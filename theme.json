@@ -1,0 +1,146 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "name": "Theme Color 1",
+                    "slug": "ast-global-color-0",
+                    "color": "var(--ast-global-color-0)"
+                },
+                {
+                    "name": "Theme Color 2",
+                    "slug": "ast-global-color-1",
+                    "color": "var(--ast-global-color-1)"
+                },
+                {
+                    "name": "Theme Color 3",
+                    "slug": "ast-global-color-2",
+                    "color": "var(--ast-global-color-2)"
+                },
+                {
+                    "name": "Theme Color 4",
+                    "slug": "ast-global-color-3",
+                    "color": "var(--ast-global-color-3)"
+                },
+                {
+                    "name": "Theme Color 5",
+                    "slug": "ast-global-color-4",
+                    "color": "var(--ast-global-color-4)"
+                },
+                {
+                    "name": "Theme Color 6",
+                    "slug": "ast-global-color-5",
+                    "color": "var(--ast-global-color-5)"
+                },
+                {
+                    "name": "Theme Color 7",
+                    "slug": "ast-global-color-6",
+                    "color": "var(--ast-global-color-6)"
+                },
+                {
+                    "name": "Theme Color 8",
+                    "slug": "ast-global-color-7",
+                    "color": "var(--ast-global-color-7)"
+                },
+                {
+                    "name": "Theme Color 9",
+                    "slug": "ast-global-color-8",
+                    "color": "var(--ast-global-color-8)"
+                },
+                {
+                    "name": "Neutral grey Dark",
+                    "slug": "neutral-gray-dark",
+                    "color": "#5B5B5B"
+                },
+                {
+                    "name": "Neutral Grey",
+                    "slug": "neutral-gray",
+                    "color": "#989898"
+                },
+                {
+                    "name": "Neutral Grey Middle",
+                    "slug": "neutral-gray-middle",
+                    "color": "#727272"
+                },
+                {
+                    "name": "Neutral Grey Light",
+                    "slug": "neutral-gray-light",
+                    "color": "#DADADA"
+                },
+                {
+                    "name": "Neutral White Middle",
+                    "slug": "neutral-white-middle",
+                    "color": "#F9F9F9"
+                },
+                {
+                    "slug": "neutral-warm-light",
+                    "color": "#FFFCF3",
+                    "name": "Neutral Warm Light"
+                }
+            ]
+        },
+        "appearanceTools": true,
+        "spacing": {
+            "blockGap": true,
+            "margin": true,
+            "padding": true,
+            "units": [
+                "%",
+                "px",
+                "em",
+                "rem",
+                "vh",
+                "vw"
+            ]
+        },
+        "typography": {
+            "customFontSize": true,
+            "customLineHeight": true,
+            "dropCap": true,
+            "fontFamilies": [],
+            "fontSizes": [
+                {
+                    "size": "13px",
+                    "name": "Small",
+                    "slug": "small"
+                },
+                {
+                    "size": "20px",
+                    "name": "Medium",
+                    "slug": "medium"
+                },
+                {
+                    "size": "36px",
+                    "name": "Large",
+                    "slug": "large"
+                },
+                {
+                    "size": "42px",
+                    "name": "Extra Large",
+                    "slug": "x-large"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "var(--wp--custom--ast-content-width-size)",
+            "wideSize": "var(--wp--custom--ast-wide-width-size)",
+            "fullSize": "none"
+        }
+    },
+    "styles": {
+        "root": {
+            "typography": {
+                "fontFamily": "Inter, sans-serif"
+            }
+        },
+        "elements": {
+            "link": {
+                "typography": {
+                    "textDecoration": "none"
+                }
+            }
+        }
+    }
+}

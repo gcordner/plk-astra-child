@@ -1,0 +1,70 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.archive {
+    .entry-title {
+        font-weight: 600;
+        line-height: 1.3em;
+        font-size: .3s ease-in-out;
+
+        a {
+            font-weight: 600;
+            line-height: 1.3em;
+            font-size: .3s ease-in-out;
+        }
+    }
+}
+
+.blog {
+    .entry-title {
+        font-weight: 600;
+        line-height: 1.3em;
+        font-size: .3s ease-in-out;
+
+        a {
+            font-weight: 600;
+            line-height: 1.3em;
+            font-size: .3s ease-in-out;
+        }
+    }
+}
+
+
+h2,
+.heading-2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+
+    @media (max-width: $medium-size) {
+        font-size: 1.5rem;
+    }
+}
+
+h4 {
+    margin-bottom: 1rem;
+}
+
+.text-large {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 500;
+
+    @media (max-width: $medium-size) {
+        font-size: 1rem;
+    }
+}
+
+.heading-5 {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+// h5 {
+// 	font-size: 1rem;
+// 	line-height: 1.5;
+// 	font-weight: 600;
+// }

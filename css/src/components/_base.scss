@@ -1,0 +1,161 @@
+.section-padding {
+    padding: 100px 0;
+
+    @media (max-width: $medium-size) {
+        padding: 50px 0;
+    }
+}
+
+.section-padding-top {
+    padding-top: 100px;
+
+    @media (max-width: $medium-size) {
+        padding-top: 50px;
+    }
+
+    &--xl {
+        padding-top: 160px;
+
+        @media (max-width: $medium-size) {
+            padding-top: 5rem;
+        }
+    }
+
+    &--lg {
+        padding-top: 5rem;
+    }
+
+    &--md {
+        padding-top: 2.5rem;
+    }
+}
+
+.section-padding-bottom {
+    padding-bottom: 100px;
+
+    @media (max-width: $medium-size) {
+        padding-bottom: 50px;
+    }
+
+    &--xxl {
+        padding-bottom: 200px;
+    }
+
+    &--lg {
+        padding-bottom: 5rem;
+    }
+
+    &--md {
+        padding-bottom: 2.5rem;
+    }
+}
+
+.section-margin {
+    margin-top: 5rem;
+
+    @media (max-width: $medium-size) {
+        margin-top: 2.5rem;
+    }
+
+    &--md {
+        margin-top: 2.5rem;
+    }
+}
+
+.section-margin-bottom {
+    margin-bottom: 5rem;
+
+    @media (max-width: $medium-size) {
+        margin-top: 2.5rem;
+    }
+
+    &--md {
+        margin-bottom: 2.5rem;
+    }
+}
+
+.header-margin {
+    margin-bottom: 1.5rem;
+
+    @media (max-width: $medium-size) {
+        margin-bottom: 16px;
+    }
+
+    &--inner {
+        margin-top: 1.5rem;
+        margin-bottom: 8px;
+
+        @media (max-width: $medium-size) {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.list-reset {
+    padding-left: 0;
+    list-style: none;
+}
+
+.link-reset {
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+// Back and forward arrows for the slider //
+
+.custom-navigation .swiper-button-disabled .icon-arrow-up {
+    color: #dadada;
+}
+
+.custom-navigation__button--prev .icon-arrow-up {
+    transform: rotate(-90deg);
+}
+
+.custom-navigation__button .icon-arrow-up {
+    font-size: 32px;
+    color: #6f9238;
+    transition: all .3s ease-in-out;
+}
+
+
+
+.custom-navigation {
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        &::after {
+            content: none;
+        }
+    }
+
+    .swiper-button-disabled {
+        box-shadow: 4px 4px 9px rgba(233, 233, 233, 0.25);
+        cursor: no-drop;
+
+        @media (max-width: $medium-size) {
+            box-shadow: none;
+        }
+
+        .icon-arrow-up {
+            color: $neutral-gray-light;
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: 4px 4px 9px rgba(233, 233, 233, 0.25);
+
+            @media (max-width: $medium-size) {
+                box-shadow: none;
+            }
+
+            .icon-arrow-up {
+                color: $neutral-gray-light;
+            }
+        }
+    }
+}
+
+span.price {
+    color: $neutral-gray-dark !important;
+    font-size: 1rem !important
+}

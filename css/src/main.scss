@@ -1,0 +1,60 @@
+// variables
+@import './variables';
+
+// fonts
+@import './font/inter';
+
+// icons
+@import './font/icon-font';
+
+// typography
+@import './typography';
+
+// layout and structure
+@import './layout';
+
+// base styles
+@import './components/base';
+
+// backgrounds styles
+@import './components/background';
+
+// hero
+@import './components/hero';
+
+// infoblock
+@import './components/infoblock';
+
+// categories
+@import './components/categories';
+
+// products flex content
+@import './components/products'; // faq
+@import './components/faq';
+
+// accordion
+@import './components/accordion';
+
+// buttons
+@import './components/buttons';
+
+// catalog-content
+@import './components/catalog-about';
+
+// category-content
+@import './components/category';
+
+// cards
+@import './components/cards';
+
+// main content pane styles
+@import './components/content';
+
+// links
+@import './components/links';
+
+// woocommerce single product styles
+@import './components/woo-product';
+
+// stamped
+@import './components/stamped';

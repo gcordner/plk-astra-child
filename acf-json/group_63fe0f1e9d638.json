@@ -1,0 +1,284 @@
+{
+    "key": "group_63fe0f1e9d638",
+    "title": "Categories Banner Images",
+    "fields": [
+        {
+            "key": "field_64236ee7f4e2b",
+            "label": "Single or Double Image Banner",
+            "name": "banner_type",
+            "type": "radio",
+            "instructions": "Select whether you would like to show a single or double banner (in place of the hero image) or no banner at all (will display hero).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "none",
+                "single banner": "single banner",
+                "double banner": "double banner"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "none",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_642370ad976f0",
+            "label": "Mobile Banner",
+            "name": "mobile_banner",
+            "type": "image",
+            "instructions": "Add mobile banner. Recommended dimensions in px: 660w x 433h.",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "single banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 660,
+            "min_height": "",
+            "min_size": "",
+            "max_width": 1000,
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
+        },
+        {
+            "key": "field_64237146976f1",
+            "label": "Desktop Banner",
+            "name": "desktop_banner",
+            "type": "image",
+            "instructions": "Upload single desktop banner. Recommended minimum width: 1320px",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "single banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": 1024,
+            "min_height": "",
+            "min_size": "",
+            "max_width": 2000,
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
+        },
+        {
+            "key": "field_642371a2976f2",
+            "label": "Banner url",
+            "name": "banner_url",
+            "type": "url",
+            "instructions": "Add optional banner link url",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "single banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_63fe1bf9f3bac",
+            "label": "Banner image 1",
+            "name": "banner_image_1",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "double banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
+        },
+        {
+            "key": "field_63fe1c08f3bad",
+            "label": "Banner url 1",
+            "name": "banner_url_1",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "double banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_63fe1c1a44b3c",
+            "label": "Banner image 2",
+            "name": "banner_image_2",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "double banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "uploader": "",
+            "acfe_thumbnail": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "library": "all"
+        },
+        {
+            "key": "field_63fe1c2144b3d",
+            "label": "Banner url 2",
+            "name": "banner_url_2",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64236ee7f4e2b",
+                        "operator": "==",
+                        "value": "double banner"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_63fe53580b04e",
+            "label": "Quantity Discount",
+            "name": "quantity_discount",
+            "type": "true_false",
+            "instructions": "This product has quantity disccount, the text shows in the banner.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "product_cat"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "acfe_display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1680551145
+}

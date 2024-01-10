@@ -1,0 +1,11 @@
+.background--gray {
+    background-color: $neutral-white-middle;
+}
+
+.background--warm {
+    background-color: $neutral-warm-light;
+
+    &-contrast {
+        background-color: var(--ast-global-color-6);
+    }
+}

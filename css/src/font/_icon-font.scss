@@ -1,0 +1,147 @@
+$icon-font-path: "../../font" !default;
+
+
+@font-face {
+    font-family: icon-font;
+    font-display: swap;
+    src: url('#{$icon-font-path}/icon-font.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon"],
+[class*=" icon"] {
+    font-family: 'icon-font';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+
+
+.icon-arrow-down::before {
+    content: "\ea01";
+}
+
+.icon-arrow-up::before {
+    content: "\ea02";
+}
+
+.icon-basket::before {
+    content: "\ea03";
+}
+
+.icon-burger::before {
+    content: "\ea04";
+}
+
+.icon-check::before {
+    content: "\ea05";
+}
+
+.icon-clock::before {
+    content: "\ea06";
+}
+
+.icon-cross::before {
+    content: "\ea07";
+}
+
+.icon-detox::before {
+    content: "\ea08";
+}
+
+.icon-energy::before {
+    content: "\ea09";
+}
+
+.icon-euphoria::before {
+    content: "\ea0a";
+}
+
+.icon-facebook::before {
+    content: "\ea0b";
+}
+
+.icon-gal-magnifier::before {
+    content: "\ea0c";
+}
+
+.icon-heart::before {
+    content: "\ea0d";
+}
+
+.icon-linkedin::before {
+    content: "\ea0e";
+}
+
+.icon-mail::before {
+    content: "\ea0f";
+}
+
+.icon-mellow::before {
+    content: "\ea10";
+}
+
+.icon-moon::before {
+    content: "\ea11";
+}
+
+.icon-nav-arrow::before {
+    content: "\ea12";
+}
+
+.icon-opiate::before {
+    content: "\ea13";
+}
+
+.icon-pain::before {
+    content: "\ea14";
+}
+
+.icon-private::before {
+    content: "\ea15";
+}
+
+.icon-relax::before {
+    content: "\ea16";
+}
+
+.icon-search::before {
+    content: "\ea17";
+}
+
+.icon-sleep::before {
+    content: "\ea18";
+}
+
+.icon-smile::before {
+    content: "\ea19";
+}
+
+.icon-star::before {
+    content: "\ea1a";
+}
+
+.icon-stimul::before {
+    content: "\ea1b";
+}
+
+.icon-stress::before {
+    content: "\ea1c";
+}
+
+.icon-sun::before {
+    content: "\ea1d";
+}
+
+.icon-twitter::before {
+    content: "\ea1e";
+}
+
+.icon-user::before {
+    content: "\ea1f";
+}
+
+.icon-verify::before {
+    content: "\ea20";
+}

@@ -1,0 +1,26 @@
+a {
+    &:focus {
+        text-decoration: underline;
+        color: var(--ast-global-color-0);
+    }
+
+    &:hover {
+        text-decoration: underline;
+        color: var(--ast-global-color-0);
+    }
+}
+
+
+.woocommerce-product-details__categories {
+    a {
+        color: var(--ast-global-color-2);
+
+        &:focus {
+            color: var(--ast-global-color-2);
+        }
+
+        &:hover {
+            color: var(--ast-global-color-2);
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.post-content.ast-grid-common-col {
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        .ast-blog-featured-section.post-thumb.ast-grid-common-col.ast-float {
+            border-radius: 0;
+
+            .post-thumb-img-content.post-thumb img {
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+
+.ast-blog-featured-section.post-thumb.ast-grid-common-col.ast-float {
+    display: block;
+    height: 323px;
+    overflow: hidden; // hide any overflowing content (part of the image)
+    transition: all .3s ease-in-out;
+    border-radius: 0 0 64px 0;
+
+    .post-thumb-img-content.post-thumb img {
+        height: 323px; // set the height
+        width: auto; // scales width while maintaining aspect ratio
+        transform: scale(1);
+        opacity: 1;
+        object-fit: cover;
+        transition: all .3s ease-in-out;
+    }
+}

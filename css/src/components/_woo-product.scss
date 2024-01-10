@@ -1,0 +1,111 @@
+.woocommerce-js {
+    div.product {
+        div.summary {
+            .single-product-category {
+                display: none; // Removes category list from the top of the page
+            }
+        }
+
+        .product_title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02rem;
+            margin-bottom: 1rem;
+        }
+
+        .product_meta {
+            border-top: none;
+
+            .posted_in,
+            span {
+                font-size: 1rem;
+            }
+        }
+
+        .stock {
+            color: var(--ast-global-color-0);
+            font-weight: 500;
+        }
+
+        .out-of-stock {
+            color: var(--ast-global-color-8);
+            font-size: 1rem !important;
+            font-weight: 600;
+        }
+
+        p.price {
+            color: var(--ast-global-color-2);
+            font-size: 1.7rem;
+            line-height: 1.4;
+            letter-spacing: -.02em;
+            margin: 1rem 0;
+            font-weight: 500;
+
+            ins {
+                font-weight: 500;
+            }
+
+            del {
+                color: var(--ast-global-color-3);
+                opacity: 0.4;
+                font-weight: 500;
+            }
+        }
+
+        button.button.alt.disabled {
+            background-color: $neutral-gray-dark;
+        }
+
+        form.cart {
+            .variations {
+                border-bottom: none;
+
+                label {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+.ast-single-product-extras {
+    ul {
+        display: none;
+    }
+}
+
+.woocommerce-variation-price {
+    display: none; // Removes redundant price from the product page
+}
+
+.ast-woocommerce-container {
+    .entry-summary {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.tiered-pricing-wrapper {
+    h3 {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+}
+
+.woocommerce-product-details__short-description {
+    h5 {
+        margin-bottom: 1rem;
+    }
+}
+
+.ast-single-product-extras {
+    border-bottom: 1px solid $neutral-gray-light;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.woocommerce {
+    span.onsale {
+        background-color: var(--ast-global-color-8);
+    }
+}

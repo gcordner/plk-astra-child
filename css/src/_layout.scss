@@ -1,0 +1,99 @@
+html {
+  // background: url(../../img/background.jpg);
+  // background-size: cover;
+  // font-family: 'Inter', sans-serif;
+  // font-weight: 400;
+}
+
+body {
+  // text-align: center;
+  // background-color: rgb(202, 248, 248);
+  // padding: 0;
+  // margin: 0;
+  // height: 100vh;
+
+  // display: flex;
+  // flex-flow: column;
+  // justify-content: center;
+  // align-items: center;
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .wp-block-cover {
+    h2 {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+footer {
+  // position: fixed;
+  // bottom: 0px;
+  // color: white;
+}
+
+// Astra container bc I can't find it in customizer.
+
+.ast-separate-container {
+  .ast-article-post {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .ast-article-single {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .ast-author-box {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .ast-404-layout-1 {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .no-results {
+    padding: 3rem 0 3rem 0;
+  }
+}
+
+
+.ast-archive-description {
+  .ast-archive-title {
+    margin-bottom: 4px;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+body.archive {
+  .ast-archive-description {
+    padding-top: 0;
+    padding-right: 1em;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    margin-top: -1rem;
+  }
+}
+
+
+.ast-separate-container {
+  .ast-archive-description {
+    max-width: 1312px;
+    width: 100%;
+    text-align: left;
+    padding-top: 0;
+    padding-right: 1em;
+    padding-bottom: 3em;
+    padding-left: 1em;
+    margin-top: -1rem;
+  }
+}
+
+#primary {
+  margin: 2rem 0;
+}
+
+.container {
+  padding: 0 1rem;
+}

@@ -1,0 +1,66 @@
+// COLORS
+
+$neutral-gray-dark: #5B5B5B;
+$neutral-gray: #989898;
+$neutral-gray-light: #DADADA;
+$neutral-gray-extra: #E7E7E7;
+$neutral-gray-middle: #727272;
+$neutral-white-middle: #F9F9F9;
+$neutral-warm: #FFF4D2;
+$neutral-warm-light: #FFFCF3;
+$neutral-warm-middle: #F4F7EE;
+$neutral-white-ultra: #E1E1E1;
+$neutral-green-dark: var(--ast-global-color-1);
+$neutral-gray-dark: #5B5B5B;
+$neutral-gray-middle: #727272;
+$neutral-gray-middle-2: #7a7a7a;
+
+
+$neutral-1: $neutral-green-dark;
+$neutral-2: $neutral-gray-middle;
+
+$neutral-gray: #989898;
+$neutral-warm-contrast: #F4D060;
+
+$color-orange-dark: #c15407;
+$color-orange: #ff8b37;
+$color-grey-dark: #545454;
+$color-green-dark: #55761f;
+$color-red-dark: #bb2323;
+$color-brown-dark: #875e0a;
+$color-blue-dark: #3748e5;
+
+// SCREEN SIZES
+
+$large-size: 1282px;
+$medium-size: 1024px;
+$small-size: 768px;
+$smallest-size: 480px;
+$extrasmall-size: 400px;
+
+
+$transition-base: 300ms ease;
+
+// PADDING, MARGINS, SPACING
+
+$spacer-0: 0;
+$spacer-1: 0.25rem;
+$spacer-2: 0.5rem;
+$spacer-3: 1rem;
+$spacer-4: 1.5rem;
+$spacer-5: 2rem;
+$spacer-6: 2.5rem;
+$spacer-7: 3.0rem;
+$spacer-8: 3.5rem;
+
+// TYPOGRAPHY
+$font-family-base: 'Inter',
+sans-serif;
+
+// ODSS AND END FROM PLK/front/src/styles/_resources.scss
+$box-shadow-1: 4px 4px 9px rgba(160, 160, 160, .25);
+$box-shadow-2: 0px 0px 17px rgba(160, 160, 160, .15);
+$box-shadow-3: 0px 0px 17px rgba(160, 160, 160, .25);
+$box-shadow-4: 2px 2px 10px rgba(0, 0, 0, .65);
+
+$custom-box-shadow: 3px 6px 9px rgba(215, 215, 215, .55);
