@@ -1,3 +1,4 @@
 # Etc
 .DS_Store
 node_modules/
+*.old
