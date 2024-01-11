@@ -1,0 +1,204 @@
+@function rem($pixels, $context: $font-size-base) {
+    @return #{$pixels/$context}rem;
+}
+
+@mixin max-screen($size) {
+    @media (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin min-screen($size) {
+    @media (min-width: $size + 1px) {
+        @content;
+    }
+}
+
+@mixin large() {
+    @include max-screen($large-size) {
+        @content;
+    }
+}
+
+@mixin medium() {
+    @include max-screen($medium-size) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @include max-screen($small-size) {
+        @content;
+    }
+}
+
+@mixin phone() {
+    @include max-screen($smallest-size) {
+        @content;
+    }
+}
+
+@mixin min-phone() {
+    @include max-screen($extrasmall-size) {
+        @content;
+    }
+}
+
+@mixin large-mf() {
+    @include min-screen($large-size) {
+        @content;
+    }
+}
+
+@mixin medium-mf() {
+    @include min-screen($medium-size) {
+        @content;
+    }
+}
+
+@mixin tablet-mf() {
+    @include min-screen($small-size) {
+        @content;
+    }
+}
+
+@mixin phone-mf() {
+    @include min-screen($smallest-size) {
+        @content;
+    }
+}
+
+@mixin input-contact {
+    border: 1px solid $neutral-gray-light;
+    border-radius: 8px;
+    padding: 14px 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $neutral-gray;
+
+    background-color: $white;
+
+    &:focus-visible {
+        border-color: $primary-1;
+
+        color: $neutral-green-dark;
+
+        outline: none;
+    }
+}
+
+@mixin textarea-contact {
+    @include input-contact;
+
+    resize: none;
+}
+
+@mixin hovering {
+    @media (hover: hover) {
+        @content;
+    }
+}
+
+@mixin not-first {
+    &:not(:first-child) {
+        @content;
+    }
+}
+
+@mixin not-last {
+    &:not(:last-child) {
+        @content;
+    }
+}
+
+@mixin absolute-covered() {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@mixin img-inside-wrap {
+
+    img,
+    svg {
+        @include absolute-covered;
+
+        right: 0;
+        bottom: 0;
+        object-fit: cover;
+        object-position: center;
+    }
+
+}
+
+@mixin img-wrap {
+
+    position: relative;
+    overflow: hidden;
+
+    @include img-inside-wrap;
+
+}
+
+@mixin aspect-ratio-w-pseudo ($x: auto, $y: none) {
+
+    @if $x and $y !=none {
+
+        aspect-ratio: #{$x} / #{$y};
+
+        @supports not (aspect-ratio: #{$x} / #{$y}) {
+            &::before {
+                content: '';
+                display: block;
+
+                width: 100%;
+                padding-bottom: calc($y / $x) * 100%;
+
+                position: relative;
+                z-index: -101;
+            }
+        }
+
+    }
+
+    @else {
+
+        aspect-ratio: $x;
+
+        @supports not (aspect-ratio: $x) {
+            &::before {
+                content: '';
+                display: block;
+
+                @if $x==auto {
+                    width: 0;
+                    padding-bottom: 0;
+                }
+
+                @else {
+                    width: 100%;
+                    padding-bottom: calc(1 / $x) * 100%;
+                }
+
+                position: relative;
+                z-index: -101;
+            }
+        }
+    }
+}
+
+@mixin heading-4 {
+    font-size: 18px;
+    line-height: 130%;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 768px) {
+        font-size: 24px;
+    }
+}

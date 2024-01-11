@@ -1,5 +1,4 @@
-// COLORS
-
+// COLORS from SHEET #1
 $neutral-gray-dark: #5B5B5B;
 $neutral-gray: #989898;
 $neutral-gray-light: #DADADA;
@@ -11,15 +10,11 @@ $neutral-warm-light: #FFFCF3;
 $neutral-warm-middle: #F4F7EE;
 $neutral-white-ultra: #E1E1E1;
 $neutral-green-dark: var(--ast-global-color-1);
-$neutral-gray-dark: #5B5B5B;
-$neutral-gray-middle: #727272;
 $neutral-gray-middle-2: #7a7a7a;
-
 
 $neutral-1: $neutral-green-dark;
 $neutral-2: $neutral-gray-middle;
 
-$neutral-gray: #989898;
 $neutral-warm-contrast: #F4D060;
 
 $color-orange-dark: #c15407;
@@ -30,19 +25,61 @@ $color-red-dark: #bb2323;
 $color-brown-dark: #875e0a;
 $color-blue-dark: #3748e5;
 
-// SCREEN SIZES
+// COLORS from SHEET #2
+$neutral-green: #88AA51;
+$neutral-green-contrast: #07423D;
+$neutral-green-add: #35523B;
+$neutral-gray-medium: #B8B8B8;
+$neutral-white-dark: #F0F0F0;
+$neutral-white-light: #FBFBFB;
+$neutral-warm-dark: #857B21;
+$neutral-warm-med-dark: #E4D5A5;
 
+$primary-1: #6F9238;
+$primary-gradient: linear-gradient(168.69deg, #8EB354 5%, #72953B 91.67%);
+$red-gradient: linear-gradient(168.69deg, #D72828 5%, #C42D2D 91.67%);
+
+$info-1: #00669f;
+$info-2: #dde6eb;
+$info-3: #5766EB;
+
+$primary-4: #EB5757;
+$primary-5: #F5EEEE;
+$primary-6: #D2600F;
+
+$black: #000000;
+$white: #FFFFFF;
+$orange: $primary-6;
+$brown: #BD840A;
+$blue: #5792EB;
+
+$neutral-search: $neutral-white-light;
+
+// SCREEN SIZES (Consolidated)
 $large-size: 1282px;
 $medium-size: 1024px;
 $small-size: 768px;
 $smallest-size: 480px;
 $extrasmall-size: 400px;
 
+// TYPOGRAPHY (Consolidated)
+$font-family-base: 'Inter',
+sans-serif;
+$font-size-base: 16;
+$font-family-solid: 'Montserrat',
+sans-serif;
 
+// SHADOWS (Consolidated)
+$box-shadow-1: 4px 4px 9px rgba(160, 160, 160, .25);
+$box-shadow-2: 0px 0px 17px rgba(160, 160, 160, .15);
+$box-shadow-3: 0px 0px 17px rgba(160, 160, 160, .25);
+$box-shadow-4: 2px 2px 10px rgba(0, 0, 0, .65);
+$custom-box-shadow: 3px 6px 9px rgba(215, 215, 215, .55);
+
+// TRANSITIONS (Consolidated)
 $transition-base: 300ms ease;
 
-// PADDING, MARGINS, SPACING
-
+// PADDING, MARGINS, SPACING (Consolidated)
 $spacer-0: 0;
 $spacer-1: 0.25rem;
 $spacer-2: 0.5rem;
@@ -53,14 +90,123 @@ $spacer-6: 2.5rem;
 $spacer-7: 3.0rem;
 $spacer-8: 3.5rem;
 
-// TYPOGRAPHY
-$font-family-base: 'Inter',
-sans-serif;
+// MISC CLASS DEFINITIONS (From Sheet #2)
+.pl-2 {
+    padding-left: $spacer-2;
+}
 
-// ODSS AND END FROM PLK/front/src/styles/_resources.scss
-$box-shadow-1: 4px 4px 9px rgba(160, 160, 160, .25);
-$box-shadow-2: 0px 0px 17px rgba(160, 160, 160, .15);
-$box-shadow-3: 0px 0px 17px rgba(160, 160, 160, .25);
-$box-shadow-4: 2px 2px 10px rgba(0, 0, 0, .65);
+.pl-3 {
+    padding-left: $spacer-3;
+}
 
-$custom-box-shadow: 3px 6px 9px rgba(215, 215, 215, .55);
+.pl-4 {
+    padding-left: $spacer-4;
+}
+
+.pl-5 {
+    padding-left: $spacer-5;
+}
+
+.pl-6 {
+    padding-left: $spacer-6;
+}
+
+.pr-2 {
+    padding-right: $spacer-2;
+}
+
+.pr-3 {
+    padding-right: $spacer-3;
+}
+
+.pr-4 {
+    padding-right: $spacer-4;
+}
+
+.pr-5 {
+    padding-right: $spacer-5;
+}
+
+.pr-6 {
+    padding-right: $spacer-6;
+}
+
+.ml-2 {
+    margin-left: $spacer-2;
+}
+
+.ml-3 {
+    margin-left: $spacer-3;
+}
+
+.ml-4 {
+    margin-left: $spacer-4;
+}
+
+.ml-5 {
+    margin-left: $spacer-5;
+}
+
+.ml-6 {
+    margin-left: $spacer-6;
+}
+
+.mr-2 {
+    margin-right: $spacer-2;
+}
+
+.mr-3 {
+    margin-right: $spacer-3;
+}
+
+.mr-4 {
+    margin-right: $spacer-4;
+}
+
+.mr-5 {
+    margin-right: $spacer-5;
+}
+
+.mr-6 {
+    margin-right: $spacer-6;
+}
+
+.mt-2 {
+    margin-top: $spacer-2;
+}
+
+.mt-3 {
+    margin-top: $spacer-3;
+}
+
+.mt-4 {
+    margin-top: $spacer-4;
+}
+
+.mt-5 {
+    margin-top: $spacer-5;
+}
+
+.mt-6 {
+    margin-top: $spacer-6;
+}
+
+.mb-2 {
+    margin-bottom: $spacer-2;
+}
+
+.mb-3 {
+    margin-bottom: $spacer-3;
+}
+
+.mb-4 {
+    margin-bottom: $spacer-4;
+}
+
+.mb-5 {
+    margin-bottom: $spacer-5;
+}
+
+.mb-6 {
+    margin-bottom: $spacer-6;
+}
