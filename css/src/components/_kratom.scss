@@ -1,0 +1,55 @@
+.kratom {
+    text-align: center;
+
+    h2 {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    ul {
+        text-align: left;
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 1.5rem; // Changed from 24px
+
+        li {
+            margin-bottom: 0.5rem; // Changed from 8px
+            position: relative;
+            font-weight: 400;
+            font-size: 1rem; // Changed from 16px
+            line-height: 1.5;
+            padding-left: 1.5rem; // Changed from 25px
+            color: $neutral-2;
+
+            &::before {
+                content: "\ea02";
+                font-family: "icon-font";
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                font-style: normal;
+                transform: rotate(90deg);
+                display: inline-flex;
+                color: $primary-1;
+                font-size: 1rem; // Changed from 15px
+                position: absolute;
+                top: 1px;
+                left: 0;
+            }
+        }
+    }
+}
+
+.kratom__header {
+    margin-bottom: 1.5rem; // Changed from 24px
+}
+
+.kratom__header,
+.kratom__wrapper {
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kratom__text {
+    color: $neutral-2;
+}
