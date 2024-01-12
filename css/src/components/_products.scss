@@ -13,9 +13,15 @@
         }
     }
 
-    @media (min-width: $medium-size) {
-        /*margin-top: 40px; Removed to eliminate white space between components */
+    @include medium {
         overflow: hidden;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .bapf_sfa_taxonomy {
@@ -28,14 +34,19 @@
         display: none;
     }
 
-    // .container class removed
-    // .products__link class removed
+    &.section-margin {
+        .products__link {
+            @media (max-width: 1024px) {
+                margin-bottom: 40px;
+            }
+        }
+    }
 }
 
 .products+.products {
     margin-top: 0;
 
-    @media (min-width: $medium-size) {
+    @include medium {
         margin-top: 40px;
     }
 }
@@ -43,16 +54,28 @@
 .products__heading {
     margin-bottom: 0;
 
-    @media (max-width: 375px) {
+    @include max-screen(375px) {
         max-width: 80%;
     }
 }
 
-// .products__link class removed entirely, including .btn--arrow
+.products__link {
+    cursor: pointer;
+
+    &.btn--arrow {
+        color: $color-green-dark;
+    }
+
+    @include medium {
+        order: 2;
+    }
+}
 
 .products__slider {
     position: relative;
     width: 100%;
+    //margin-left: -10px;
+    //margin-right: -10px;
 
     &::before,
     &::after {
@@ -63,7 +86,7 @@
         height: 100%;
         width: 100%;
         z-index: 2;
-        // background-color: var(--ast-global-color-5);   
+        background-color: $white;
     }
 
     &::before {
@@ -75,13 +98,18 @@
     }
 
     .swiper-container {
-        @media (min-width: $medium-size) {
+        //overflow: hidden;
+        //padding-bottom: 80px;
+        //padding-left: 10px;
+        //padding-right: 10px;
+
+        @include medium {
             overflow: visible;
             width: 100%;
             padding-bottom: 0;
         }
 
-        @media (max-width: $small-size) {
+        @include phone {
             width: 100%;
         }
     }
@@ -90,14 +118,14 @@
         padding: 16px;
         min-height: 312px;
 
-        @media (min-width: $medium-size) {
+        @include medium {
             padding-bottom: 16px;
             min-height: 286px;
             height: auto;
             min-height: 290px;
         }
 
-        @media (max-width: $small-size) {
+        @include phone {
             max-width: 240px;
         }
 
@@ -117,7 +145,7 @@
         justify-content: center;
         bottom: -60px;
 
-        @media (min-width: $medium-size) {
+        @include medium {
             padding: 0;
             z-index: 1;
             justify-content: flex-start;
@@ -130,7 +158,7 @@
         .product__item-btn--descktop {
             padding: 13px 10px;
 
-            @media (min-width: $medium-size) {
+            @include medium {
                 padding: 8px 30px;
                 opacity: 1;
             }
@@ -146,8 +174,4 @@
     padding-top: 32px;
     flex-basis: 100%;
     display: flex;
-}
-
-.background--warm-contrast {
-    background-color: $neutral-warm-light;
 }

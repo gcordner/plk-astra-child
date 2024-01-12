@@ -1,0 +1,55 @@
+.aboutinfo {
+    margin-top: 6.25rem;
+    /* Changed from 100px */
+
+    @include medium {
+        margin-top: 0;
+    }
+}
+
+.aboutinfo__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &.section-padding-top {
+        @include medium {
+            padding-top: 0;
+        }
+    }
+
+    img {
+        border-radius: 1rem;
+        /* Changed from 16px */
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+
+        @include medium {
+            margin-top: 1.875rem;
+            /* Changed from 30px */
+            max-height: 300px;
+            /* Left as px because it's over 80px */
+        }
+    }
+}
+
+.aboutinfo__text {
+    flex-basis: 50%;
+    padding-right: 5rem;
+    /* Changed from 80px */
+
+    @include medium {
+        flex-basis: 100%;
+        padding-right: 0;
+    }
+}
+
+.aboutinfo__picture {
+    flex-basis: 50%;
+
+    @include medium {
+        flex-basis: 100%;
+    }
+}

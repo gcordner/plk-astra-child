@@ -1,0 +1,153 @@
+.about {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &.background--warm-contrast {
+        background-color: $neutral-warm-light;
+    }
+}
+
+.about__wrapper--large {
+    flex-basis: 55%;
+
+    @include medium {
+        flex-basis: 100%;
+    }
+
+    .about__image {
+        max-height: 732px;
+        margin-bottom: 0;
+
+        @include medium {
+            //max-height: 248px;
+            margin-right: 0.675rem;
+            max-width: 95%;
+            padding-top: 60%;
+        }
+
+        @include phone {
+            padding-top: 80%;
+        }
+
+        img {
+            max-height: 732px;
+        }
+    }
+}
+
+.about__wrapper--small {
+    flex-basis: 35%;
+    position: relative;
+
+    @include medium {
+        flex-basis: 100%;
+        padding-top: 117px;
+    }
+
+    @include tablet {
+        padding-top: 97px;
+    }
+
+    @include phone {
+        padding-top: 117px;
+    }
+
+    @include min-phone {
+        padding-top: 80px;
+    }
+
+    .about__image {
+        @include medium {
+            max-height: 140px;
+            width: 200px;
+            position: absolute;
+            top: -100px;
+            right: 0;
+            padding-top: 20%;
+        }
+
+        @include tablet {
+            top: -60px;
+            width: 140px;
+        }
+
+        @include phone {
+            padding-top: 36%;
+        }
+
+        @include min-phone {
+            width: 100px;
+        }
+    }
+}
+
+.about__caption {
+    color: $neutral-gray-dark;
+    font-weight: 500;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &--small {
+        font-weight: 400;
+
+        @include medium {
+            font-size: 14px;
+        }
+    }
+}
+
+.about__btn {
+    margin-top: 2.5rem;
+
+    &.btn--arrow {
+        color: $color-green-dark;
+    }
+
+    @include medium {
+        margin-top: 2rem;
+    }
+}
+
+.about__wrapper-image {
+    margin-top: 3rem;
+    position: relative;
+}
+
+.about__image {
+    border-radius: 1rem;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    height: 0;
+    padding-top: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+
+    img {
+        border-radius: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+}
+
+.about__image--animated {
+    position: absolute;
+    bottom: -1.875rem;
+    right: -85px;
+
+    @include medium {
+        width: 118px;
+        left: 2.375rem;
+        right: auto;
+    }
+}

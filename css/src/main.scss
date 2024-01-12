@@ -1,7 +1,7 @@
 // variables
 @import './variables';
 
-// mixinx
+// mixins
 @import './mixins';
 
 // fonts
@@ -19,20 +19,28 @@
 // base styles
 @import './components/base';
 
+// aboutinfo styles - for image_text template part
+@import './components/about';
+
+// about styles
+@import './components/aboutinfo';
+
 // backgrounds styles
 @import './components/background';
 
 // hero
 @import './components/hero';
 
-// infoblock
+// infoblock - for image_text template part
 @import './components/infoblock';
 
 // categories
 @import './components/categories';
 
-// products flex content
-@import './components/products'; // faq
+// products flex content  - for category-products template part
+@import './components/products';
+
+// faq
 @import './components/faq';
 
 // accordion
