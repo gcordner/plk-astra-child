@@ -1,7 +1,11 @@
 .faq {
     &--page {
         .faq__heading {
-            @media (max-width: $medium-size) {
+            //font-weight: 600;
+            //font-size: 64px;
+            //line-height: 1.1;
+
+            @include medium {
                 font-size: 40px;
             }
         }
@@ -12,8 +16,8 @@
     text-align: center;
     margin-bottom: 56px;
 
-    @media (max-width: $medium-size) {
-        margin-bottom: 1.5rem;
+    @include medium {
+        margin-bottom: 24px;
     }
 }
 
@@ -21,12 +25,6 @@
     max-width: 866px;
     margin-left: auto;
     margin-right: auto;
-
-    .heading-4 {
-        font-size: 1.5rem;
-        line-height: 1.3;
-        font-weight: 600;
-    }
 }
 
 .faq__section {
@@ -34,7 +32,7 @@
 }
 
 .faq__item {
-    margin-top: 1.5rem;
+    margin-top: 24px;
 
     &.opened {
         .faq__item-icon {
@@ -44,7 +42,7 @@
 }
 
 .faq__list+.heading-2 {
-    margin-top: 1rem;
+    margin-top: 16px;
 }
 
 .faq__item-link {
@@ -52,29 +50,29 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--ast-global-color-5);
+    background: $white;
     border-radius: 144px;
-    padding: 1.5rem 3rem;
+    padding: 24px 48px;
     cursor: pointer;
 
-    @media (max-width: $medium-size) {
-        padding: 0.75rem 30px;
+    @include medium {
+        padding: 12px 30px;
     }
 
     .faq__item-name {
         margin-bottom: 0;
-        color: var(--ast-global-color-3);
+        color: $neutral-1;
     }
 }
 
 .faq__item-icon {
-    color: var(--ast-global-color-3);
-    font-size: 1.5rem;
+    color: $neutral-1;
+    font-size: 24px;
     transform: rotate(0deg);
     transition: all .3s ease-in-out;
 
-    @media (max-width: $medium-size) {
-        font-size: 1.13rem;
+    @include medium {
+        font-size: 18px;
     }
 }
 
@@ -83,31 +81,31 @@
     flex-direction: column;
     align-items: flex-start;
 
-    color: $neutral-gray-middle;
-    padding-left: 3rem;
+    color: $neutral-2;
+    padding-left: 48px;
     max-width: 690px;
 
-    @media (max-width: $medium-size) {
+    @include medium {
         padding-left: 30px;
     }
 
     &>* {
         &:first-child {
-            padding-top: 2rem;
+            padding-top: 32px;
 
-            @media (max-width: $medium-size) {
-                padding-top: 1.25rem;
+            @include medium {
+                padding-top: 20px;
             }
         }
 
         &:last-child {
-            padding-bottom: 0.5rem;
+            padding-bottom: 8px;
         }
     }
 
     .text-medium {
-        @media (max-width: $medium-size) {
-            font-size: 1rem;
+        @include medium {
+            font-size: 16px;
             line-height: 1.5;
         }
     }
@@ -115,35 +113,35 @@
     h3,
     h4,
     h5 {
-        color: var(--ast-global-color-3);
+        color: $neutral-1;
     }
 
     p {
         em {
             font-style: normal;
-            color: var(--ast-global-color-3);
+            color: $neutral-1;
         }
 
         strong {
             color: $color-red-dark;
-            background-color: var(--ast-global-color-4);
+            background-color: $primary-5;
             border-radius: 40px;
             padding: 4px 14px;
             font-weight: 500;
 
             &.available {
                 background-color: $neutral-warm-middle;
-                color: var(--ast-global-color-3);
+                color: $neutral-1;
             }
         }
 
         a {
             text-decoration: none;
-            color: var(--ast-global-color-0);
+            color: $primary-1;
             transition: all .3s ease-in-out;
 
             &:hover {
-                color: var(--ast-global-color-3);
+                color: $neutral-1;
             }
         }
     }
@@ -151,25 +149,25 @@
     ul,
     ol {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
 
         li {
             position: relative;
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 16px;
             line-height: 1.5;
 
             &:not(:last-child) {
-                margin-bottom: 0.5rem;
+                margin-bottom: 8px;
             }
 
             a {
                 text-decoration: none;
-                color: var(--ast-global-color-1);
+                color: $color-green-dark;
                 transition: all .3s ease-in-out;
 
                 &:hover {
-                    color: var(--ast-global-color-3);
+                    color: $neutral-1;
                 }
             }
         }
@@ -178,22 +176,22 @@
     ul {
         list-style: none;
         padding-left: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: 24px;
 
         li {
             position: relative;
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 16px;
             line-height: 1.5;
             padding-left: 25px;
-            color: var(--ast-global-color-1);
+            color: $color-green-dark;
 
             &:not(:last-child) {
-                margin-bottom: 0.5rem;
+                margin-bottom: 8px;
             }
 
             span {
-                color: var(--ast-global-color-8);
+                color: $primary-4;
             }
 
             &::before {
@@ -204,7 +202,7 @@
                 font-style: normal;
                 transform: rotate(90deg);
                 display: inline-flex;
-                color: var(--ast-global-color-0);
+                color: $primary-1;
                 font-size: 15px;
                 position: absolute;
                 top: 1px;
@@ -215,15 +213,10 @@
 
     ol {
         list-style: lower-alpha;
-        padding-left: 1.25rem;
+        padding-left: 20px;
 
         li {
             padding-left: 4px;
         }
     }
-}
-
-
-.icon-arrow-down::before {
-    content: "\ea01";
 }
