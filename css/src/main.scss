@@ -16,6 +16,12 @@
 // layout and structure
 @import './layout';
 
+// accordion
+@import './modules/accordion';
+
+// parallax module
+@import './modules/parallax';
+
 // base styles
 @import './components/base';
 
@@ -52,8 +58,7 @@
 // faq
 @import './components/faq';
 
-// accordion
-@import './components/accordion';
+
 
 // brand  - for brands template part
 @import './components/brand';
@@ -84,9 +89,6 @@
 
 // woocommerce single product styles
 @import './components/woo-product';
-
-// parallax module
-@import './modules/parallax';
 
 // stamped
 @import './components/stamped';
