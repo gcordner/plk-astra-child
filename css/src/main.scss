@@ -16,14 +16,15 @@
 // layout and structure
 @import './layout';
 
+// base styles
+@import './modules/base';
+
 // accordion
 @import './modules/accordion';
 
 // parallax module
 @import './modules/parallax';
 
-// base styles
-@import './components/base';
 
 // aboutinfo styles - for image_text template part
 @import './components/about';
