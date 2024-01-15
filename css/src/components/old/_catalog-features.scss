@@ -1,0 +1,116 @@
+.catalog-features {
+    background-color: $neutral-white-middle;
+}
+
+.catalog-features__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 1.25rem; // Converted from 40px
+
+    @media (min-width: 768px) {
+        padding-top: 2.5rem; // Converted from 80px
+    }
+}
+
+.catalog-features__text {
+    max-width: 600px;
+
+    text-align: center;
+    color: $neutral-gray-middle;
+
+    @include not-last {
+        margin-bottom: 1.5rem; // Converted from 24px
+
+        @media (min-width: 768px) {
+            margin-bottom: 3.5rem; // Converted from 56px
+        }
+    }
+}
+
+.catalog-features__list {
+    display: grid;
+    grid-row-gap: 1.25rem; // Converted from 32px
+
+    @media (min-width: 480px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 0.9375rem; // Converted from 24px
+    }
+
+    @media (min-width: 768px) {
+        grid-column-gap: 1.875rem; // Converted from 48px
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1280px) {
+        grid-column-gap: 3.75rem;
+    }
+
+    @include not-last {
+        margin-bottom: 1.5rem; // Converted from 24px
+
+        @media (min-width: 768px) {
+            margin-bottom: 3.5rem; // Converted from 56px
+        }
+    }
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 270px;
+
+    color: $neutral-gray-middle;
+    text-align: center;
+}
+
+.feature-card__wr-ico {
+    @include aspect-ratio-w-pseudo(1);
+
+    width: 110px;
+    margin-bottom: 0.5rem; // Converted from 7.5px
+
+    position: relative;
+    overflow: hidden;
+
+    background: $primary-gradient;
+    border-radius: 50%;
+}
+
+.feature-card__ico {
+    @include aspect-ratio-w-pseudo(1);
+    @include img-wrap;
+
+    width: 3.75rem;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    img,
+    svg {
+        object-fit: contain;
+    }
+}
+
+.feature-card__name {
+    @include heading-4;
+    color: $neutral-green-dark;
+}
+
+.feature-card__text {
+    margin-top: 0.125rem; // Converted from 2px
+}
