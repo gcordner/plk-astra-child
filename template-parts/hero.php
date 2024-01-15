@@ -8,7 +8,10 @@
 
 // Sub Init.
 $sub = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
-
+if ( ! $sub ) {
+	?><link href="<?php echo esc_url( get_template_directory_uri() ); ?>/front/build/hero.css?ver=<?php echo esc_attr( '1.02' ); ?>" rel="stylesheet">
+	<?php
+}
 $group         = $sub ?? null ?: $args['group'] ?? null;
 $args['group'] = $group;
 // Sub Init Done.
@@ -40,7 +43,121 @@ $image_alt          = $args['group']['image_alt'] ?? null;
 /** Define function to output styles for double image banners */
 function double_image_styles() {
 	?>
-	
+	<style>
+		/* Style for hero image section */
+		section.hero.hero--image.layout-hero {
+			background: #fff;
+			padding-bottom: 0px !important;
+		}
+
+		/* Style for hero image section on large screens */
+		@media only screen and (min-width:1025px){
+			section.hero.hero--image.layout-hero {
+				margin-bottom: -60px !important;
+			}
+		}
+
+		/* Style for banner images on small screens */
+		@media only screen and (max-width:768px){
+			.banner-images {
+				flex-direction: column !important;
+				max-height: none;
+			}
+		}
+
+		/* Style for hero heading */
+		.hero--image .hero__heading {
+			color: #042825;
+			font-size: 2.2rem;
+		}
+
+		@media only screen and (max-width:768px){
+			.hero--image .hero__heading {
+			font-size: 1.8rem;
+		}
+		}
+
+
+
+		/* Style for hero caption */
+		.hero--image .hero__caption {
+			color: #042825;
+			margin-top: 10px;
+		}
+
+		/* Style for breadcrumb links */
+		.breadcrumb--category .breadcrumb__item a {
+			color: #949494;
+		}
+
+		/* Style for header */
+		header.header {
+			border-bottom: 5px solid #fff4d2;
+		}
+
+		/* Style for breadcrumb arrow icon */
+		span.icon-arrow-up.breadcrumb__item-icon {
+			color: #949494 !important;
+		}
+
+		/* Reorder elements */
+		.hero__wrapper--text {
+			display: flex;
+			flex-direction: column;
+		}
+		h1.heading-1.hero__heading {
+			order: 1;
+		}
+		.hero__wrapper--text {
+			max-width: none !important;
+		}
+		p.hero__caption {
+			max-width: none !important;
+		}
+		.banner-images {
+			order: 2;
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			gap: 25px;
+		}
+		.banner-images a {
+			width: 100%;
+		}
+		.banner-images img {
+			width: 100%;
+			object-fit: contain;
+		}
+		p.hero__caption {
+			order: 3;
+		}
+		/* Style for quantity discount text */
+		span.qty-dis{
+			color:#FF5800;
+		}
+		@media (max-width:768px) {
+			.mobi-show {
+			display:block;
+		}
+		.mobi-hide {
+			display:none;
+		}
+		}
+
+		@media (min-width:768px) {
+			.mobi-show {
+			display:none;
+		}
+		.mobi-hide {
+			display:block;
+		}
+		}
+		
+		
+		.fluffy {
+			color: red;
+		}
+	</style>
 	<?php
 }
 
@@ -151,7 +268,7 @@ if ( ( 'single banner' === $banner_type || 'double banner' === $banner_type ) ) 
 
 
 
-	<div class="ast-container">
+	<div class="container">
 		<div class="hero__wrapper--text">
 			<?php if ( $cat_title ) { ?>
 				<h1 class="heading-1 hero__heading"><?php echo esc_html( $cat_title ); ?></h1>

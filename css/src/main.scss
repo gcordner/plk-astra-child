@@ -79,8 +79,14 @@
 // links
 @import './components/links';
 
+// content - for reviews template part
+@import './components/reviews';
+
 // woocommerce single product styles
 @import './components/woo-product';
+
+// parallax module
+@import './modules/parallax';
 
 // stamped
 @import './components/stamped';
