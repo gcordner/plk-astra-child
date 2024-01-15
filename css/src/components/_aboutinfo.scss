@@ -1,9 +1,8 @@
 .aboutinfo {
-    margin-top: 6.25rem;
-    /* Changed from 100px */
+    margin-top: 100px; // Unchanged 
 
     @include medium {
-        margin-top: 0;
+        margin-top: 0px; // Unchanged
     }
 }
 
@@ -15,34 +14,30 @@
 
     &.section-padding-top {
         @include medium {
-            padding-top: 0;
+            padding-top: 0; // Unchanged
         }
     }
 
     img {
-        border-radius: 1rem;
-        /* Changed from 16px */
+        border-radius: 1rem; // Converted from 16px
         object-fit: cover;
         object-position: center;
         width: 100%;
 
         @include medium {
-            margin-top: 1.875rem;
-            /* Changed from 30px */
-            max-height: 300px;
-            /* Left as px because it's over 80px */
+            margin-top: 1.875rem; // Converted from 30px
+            max-height: 300px; // Unchanged
         }
     }
 }
 
 .aboutinfo__text {
     flex-basis: 50%;
-    padding-right: 5rem;
-    /* Changed from 80px */
+    padding-right: 5rem; // Converted from 80px
 
     @include medium {
-        flex-basis: 100%;
-        padding-right: 0;
+        flex-basis: 100%; // Unchanged
+        padding-right: 0; // Unchanged
     }
 }
 
@@ -50,6 +45,6 @@
     flex-basis: 50%;
 
     @include medium {
-        flex-basis: 100%;
+        flex-basis: 100%; // Unchanged
     }
 }

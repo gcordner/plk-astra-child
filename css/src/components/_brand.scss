@@ -1,60 +1,51 @@
 .brand {
     text-align: center;
-    padding-left: 1.875rem;
-    /* Changed from 30px */
-    padding-right: 1.875rem;
-    /* Changed from 30px */
+    padding-left: 1.875rem; // Converted from 30px
+    padding-right: 1.875rem; // Converted from 30px
     position: relative;
 
     @include medium {
-        padding-left: 1rem;
-        /* Changed from 15px */
-        padding-right: 1rem;
-        /* Changed from 15px */
+        padding-left: 1rem; // Converted from 15px
+        padding-right: 1rem; // Converted from 15px
     }
 
     &.section-padding {
-        padding: 0;
+        padding: 0; // Unchanged
     }
 
     &.bg--gradient {
-        background: transparent;
+        background: transparent; // Unchanged
     }
 }
 
 .brand__image {
     position: absolute;
-    bottom: -3.125rem;
-    /* Changed from -50px */
+    bottom: -3.125rem; // Converted from 50px
     right: 2%;
 
     @include medium {
-        display: none;
+        display: none; // Unchanged
     }
 }
 
 .brand-wrapper {
     background-color: $neutral-warm-light;
-    border-radius: 1rem;
-    /* Changed from 16px */
-    padding: 6.25rem 5rem;
-    /* Changed from 100px 80px */
+    border-radius: 1rem; // Converted from 16px
+    padding: 6.25rem 5rem; // Converted from 100px 80px
 
     @include medium {
-        padding: 3.125rem 0.75rem;
-        /* Changed from 50px 12px */
+        padding: 3.125rem 0.75rem; // Converted from 50px 12px
     }
 }
 
 .brand__caption {
-    max-width: 566px;
-    /* Left as px because it's over 80px */
+    max-width: 566px; // Unchanged
     margin-left: auto;
     margin-right: auto;
 
     @include medium {
-        max-width: 80%;
-        margin-bottom: 0;
+        max-width: 80%; // Unchanged
+        margin-bottom: 0; // Unchanged
     }
 }
 
@@ -63,36 +54,29 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 3.5rem;
-    /* Changed from 56px */
-    margin-bottom: 4.5rem;
-    /* Changed from 72px */
+    margin-top: 3.5rem; // Converted from 56px
+    margin-bottom: 4.5rem; // Converted from 72px
 
     @include medium {
-        justify-content: space-evenly;
-        margin-top: 0;
-        margin-bottom: 2rem;
-        /* Changed from 32px */
+        justify-content: space-evenly; // Unchanged
+        margin-top: 0; // Unchanged
+        margin-bottom: 2rem; // Converted from 32px
     }
 }
 
 .brand__item {
     @include medium {
-        margin-top: 2rem;
-        /* Changed from 33px */
-        flex-basis: calc(100% / 3 - 10px);
-        /* Partially left as px */
+        margin-top: 2rem; // Converted from 33px
+        flex-basis: calc(33.33333% - 0.625rem); // Converted from calc(100% / 3 - 10px)
     }
 
     img {
-        max-height: 6.875rem;
-        /* Changed from 110px */
+        max-height: 110px; // Unchanged.
         object-fit: contain;
         transition: all .3s ease-in-out;
 
         @include medium {
-            max-height: 4.0625rem;
-            /* Changed from 65px */
+            max-height: 1.03125rem; // Converted from 65px
         }
     }
 }

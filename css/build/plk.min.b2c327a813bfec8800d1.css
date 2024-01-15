@@ -970,12 +970,11 @@ span.price {
 }
 
 .aboutinfo {
-  margin-top: 6.25rem;
-  /* Changed from 100px */
+  margin-top: 100px;
 }
 @media (max-width: 1024px) {
   .aboutinfo {
-    margin-top: 0;
+    margin-top: 0px;
   }
 }
 
@@ -992,7 +991,6 @@ span.price {
 }
 .aboutinfo__wrapper img {
   border-radius: 1rem;
-  /* Changed from 16px */
   object-fit: cover;
   object-position: center;
   width: 100%;
@@ -1000,16 +998,13 @@ span.price {
 @media (max-width: 1024px) {
   .aboutinfo__wrapper img {
     margin-top: 1.875rem;
-    /* Changed from 30px */
     max-height: 300px;
-    /* Left as px because it's over 80px */
   }
 }
 
 .aboutinfo__text {
   flex-basis: 50%;
   padding-right: 5rem;
-  /* Changed from 80px */
 }
 @media (max-width: 1024px) {
   .aboutinfo__text {
@@ -2554,17 +2549,17 @@ span.price {
 
 @media (max-width: 1024px) {
   .faq--page .faq__heading {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
 
 .faq__heading {
   text-align: center;
-  margin-bottom: 56px;
+  margin-bottom: 3.5rem;
 }
 @media (max-width: 1024px) {
   .faq__heading {
-    margin-bottom: 24px;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -2579,14 +2574,14 @@ span.price {
 }
 
 .faq__item {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 .faq__item.opened .faq__item-icon {
-  transform: translateY(-4px) rotate(180deg);
+  transform: translateY(-0.25rem) rotate(180deg);
 }
 
 .faq__list + .heading-2 {
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .faq__item-link {
@@ -2595,13 +2590,13 @@ span.price {
   justify-content: space-between;
   align-items: center;
   background: #FFFFFF;
-  border-radius: 144px;
-  padding: 24px 48px;
+  border-radius: 9rem;
+  padding: 1.5rem 3rem;
   cursor: pointer;
 }
 @media (max-width: 1024px) {
   .faq__item-link {
-    padding: 12px 30px;
+    padding: 0.75rem 1.875rem;
   }
 }
 .faq__item-link .faq__item-name {
@@ -2611,13 +2606,13 @@ span.price {
 
 .faq__item-icon {
   color: var(--ast-global-color-1);
-  font-size: 24px;
+  font-size: 1.5rem;
   transform: rotate(0deg);
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 1024px) {
   .faq__item-icon {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
@@ -2626,28 +2621,28 @@ span.price {
   flex-direction: column;
   align-items: flex-start;
   color: #727272;
-  padding-left: 48px;
+  padding-left: 3rem;
   max-width: 690px;
 }
 @media (max-width: 1024px) {
   .faq__item-content {
-    padding-left: 30px;
+    padding-left: 1.875rem;
   }
 }
 .faq__item-content > *:first-child {
-  padding-top: 32px;
+  padding-top: 2rem;
 }
 @media (max-width: 1024px) {
   .faq__item-content > *:first-child {
-    padding-top: 20px;
+    padding-top: 1.25rem;
   }
 }
 .faq__item-content > *:last-child {
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
 }
 @media (max-width: 1024px) {
   .faq__item-content .text-medium {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.5;
   }
 }
@@ -2663,8 +2658,8 @@ span.price {
 .faq__item-content p strong {
   color: #bb2323;
   background-color: #F5EEEE;
-  border-radius: 40px;
-  padding: 4px 14px;
+  border-radius: 2.5rem;
+  padding: 0.25rem 0.875rem;
   font-weight: 500;
 }
 .faq__item-content p strong.available {
@@ -2682,18 +2677,18 @@ span.price {
 .faq__item-content ul,
 .faq__item-content ol {
   margin-top: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .faq__item-content ul li,
 .faq__item-content ol li {
   position: relative;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
 }
 .faq__item-content ul li:not(:last-child),
 .faq__item-content ol li:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .faq__item-content ul li a,
 .faq__item-content ol li a {
@@ -2708,18 +2703,18 @@ span.price {
 .faq__item-content ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 .faq__item-content ul li {
   position: relative;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
-  padding-left: 25px;
+  padding-left: 1.5625rem;
   color: #55761f;
 }
 .faq__item-content ul li:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 }
 .faq__item-content ul li span {
   color: #EB5757;
@@ -2733,17 +2728,17 @@ span.price {
   transform: rotate(90deg);
   display: inline-flex;
   color: #6F9238;
-  font-size: 15px;
+  font-size: 1rem;
   position: absolute;
-  top: 1px;
+  top: 0.0625rem;
   left: 0;
 }
 .faq__item-content ol {
   list-style: lower-alpha;
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 .faq__item-content ol li {
-  padding-left: 4px;
+  padding-left: 0.25rem;
 }
 
 .accordion.open .icon-arrow-up {
@@ -2764,17 +2759,13 @@ span.price {
 .brand {
   text-align: center;
   padding-left: 1.875rem;
-  /* Changed from 30px */
   padding-right: 1.875rem;
-  /* Changed from 30px */
   position: relative;
 }
 @media (max-width: 1024px) {
   .brand {
     padding-left: 1rem;
-    /* Changed from 15px */
     padding-right: 1rem;
-    /* Changed from 15px */
   }
 }
 .brand.section-padding {
@@ -2787,7 +2778,6 @@ span.price {
 .brand__image {
   position: absolute;
   bottom: -3.125rem;
-  /* Changed from -50px */
   right: 2%;
 }
 @media (max-width: 1024px) {
@@ -2799,20 +2789,16 @@ span.price {
 .brand-wrapper {
   background-color: #FFFCF3;
   border-radius: 1rem;
-  /* Changed from 16px */
   padding: 6.25rem 5rem;
-  /* Changed from 100px 80px */
 }
 @media (max-width: 1024px) {
   .brand-wrapper {
     padding: 3.125rem 0.75rem;
-    /* Changed from 50px 12px */
   }
 }
 
 .brand__caption {
   max-width: 566px;
-  /* Left as px because it's over 80px */
   margin-left: auto;
   margin-right: auto;
 }
@@ -2829,37 +2815,30 @@ span.price {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 3.5rem;
-  /* Changed from 56px */
   margin-bottom: 4.5rem;
-  /* Changed from 72px */
 }
 @media (max-width: 1024px) {
   .brand__list {
     justify-content: space-evenly;
     margin-top: 0;
     margin-bottom: 2rem;
-    /* Changed from 32px */
   }
 }
 
 @media (max-width: 1024px) {
   .brand__item {
     margin-top: 2rem;
-    /* Changed from 33px */
-    flex-basis: calc(33.3333333333% - 10px);
-    /* Partially left as px */
+    flex-basis: calc(33.33333% - 0.625rem);
   }
 }
 .brand__item img {
-  max-height: 6.875rem;
-  /* Changed from 110px */
+  max-height: 110px;
   object-fit: contain;
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 1024px) {
   .brand__item img {
-    max-height: 4.0625rem;
-    /* Changed from 65px */
+    max-height: 1.03125rem;
   }
 }
 
