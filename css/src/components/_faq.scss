@@ -53,6 +53,7 @@
     background: $white;
     border-radius: 9rem; // Converted from 144px
     padding: 1.5rem 3rem; // Converted from 24px 48px
+    color: var(--ast-global-color-3);
     cursor: pointer;
 
     @include medium {
