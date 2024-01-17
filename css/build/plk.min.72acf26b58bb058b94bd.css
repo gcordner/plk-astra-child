@@ -318,6 +318,17 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+h3, .faq__item-link .faq__item-name {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: 700;
+}
+@media (max-width: 1024px) {
+  h3, .faq__item-link .faq__item-name {
+    font-size: 1.25rem;
+  }
+}
+
 .archive .entry-title {
   font-weight: 600;
   line-height: 1.3em;
@@ -1305,7 +1316,7 @@ span.price {
 }
 @media (max-width: 768px) {
   .why__slider {
-    padding-bottom: 3.8125rem;
+    padding-bottom: 61px;
   }
 }
 @media (max-width: 768px) {
@@ -1321,13 +1332,13 @@ span.price {
   }
 }
 .why__slider .swiper-slide {
-  flex-basis: calc(25% - 5rem);
+  flex-basis: calc(25% - 80px);
   opacity: 1;
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 1024px) {
   .why__slider .swiper-slide {
-    flex-basis: calc(25% - 2.5rem);
+    flex-basis: calc(25% - 40px);
   }
 }
 @media (max-width: 768px) {
@@ -1383,12 +1394,14 @@ span.price {
 
 .why__slider + .why__caption {
   margin-top: 3.125rem;
+  /* 50px converted to 3.125rem */
 }
 
 .why__list {
   display: flex;
   justify-content: space-between;
   padding-top: 4rem;
+  /* 64px converted to 4rem */
 }
 @media (max-width: 768px) {
   .why__list {
@@ -1397,7 +1410,7 @@ span.price {
 }
 
 .why__item {
-  flex-basis: calc(25% - 5rem);
+  flex-basis: calc(25% - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1405,11 +1418,12 @@ span.price {
 @media (max-width: 768px) {
   .why__item {
     margin-top: 1.875rem;
-    flex-basis: calc(50% - 5rem);
+    /* 30px converted to 1.875rem */
+    flex-basis: calc(50% - 80px);
   }
 }
 .why__item .heading-4 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   color: #000;
 }
 
@@ -1422,7 +1436,7 @@ span.price {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 12px;
 }
 .why__item-icon picture {
   display: flex;
@@ -1430,7 +1444,9 @@ span.price {
 }
 .why__item-icon img {
   max-width: 4rem;
-  max-height: 3.1875rem;
+  /* 64px converted to 4rem */
+  max-height: 3.2;
+  /* 51px converted to 3.2rem */
   object-fit: contain;
 }
 
@@ -2807,7 +2823,7 @@ span.price {
     line-height: 1.5;
   }
 }
-.faq__item-content h3,
+.faq__item-content h3, .faq__item-content .faq__item-link .faq__item-name, .faq__item-link .faq__item-content .faq__item-name,
 .faq__item-content h4,
 .faq__item-content h5 {
   color: var(--ast-global-color-1);
@@ -5220,7 +5236,7 @@ a:hover {
   padding-right: 1rem;
 }
 
-.tiered-pricing-wrapper h3 {
+.tiered-pricing-wrapper h3, .tiered-pricing-wrapper .faq__item-link .faq__item-name, .faq__item-link .tiered-pricing-wrapper .faq__item-name {
   font-size: 1rem;
   font-weight: 500;
 }

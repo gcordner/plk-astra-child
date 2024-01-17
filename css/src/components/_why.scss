@@ -25,7 +25,7 @@
     position: relative;
 
     @include tablet {
-        padding-bottom: 3.8125rem; // Changed from 61px
+        padding-bottom: 61px;
     }
 
     .swiper-container {
@@ -41,12 +41,12 @@
     }
 
     .swiper-slide {
-        flex-basis: calc(100% / 4 - 5rem); // Changed from 80px
+        flex-basis: calc(100% / 4 - 80px);
         opacity: 1;
         transition: all .3s ease-in-out;
 
         @include medium {
-            flex-basis: calc(100% / 4 - 2.5rem); // Changed from 40px
+            flex-basis: calc(100% / 4 - 40px);
         }
 
         @include tablet {
@@ -104,13 +104,15 @@
 }
 
 .why__slider+.why__caption {
-    margin-top: 3.125rem; // Changed from 50px
+    margin-top: 3.125rem;
+    /* 50px converted to 3.125rem */
 }
 
 .why__list {
     display: flex;
     justify-content: space-between;
-    padding-top: 4rem; // Changed from 64px
+    padding-top: 4rem;
+    /* 64px converted to 4rem */
 
     @include tablet {
         padding-top: 0;
@@ -118,18 +120,20 @@
 }
 
 .why__item {
-    flex-basis: calc(100% / 4 - 5rem); // Changed from 80px
+    flex-basis: calc(100% / 4 - 80px);
     display: flex;
     flex-direction: column;
     align-items: center;
 
     @include tablet {
-        margin-top: 1.875rem; // Changed from 30px
-        flex-basis: calc(100% / 2 - 5rem); // Changed from 80px
+        margin-top: 1.875rem;
+        /* 30px converted to 1.875rem */
+        flex-basis: calc(100% / 2 - 80px);
     }
 
     .heading-4 {
-        margin-bottom: 0.5rem; // Changed from 8px
+        margin-bottom: 8px;
+
         color: #000;
     }
 }
@@ -137,13 +141,13 @@
 .why__item-icon {
     background-color: $neutral-warm-light;
     border: 1px solid $neutral-warm-contrast;
-    width: 111px; // Changed from 111px
-    height: 111px; // Changed from 111px
+    width: 111px;
+    height: 111px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0.75rem; // Changed from 12px
+    margin-bottom: 12px;
 
     picture {
         display: flex;
@@ -151,8 +155,10 @@
     }
 
     img {
-        max-width: 4rem; // Changed from 64px
-        max-height: 3.1875rem; // Changed from 51px
+        max-width: 4rem;
+        /* 64px converted to 4rem */
+        max-height: 3.2;
+        /* 51px converted to 3.2rem */
         object-fit: contain;
     }
 }

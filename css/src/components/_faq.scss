@@ -60,6 +60,7 @@
     }
 
     .faq__item-name {
+        @extend h3;
         margin-bottom: 0;
         color: $neutral-1;
     }
