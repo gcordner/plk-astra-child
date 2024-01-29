@@ -61,6 +61,8 @@
         justify-content: space-evenly; // Unchanged
         margin-top: 0; // Unchanged
         margin-bottom: 2rem; // Converted from 32px
+        flex-direction: column;
+        margin-left: 0px;
     }
 }
 
@@ -74,10 +76,6 @@
         max-height: 110px; // Unchanged.
         object-fit: contain;
         transition: all .3s ease-in-out;
-
-        @include medium {
-            max-height: 1.03125rem; // Converted from 65px
-        }
     }
 }
 
