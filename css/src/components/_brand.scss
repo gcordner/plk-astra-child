@@ -33,12 +33,17 @@
     border-radius: 1rem; // Converted from 16px
     padding: 6.25rem 5rem; // Converted from 100px 80px
 
+    .ast-container {
+        display: block;
+    }
+
     @include medium {
         padding: 3.125rem 0.75rem; // Converted from 50px 12px
     }
 
     .btn--anchor {
-        @include button-styles
+        @include button-styles;
+        background-color: var(--ast-global-color-0);
     }
 }
 
