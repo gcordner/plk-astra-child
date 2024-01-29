@@ -48,7 +48,7 @@ $view_all_link     = $args['group']['view_all_link'] ?? null;
 		<?php
 		if ( $view_all_link ) {
 			$category_link        = new Link( $view_all_link );
-			$category_link->class = 'btn btn--middle btn--primary';
+			$category_link->class = 'btn--anchor';
 			echo wp_kses_post( $category_link->a() );
 		}
 		?>

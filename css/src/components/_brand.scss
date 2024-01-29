@@ -36,6 +36,10 @@
     @include medium {
         padding: 3.125rem 0.75rem; // Converted from 50px 12px
     }
+
+    .btn--anchor {
+        @include button-styles
+    }
 }
 
 .brand__caption {
