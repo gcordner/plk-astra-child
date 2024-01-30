@@ -15,7 +15,7 @@ $subtitle          = $args['group']['subtitle'] ?? null;
 $select_categories = $args['group']['select_categories'] ?? null;
 $view_all_link     = $args['group']['view_all_link'] ?? null;
 ?>
-<section class="brand section-padding bg--gradient brand-wrapper">
+<section class="brand section-padding brand-wrapper">
 	<div class="ast-container">
 		<div class="container">
 			<?php if ( $block_title ) { ?>
