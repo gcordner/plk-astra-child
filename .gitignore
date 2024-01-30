@@ -3,3 +3,8 @@
 node_modules/
 *.old
 vendor/*
+*.new
+css/build/*
+js/build/*
+
+
