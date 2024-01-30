@@ -4,7 +4,7 @@ import { logFreePalestine } from './components/ConsoleLog';
 import { Harm } from './components/faq';
 import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
-
+import { aboutUsParallax } from './components/category.js';
 
 let Main = {
   init: async function () {
@@ -24,6 +24,9 @@ let Main = {
 
     // Initialize Swiper sliders
     setupSwiper();
+
+    // About us parallax 
+    aboutUsParallax();
   },
 };
 
