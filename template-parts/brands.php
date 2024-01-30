@@ -15,9 +15,9 @@ $subtitle          = $args['group']['subtitle'] ?? null;
 $select_categories = $args['group']['select_categories'] ?? null;
 $view_all_link     = $args['group']['view_all_link'] ?? null;
 ?>
-<section class="brand section-padding bg--gradient">
-	<div class="container brand-wrapper">
-		<div class="ast-container">
+<section class="brand section-padding bg--gradient brand-wrapper">
+	<div class="ast-container">
+		<div class="container">
 			<?php if ( $block_title ) { ?>
 				<h2 class="heading-2"><?php echo esc_html( $block_title ); ?></h2>
 			<?php } ?>
