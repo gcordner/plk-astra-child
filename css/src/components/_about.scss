@@ -114,6 +114,7 @@
 
     &.btn--arrow {
         color: $color-green-dark;
+        float: left;
     }
 
     @include medium {
