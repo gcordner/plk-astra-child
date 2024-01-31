@@ -1,8 +1,16 @@
 .about {
+    color: $neutral-green-dark;
+
     .container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding: 0 20px;
+        width: 100%;
+
+        @include medium {
+            padding: 0 10px;
+        }
     }
 
     &.background--warm-contrast {
@@ -85,7 +93,7 @@
 }
 
 .about__caption {
-    color: $neutral-gray-dark;
+    color: $neutral-green-dark;
     font-weight: 500;
 
     &:last-of-type {
@@ -142,12 +150,14 @@
 
 .about__image--animated {
     position: absolute;
-    bottom: -1.875rem;
+    // bottom: -1.875rem;
+    bottom: 320px;
     right: -85px;
 
     @include medium {
         width: 118px;
         left: 2.375rem;
         right: auto;
+        bottom: -2.875rem;
     }
 }

@@ -4,6 +4,9 @@ export const aboutUsParallax = () => {
   const aboutImageParallax = document.querySelector('.about__image--animated');
   const animationBlock = document.querySelectorAll('.animate-on-scroll');
   const aboutImageElement = document.querySelector('.about__wrapper--small');
+  const imageElements = document.querySelectorAll('img');
+  const reviewSlider = document.querySelector('.stamped-carousel-scroll');
+  const productSliderSection = document.querySelector('.product__slider');
 
   const onEntry = (entry) => {
     entry.forEach(change => {
@@ -15,17 +18,11 @@ export const aboutUsParallax = () => {
 
   const options = { threshold: [0.5] };
   const observer = new IntersectionObserver(onEntry, options);
-
   if (animationBlock) {
-    const elements = document.querySelectorAll('.animate-on-scroll');  
-    for (const elm of elements) {
+    for (const elm of animationBlock) {
       observer.observe(elm);
     }
   }
-
-  const imageElements = document.querySelectorAll('img');
-  const reviewSlider = document.querySelector('.stamped-carousel-scroll');
-  const productSliderSection = document.querySelector('.product__slider');
 
   if (!(reviewSlider) || !(productSliderSection)) {
     for (const img of imageElements) {
