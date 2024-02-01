@@ -98,6 +98,7 @@
 .about__caption {
     color: $neutral-green-dark;
     font-weight: 500;
+    font-size: 1.2rem;
 
     &:last-of-type {
         margin-bottom: 0;
@@ -105,10 +106,7 @@
 
     &--small {
         font-weight: 400;
-
-        @include medium {
-            font-size: 14px;
-        }
+        font-size: 1rem;
     }
 }
 
@@ -126,8 +124,11 @@
 }
 
 .about__wrapper-image {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     position: relative;
+    @include medium {
+        margin-top: 1.5rem;
+    }
 }
 
 .about__image {
