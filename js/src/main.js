@@ -4,10 +4,14 @@ import { logFreePalestine } from './components/ConsoleLog';
 import { Harm } from './components/faq';
 import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
-
+import { aboutUsParallax } from './components/about.js';
 
 let Main = {
   init: async function () {
+    
+    // About us parallax 
+    aboutUsParallax();
+
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
     await displayLabel.init();

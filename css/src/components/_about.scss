@@ -1,8 +1,19 @@
 .about {
+    color: $neutral-green-dark;
+    .ast-container {
+        padding: 0;
+    }
+
     .container {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding: 0;
+        width: 100%;
+
+        @include medium {
+            padding: 0 10px;
+        }
     }
 
     &.background--warm-contrast {
@@ -85,8 +96,9 @@
 }
 
 .about__caption {
-    color: $neutral-gray-dark;
+    color: $neutral-green-dark;
     font-weight: 500;
+    font-size: 1.2rem;
 
     &:last-of-type {
         margin-bottom: 0;
@@ -94,10 +106,7 @@
 
     &--small {
         font-weight: 400;
-
-        @include medium {
-            font-size: 14px;
-        }
+        font-size: 1rem;
     }
 }
 
@@ -106,6 +115,7 @@
 
     &.btn--arrow {
         color: $color-green-dark;
+        float: left;
     }
 
     @include medium {
@@ -114,8 +124,11 @@
 }
 
 .about__wrapper-image {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     position: relative;
+    @include medium {
+        margin-top: 1.5rem;
+    }
 }
 
 .about__image {
