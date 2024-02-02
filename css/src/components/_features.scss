@@ -1,27 +1,35 @@
-.why {
+.feature {
     text-align: center;
     overflow: hidden;
+    color: $neutral-green-dark;
 
+    .ast-container {
+        padding: 0;
+
+        .container {
+            padding: 0;
+        }
+    }
     @include medium {
         margin-top: 0;
     }
 
     &--gradient-icons {
-        .why__item-icon {
+        .feature__item-icon {
             background: $primary-gradient;
             border-color: transparent;
         }
     }
 }
 
-.why__caption {
+.feature__caption {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: $neutral-gray-middle;
+    color: $neutral-green-dark;
 }
 
-.why__slider {
+.feature__slider {
     position: relative;
 
     @include tablet {
@@ -57,8 +65,8 @@
     .swiper-slide-next,
     .swiper-slide-prev {
 
-        .why__item-icon,
-        .why__item-name {
+        .feature__item-icon,
+        .feature__item-name {
             @include tablet {
                 opacity: 0.6;
             }
@@ -103,12 +111,12 @@
     }
 }
 
-.why__slider+.why__caption {
+.feature__slider+.feature__caption {
     margin-top: 3.125rem;
     /* 50px converted to 3.125rem */
 }
 
-.why__list {
+.feature__list {
     display: flex;
     justify-content: space-between;
     padding-top: 4rem;
@@ -119,7 +127,7 @@
     }
 }
 
-.why__item {
+.feature__item {
     flex-basis: calc(100% / 4 - 80px);
     display: flex;
     flex-direction: column;
@@ -138,7 +146,7 @@
     }
 }
 
-.why__item-icon {
+.feature__item-icon {
     background-color: $neutral-warm-light;
     border: 1px solid $neutral-warm-contrast;
     width: 111px;

@@ -5,12 +5,16 @@ import { Harm } from './components/faq';
 import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
+import { featureSlider } from './components/feature';
 
 let Main = {
   init: async function () {
     
     // About us parallax 
     aboutUsParallax();
+
+    // FeatureSlider
+    featureSlider();
 
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
@@ -27,7 +31,7 @@ let Main = {
     });
 
     // Initialize Swiper sliders
-    setupSwiper();
+    // setupSwiper();
   },
 };
 

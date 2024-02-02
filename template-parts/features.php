@@ -16,7 +16,7 @@ $top_large_padding = $group['top_large_padding'] ?? null;
 $bottom_padding = $group['bottom_padding'] ?? null;
 $gradient_icons = $group['gradient-icons'] ?? null;
 
-$class = 'why section-padding-top bg--gray-gradient';
+$class = 'feature section-padding-top bg--gray-gradient';
 if ($top_large_padding) {
     $class .= ' section-padding-top--xl ';
 }
@@ -24,7 +24,7 @@ if ($bottom_padding) {
     $class .= ' section-padding-bottom ';
 }
 if ($gradient_icons) {
-    $class .= ' why--gradient-icons ';
+    $class .= ' feature--gradient-icons ';
 }
 ?>
 
@@ -35,28 +35,28 @@ if ($gradient_icons) {
                 <h2 class="heading-2"><?php echo $title ?></h2>
             <?php } ?>
             <?php if ($top_content) { ?>
-                <p class="why__caption"><?php echo $top_content ?></p>
+                <p class="feature__caption"><?php echo $top_content ?></p>
             <?php } ?>
             <?php if ($items) { ?>
-                <div class="why__slider custom-navigation">
+                <div class="feature__slider custom-navigation">
                     <div class="swiper-container">
-                        <ul class="why__list list-reset swiper-wrapper">
+                        <ul class="feature__list list-reset swiper-wrapper">
                             <?php foreach ($items as $item) {
                                 $iIcon = $item['icon'] ?? null;
                                 $iTitle = $item['title'] ?? null;
                                 $iSubtitle = $item['subtitle'] ?? null;
                                 ?>
                                 <li class="swiper-slide">
-                                    <div class="why__item">
+                                    <div class="feature__item">
                                         <?php if ($iIcon) { ?>
-                                            <div class="why__item-icon">
+                                            <div class="feature__item-icon">
                                                 <picture>
                                                     <?php echo wp_get_attachment_image($iIcon['ID'], 'medium', '', ['alt' => $iIcon['alt'] ?: $iTitle]); ?>
                                                 </picture>
                                             </div>
                                         <?php } ?>
                                         <?php if ($iTitle) { ?>
-                                            <h3 class="heading-4 why__item-name"><?php echo $iTitle ?></h3>
+                                            <h3 class="heading-4 feature__item-name"><?php echo $iTitle ?></h3>
                                         <?php } ?>
                                         <?php if ($iSubtitle) { ?>
                                             <p class="text-medium item__item-caption"><?php echo $iSubtitle ?></p>
@@ -65,11 +65,11 @@ if ($gradient_icons) {
                                 </li>
                             <?php } ?>
                         </ul>
-                        <div class="custom-navigation__button custom-navigation__button--next custom-navigation__button--next-why"><span class="icon-arrow-up"></span></div>
-                        <div class="custom-navigation__button custom-navigation__button--prev custom-navigation__button--prev-why"><span class="icon-arrow-up"></span></div>
+                        <div class="custom-navigation__button custom-navigation__button--next custom-navigation__button--next-feature"><span class="icon-arrow-up"></span></div>
+                        <div class="custom-navigation__button custom-navigation__button--prev custom-navigation__button--prev-feature"><span class="icon-arrow-up"></span></div>
                     </div>
                     <?php if ($bottom_content) { ?>
-                        <p class="why__caption"><?php echo $bottom_content ?></p>
+                        <p class="feature__caption"><?php echo $bottom_content ?></p>
                     <?php } ?>
                 </div>
             <?php } ?>
