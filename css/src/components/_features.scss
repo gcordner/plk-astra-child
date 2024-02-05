@@ -5,6 +5,7 @@
 
     .ast-container {
         padding: 0;
+        display: block;
 
         .container {
             padding: 0;
@@ -37,6 +38,9 @@
     }
 
     .swiper-container {
+        ul {
+            padding: 0px;
+        }
         @include tablet {
             width: 40%;
             visibility: visible;
@@ -173,4 +177,7 @@
 
 .item__item-caption {
     color: $color-grey-dark;
+}
+.feature__slider .custom-navigation__button {
+    visibility: visible;
 }

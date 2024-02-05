@@ -5,7 +5,7 @@ import { Harm } from './components/faq';
 import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
-import { featureSlider } from './components/feature';
+import { featureSlider, featureSliderBySplide } from './components/feature';
 
 let Main = {
   init: async function () {
@@ -15,6 +15,7 @@ let Main = {
 
     // FeatureSlider
     featureSlider();
+    // featureSliderBySplide();
 
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
