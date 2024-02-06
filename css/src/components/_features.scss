@@ -28,6 +28,11 @@
     margin-left: auto;
     margin-right: auto;
     color: $neutral-green-dark;
+
+    @include medium {
+        margin-left: 4px;
+        margin-right: 4px;
+    }
 }
 
 .feature__slider {
@@ -43,6 +48,16 @@
     }
     .splide__arrow {
         top: 25%;
+        background: #fff;
+
+        svg {
+            fill: #55761f;
+            transition: all .3s linear;
+
+            &:hover {
+                fill: #F4D060;
+            }
+        }
     }
     .splide__pagination {
         display: none;
@@ -77,10 +92,14 @@
         flex-basis: calc(100% / 2 - 80px);
     }
 
+    @include medium {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
     .heading-4 {
         margin-bottom: 8px;
-
-        color: #000;
+        color: $neutral-green-dark;
     }
 }
 
