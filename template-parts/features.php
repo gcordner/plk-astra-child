@@ -39,7 +39,7 @@ if ($gradient_icons) {
             <?php } ?>
             <?php if ($items) { ?>
                 <div class="feature__slider custom-navigation">
-                    <div class="swiper-container">
+                    <div class="swiper-container feature-container">
                         <ul class="feature__list list-reset swiper-wrapper">
                             <?php foreach ($items as $item) {
                                 $iIcon = $item['icon'] ?? null;
