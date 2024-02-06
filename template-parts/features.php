@@ -38,15 +38,15 @@ if ($gradient_icons) {
                 <p class="feature__caption"><?php echo $top_content ?></p>
             <?php } ?>
             <?php if ($items) { ?>
-                <div class="feature__slider custom-navigation">
-                    <div class="swiper-container feature-container">
-                        <ul class="feature__list list-reset swiper-wrapper">
+                <div class="feature__slider custom-navigation splide">
+                    <div class="feature-container splide__track">
+                        <ul class="feature__list list-reset splide__list">
                             <?php foreach ($items as $item) {
                                 $iIcon = $item['icon'] ?? null;
                                 $iTitle = $item['title'] ?? null;
                                 $iSubtitle = $item['subtitle'] ?? null;
                                 ?>
-                                <li class="swiper-slide">
+                                <li class="splide__slide">
                                     <div class="feature__item">
                                         <?php if ($iIcon) { ?>
                                             <div class="feature__item-icon">
@@ -65,8 +65,6 @@ if ($gradient_icons) {
                                 </li>
                             <?php } ?>
                         </ul>
-                        <div class="custom-navigation__button custom-navigation__button--next custom-navigation__button--next-feature"><span class="icon-arrow-up"></span></div>
-                        <div class="custom-navigation__button custom-navigation__button--prev custom-navigation__button--prev-feature"><span class="icon-arrow-up"></span></div>
                     </div>
                     <?php if ($bottom_content) { ?>
                         <p class="feature__caption"><?php echo $bottom_content ?></p>

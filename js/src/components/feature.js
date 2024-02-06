@@ -14,7 +14,6 @@ export const featureSliderBySplide = () => {
         perPage: 2,
       },
     },
-    focus  : 0
   } );
   
   splide.mount();

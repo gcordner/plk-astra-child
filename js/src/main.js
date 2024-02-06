@@ -14,8 +14,8 @@ let Main = {
     aboutUsParallax();
 
     // FeatureSlider
-    featureSlider();
-    // featureSliderBySplide();
+    // featureSlider();
+    featureSliderBySplide();
 
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
