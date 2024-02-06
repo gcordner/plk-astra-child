@@ -30,6 +30,7 @@
     color: $neutral-green-dark;
 
     @include medium {
+        max-width: 100%;
         margin-left: 4px;
         margin-right: 4px;
     }
