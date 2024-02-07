@@ -67,14 +67,14 @@ $products = get_posts( $args );
 				</a>
 			<?php endif; ?>
 
-<!-- products below this line-->
-			<div class="products__slider custom-navigation">
-				<div class="swiper-container">
-					<ul class="products__list list-reset swiper-wrapper">
+			<!-- products below this line-->
+			<div class="products__slider custom-navigation splide">
+				<div class="products-container splide__track">
+					<ul class="products__list list-reset splide__list">
 						<?php
 						$i = 0;
 						foreach ( $products as $product ) {
-							echo '<li style="width:25%; margin-right: 14px;" class="swiper-slide">';
+							echo '<li style="width:25%; margin-right: 14px;" class="splide__slide">';
 								$post_object = get_post( $product->ID );
 								setup_postdata( $GLOBALS['post'] =& $post_object );
 								wc_get_template_part( 'content', 'product' );
@@ -83,8 +83,7 @@ $products = get_posts( $args );
 						}
 						?>
 					</ul>
-					<div class="custom-navigation__button custom-navigation__button--next custom-navigation__button--next-capsules"><span class="icon-arrow-up"></span></div>
-					<div class="custom-navigation__button custom-navigation__button--prev custom-navigation__button--prev-capsules"><span class="icon-arrow-up"></span></div>
+					
 				</div>
 			</div>
 		</div>

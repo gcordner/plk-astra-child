@@ -1,3 +1,3 @@
 import { splideSlider } from '../common/slider';
 
-export const featureSlider = () => splideSlider('.splide');
+export const featureSlider = () => splideSlider('#feature_splide');
