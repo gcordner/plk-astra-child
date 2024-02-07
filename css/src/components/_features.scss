@@ -1,0 +1,137 @@
+.feature {
+    text-align: center;
+    overflow: hidden;
+    color: $neutral-green-dark;
+
+    .ast-container {
+        padding: 0;
+        display: block;
+
+        .container {
+            padding: 0;
+        }
+    }
+    @include medium {
+        margin-top: 0;
+    }
+
+    &--gradient-icons {
+        .feature__item-icon {
+            background: $primary-gradient;
+            border-color: transparent;
+        }
+    }
+}
+
+.feature__caption {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: $neutral-green-dark;
+
+    @include medium {
+        max-width: 100%;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+}
+
+.feature__slider {
+    position: relative;
+
+    @include tablet {
+        padding-bottom: 61px;
+    }
+
+    .splide__track {
+        width: 90%;
+        left: 5%;
+    }
+    .splide__arrow {
+        top: 25%;
+        background: #fff;
+
+        svg {
+            fill: #55761f;
+            transition: all .3s linear;
+
+            &:hover {
+                fill: #F4D060;
+            }
+        }
+    }
+    .splide__pagination {
+        display: none;
+    }
+}
+
+.feature__slider+.feature__caption {
+    margin-top: 3.125rem;
+    /* 50px converted to 3.125rem */
+}
+
+.feature__list {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 4rem;
+    /* 64px converted to 4rem */
+
+    @include tablet {
+        padding-top: 0;
+    }
+}
+
+.feature__item {
+    flex-basis: calc(100% / 4 - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+        margin-top: 1.875rem;
+        /* 30px converted to 1.875rem */
+        flex-basis: calc(100% / 2 - 80px);
+    }
+
+    @include medium {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .heading-4 {
+        margin-bottom: 8px;
+        color: $neutral-green-dark;
+    }
+}
+
+.feature__item-icon {
+    background-color: $neutral-warm-light;
+    border: 1px solid $neutral-warm-contrast;
+    width: 111px;
+    height: 111px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+
+    picture {
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        max-width: 4rem;
+        /* 64px converted to 4rem */
+        max-height: 3.2;
+        /* 51px converted to 3.2rem */
+        object-fit: contain;
+    }
+}
+
+.item__item-caption {
+    color: $neutral-green-dark;
+}
+.feature__slider .custom-navigation__button {
+    visibility: visible;
+}
