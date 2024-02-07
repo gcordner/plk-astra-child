@@ -53,7 +53,7 @@ $products = get_posts( $args );
 ?>
 
 <?php if ( $products ) : ?>
-<section class="categories section-margin section-margin-bottom <?php echo esc_html( $bg_class ); ?>">
+<section class="products section-margin section-margin-bottom <?php echo esc_html( $bg_class ); ?>">
 	<div class="ast-container">
 		<div class="container categories__container">
 			<?php if ( $block_title ) : ?>
@@ -74,7 +74,7 @@ $products = get_posts( $args );
 						<?php
 						$i = 0;
 						foreach ( $products as $product ) {
-							echo '<li style="width:25%; margin-right: 14px;" class="splide__slide">';
+							echo '<li  class="splide__slide">';
 								$post_object = get_post( $product->ID );
 								setup_postdata( $GLOBALS['post'] =& $post_object );
 								wc_get_template_part( 'content', 'product' );

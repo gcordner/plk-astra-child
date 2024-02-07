@@ -97,26 +97,10 @@
         right: -100%;
     }
 
-    .swiper-container {
-        //overflow: hidden;
-        //padding-bottom: 80px;
-        //padding-left: 10px;
-        //padding-right: 10px;
-
-        @include medium {
-            overflow: visible;
-            width: 100%;
-            padding-bottom: 0;
-        }
-
-        @include phone {
-            width: 100%;
-        }
-    }
-
     .products__item {
         padding: 16px;
         min-height: 312px;
+        background: transparent;
 
         @include medium {
             padding-bottom: 16px;
@@ -167,6 +151,28 @@
 
     .products__item-link {
         color: $neutral-gray-dark;
+        text-decoration: none;
+    }
+
+    .splide__track {
+        width: 90%;
+        left: 5%;
+    }
+    .splide__arrow {
+        top: 25%;
+        background: #fff;
+
+        svg {
+            fill: #55761f;
+            transition: all .3s linear;
+
+            &:hover {
+                fill: #F4D060;
+            }
+        }
+    }
+    .splide__pagination {
+        display: none;
     }
 }
 
