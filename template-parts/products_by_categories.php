@@ -52,24 +52,28 @@ $products = get_posts( $args );
 
 ?>
 
-<?php if ( $products ) { ?>
-	<section class="categories section-margin section-margin-bottom <?php echo esc_html( $bg_class ); ?>">
+<?php if ( $products ) : ?>
+<section class="categories section-margin section-margin-bottom <?php echo esc_html( $bg_class ); ?>">
+	<div class="ast-container">
 		<div class="container categories__container">
-			<?php if ( $block_title ) { ?>
+			<?php if ( $block_title ) : ?>
 				<h2 class="heading-2 products__heading"><?php echo esc_html( $block_title ); ?></h2>
-				<?php
-			}
-			if ( $view_all_link ) {
-				?>
-<a class="btn--arrow link-reset products__link" href="<?php echo esc_url( $view_all_link ); ?>"><?php echo esc_html( $block_title ); ?><span class="icon-nav-arrow"></span></a>
-<?php } ?>
+			<?php
+			endif;
+			if ( $view_all_link ) :
+			?>
+				<a class="btn--arrow link-reset products__link" href="<?php echo esc_url( $view_all_link ); ?>">
+					<?php echo esc_html( $block_title ); ?><span class="icon-nav-arrow"></span>
+				</a>
+			<?php endif; ?>
 
 <!-- products below this line-->
-<div class="products__slider custom-navigation">
+			<div class="products__slider custom-navigation">
 				<div class="swiper-container">
 					<ul class="products__list list-reset swiper-wrapper">
 						<?php
-						$i = 0;foreach ( $products as $product ) {
+						$i = 0;
+						foreach ( $products as $product ) {
 							echo '<li style="width:25%; margin-right: 14px;" class="swiper-slide">';
 								$post_object = get_post( $product->ID );
 								setup_postdata( $GLOBALS['post'] =& $post_object );
@@ -84,5 +88,6 @@ $products = get_posts( $args );
 				</div>
 			</div>
 		</div>
-	</section>
-<?php } wp_reset_postdata(); ?>
+	</div>
+</section>
+<?php endif; wp_reset_postdata(); ?>
