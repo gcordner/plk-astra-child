@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 if ($product->get_type() != 'variable') {
-    echo '<div class="category__products-item-btn-wrapper">';
+    echo '<div class="products__item-btn-wrapper">';
         echo apply_filters(
             'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
             sprintf(
@@ -40,7 +40,7 @@ if ($product->get_type() != 'variable') {
 }
 else{
   $variation = wc_get_product($product->get_children()[0]);
-  echo '<div class="category__products-item-btn-wrapper">';?>
+  echo '<div class="products__item-btn-wrapper">';?>
     <a href="?add-to-cart=<?=$variation->get_id()?>" data-quantity="1" class="btn btn--middle btn--primary product__item-btn--descktop button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id_orig="<?=$product->get_id()?>" data-product_id="<?=$variation->get_id()?>" data-variation_id="<?=$variation->get_id()?>" data-price="<?=$variation->get_price()?>" data-product_sku="<?=$variation->get_sku();?>" aria-label="Add “<?=$product->get_name()?>” to your cart" rel="nofollow">Add to cart</a>
   <?php
   echo '</div>';

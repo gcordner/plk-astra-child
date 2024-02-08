@@ -70,7 +70,7 @@ $products = get_posts( $args );
 			<!-- products below this line-->
 			<div class="products__slider custom-navigation splide">
 				<div class="products-container splide__track">
-					<ul class="products__list list-reset splide__list">
+					<ul class="products__list list-reset splide__list" style="padding-top: 32px;">
 						<?php
 						$i = 0;
 						foreach ( $products as $product ) {
