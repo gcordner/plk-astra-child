@@ -152,15 +152,18 @@
     .products__item-link {
         color: $neutral-gray-dark;
         text-decoration: none;
+
+        &:hover {
+            color: $neutral-green-dark;
+        }
     }
 
     .splide__track {
-        width: 90%;
-        left: 5%;
+        width: 94%;
+        left: 2.2%;
     }
     .splide__arrow {
-        top: 25%;
-        background: #fff;
+        background: transparent;
 
         svg {
             fill: #55761f;
@@ -180,4 +183,7 @@
     padding-top: 32px;
     flex-basis: 100%;
     display: flex;
+    .splide__slide {
+        margin: 0px 2px;
+    }
 }
