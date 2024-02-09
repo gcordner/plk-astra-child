@@ -85,7 +85,7 @@
 
     @include medium {
         order: 2;
-        margin-left: 1rem;
+        margin-left: 0.5rem;
     }
 }
 
@@ -187,6 +187,7 @@
     .splide__track {
         width: 99%;
     }
+    
     .splide__arrow {
         background: transparent;
 
@@ -195,6 +196,20 @@
         }
         &.splide__arrow--next {
             margin-right: -2%;
+        }
+
+        @include phone {
+            top: -12px;
+            height: 21px;
+            width: 21px;
+            font-size: 14px;
+
+            &.splide__arrow--prev {
+                margin-left: 78%;
+            }
+            &.splide__arrow--next {
+                margin-right: 0;
+            }
         }
 
         svg {
@@ -206,6 +221,13 @@
             }
         }
     }
+
+    @include phone {
+        button.splide__arrow{
+            font-size: 14px;
+        }
+    }
+
     .splide__pagination {
         display: none;
     }
@@ -279,4 +301,7 @@ div.products__item-btn-wrapper {
     @include max-screen($medium-size){
         margin-left: 0.5rem!important;
     }
+}
+.woocommerce-js div.product span.onsale {
+    background-color: var(--ast-global-color-8);
 }

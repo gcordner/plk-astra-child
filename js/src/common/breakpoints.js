@@ -1,15 +1,15 @@
 export const STATIC_PAGES_SLIDER_BREAKPOINTS = {
     640: {
-        slidesPerView: 2,
+        perPage: 2,
     },
     1024: {
-        slidesPerView: 4,
+        perPage: 4,
     },
     1280: {
-        slidesPerView: 5,
+        perPage: 5,
     },
     1440: {
-        slidesPerView: 6,
+        perPage: 6,
     }
 };
 

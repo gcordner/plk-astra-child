@@ -18,7 +18,7 @@ $view_all_link   = $args['group']['view_all_link']['url'] ?? null;
 
 $class            = 'products';
 $background_value = $args['group']['background'];
-if ( 1 == $background_value ) {
+if ( 1 === $background_value ) {
 	$bg_class = 'background--warm-contrast section-padding-top--md section-padding-bottom--md';
 } else {
 	$bg_class = 'section-margin';
@@ -58,10 +58,10 @@ $products = get_posts( $args );
 		<div class="container categories__container">
 			<?php if ( $block_title ) : ?>
 				<h2 class="heading-2 products__heading"><?php echo esc_html( $block_title ); ?></h2>
-			<?php
+				<?php
 			endif;
 			if ( $view_all_link ) :
-			?>
+				?>
 				<a class="btn--arrow link-reset products__link" href="<?php echo esc_url( $view_all_link ); ?>">
 					<?php echo esc_html( $block_title ); ?><span class="icon-nav-arrow"></span>
 				</a>
@@ -72,21 +72,19 @@ $products = get_posts( $args );
 				<div class="products-container splide__track">
 					<ul class="products__list list-reset splide__list" style="padding-top: 32px;">
 						<?php
-						$i = 0;
 						foreach ( $products as $product ) {
+							$post_object = get_post( $product->ID );
+							setup_postdata( $post_object );
 							echo '<li  class="splide__slide">';
-								$post_object = get_post( $product->ID );
-								setup_postdata( $GLOBALS['post'] =& $post_object );
-								wc_get_template_part( 'content', 'product' );
+							wc_get_template_part( 'content', 'product' );
 							echo '</li>';
-							$i++;
 						}
 						?>
 					</ul>
-					
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-<?php endif; wp_reset_postdata(); ?>
+<?php endif;
+wp_reset_postdata(); ?>
