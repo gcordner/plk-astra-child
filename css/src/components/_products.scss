@@ -8,6 +8,17 @@
         .container {
             padding: 0;
         }
+
+        .products__heading {
+            margin-bottom: 0;
+        
+            @include max-screen(375px) {
+                max-width: 80%;
+            }
+            @media medium {
+                margin-left: 1rem;
+            }
+        }
     }
 
     &.background--warm-contrast {
@@ -62,18 +73,6 @@
 
     @include medium {
         margin-top: 40px;
-    }
-}
-
-.products__heading {
-    margin-bottom: 0;
-    margin-left: 1rem;
-
-    @include max-screen(375px) {
-        max-width: 80%;
-    }
-    @media medium {
-        margin-left: 1rem;
     }
 }
 
@@ -186,11 +185,17 @@
     }
 
     .splide__track {
-        width: 94%;
-        left: 2.2%;
+        width: 99%;
     }
     .splide__arrow {
         background: transparent;
+
+        &.splide__arrow--prev {
+            margin-left: -2%;
+        }
+        &.splide__arrow--next {
+            margin-right: -2%;
+        }
 
         svg {
             fill: #55761f;
