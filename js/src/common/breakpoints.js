@@ -1,6 +1,6 @@
 export const STATIC_PAGES_SLIDER_BREAKPOINTS = {
     640: {
-        perPage: 2,
+        slidesPerView: 2,
     },
     1024: {
         slidesPerView: 4,
@@ -10,6 +10,21 @@ export const STATIC_PAGES_SLIDER_BREAKPOINTS = {
     },
     1440: {
         slidesPerView: 6,
+    }
+};
+
+export const PRODUCT_BY_CATEGORY_SLIDER_BREAKPOINTS = {
+    400: {
+        perPage: 2,
+    },
+    768: {
+        perPage: 3,
+    },
+    1024: {
+        perPage: 5,
+    },
+    1282: {
+        perPage: 6,
     }
 };
 

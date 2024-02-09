@@ -16,7 +16,7 @@
                 max-width: 80%;
             }
             @media medium {
-                margin-left: 1rem;
+                margin-left: 0.5rem!important;
             }
         }
     }
@@ -233,17 +233,17 @@
     .price {
         position: relative;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 1.5;
         
     }
 }
 span.price {
-    color: $neutral-green-contrast!important;
+    color: $neutral-green-dark!important;
 }
 .woocommerce-js div.product span.price {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 0.875rem;
     line-height: 1.5;
 }
 div.products__item-btn-wrapper {
@@ -267,4 +267,16 @@ div.products__item-btn-wrapper {
 }
 .products__item .btn.added {
     padding: 16px 26px;
+}
+.category__products-item .products__item-prices {
+    position: relative;
+    font-weight: 500;
+    font-size: 0.875rem!important;
+    line-height: 1.5;
+    color: $neutral-green-dark!important;
+}
+.products .ast-container .products__heading {
+    @include max-screen($medium-size){
+        margin-left: 0.5rem!important;
+    }
 }

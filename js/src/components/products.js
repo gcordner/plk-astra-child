@@ -1,5 +1,6 @@
 import { splideSlider } from '../common/slider';
 import { elementsByClass } from '../common/util';
+import { PRODUCT_BY_CATEGORY_SLIDER_BREAKPOINTS } from '../common/breakpoints';
 
 const CLASS = 'products__slider';
 
@@ -14,6 +15,6 @@ export const productByCategorySlider = () => {
     });
 
     newClasses.forEach(element => {
-        splideSlider('#' + element);
+        splideSlider('#' + element, PRODUCT_BY_CATEGORY_SLIDER_BREAKPOINTS);
     });
 };
