@@ -318,19 +318,35 @@ div.products__item-btn-wrapper {
         margin-left: 1rem!important;
     }
 }
-// .woocommerce-js div.product span.onsale {
-//     background-color: var(--ast-global-color-8);
-// }
 .woocommerce-js div.product span.onsale {
-    width: 38px;
-    height: 38px;
-    font-size: 12px;
-    font-weight: 400;
+    background-color: transparent;
+    min-width: 3em;
+    min-height: 3em;
+    line-height: 3em;
+    @include max-screen($small-size) {
+        width: 38px;
+        height: 38px;
+        font-size: 12px;
+        font-weight: 600;
+        top: 0;
+        left: 0;
+    }
 }
 .woocommerce-js span.onsale {
-    background-color: transparent;
-    top: 0;
-    left: 0;
+    font-size: 16px;
+    font-weight: 600;
+    min-width: 3em;
+    min-height: 3em;
+    line-height: 3em;
+
+    @include max-screen($small-size){
+        width: 38px;
+        height: 38px;
+        font-size: 12px;
+        font-weight: 600;
+        top: 0;
+        left: 0;
+    }
 }
 .products__item-sale {
     top: 0!important;
