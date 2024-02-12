@@ -6,18 +6,16 @@
  */
 
 // Sub Init.
-$sub           = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
-$group         = $sub ?? null ?: $args['group'] ?? null;
-$args['group'] = $group;
-// Sub Init Done.
+$sub   = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
+$group = isset( $sub ) ? $sub : ( isset( $args['group'] ) ? $args['group'] : null );
 
-$block_title     = $args['group']['title'] ?? null;
-$select_category = $args['group']['select_category'] ?? null;
-$select_products = $args['group']['select_products'] ?? null;
-$view_all_link   = $args['group']['view_all_link']['url'] ?? null;
+$block_title     = $group['title'] ?? null;
+$select_category = $group['select_category'] ?? null;
+$select_products = $group['select_products'] ?? null;
+$view_all_link   = $group['view_all_link']['url'] ?? null;
 
 $class            = 'products';
-$background_value = $args['group']['background'];
+$background_value = $group['background'];
 if ( 1 === $background_value ) {
 	$bg_class = 'background--warm-contrast section-padding-top--md section-padding-bottom--md';
 } else {
