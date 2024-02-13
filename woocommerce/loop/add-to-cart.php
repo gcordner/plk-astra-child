@@ -23,8 +23,7 @@ global $product;
 
 if ( $product->get_type() !== 'variable' ) {
     echo '<div class="products__item-btn-wrapper">';
-    echo esc_html( 
-        apply_filters(
+        echo apply_filters(
             'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
             sprintf(
                 '<a href="%s" data-quantity="%s" class="btn btn--middle btn--primary product__item-btn--descktop %s" %s>%s</a>',
@@ -36,8 +35,7 @@ if ( $product->get_type() !== 'variable' ) {
             ),
             $product,
             $args
-        ) 
-    );
+        );
     echo '</div>';
 } else {
     $variation = wc_get_product( $product->get_children()[0] );

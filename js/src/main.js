@@ -2,7 +2,7 @@
 import { DisplayLabel } from './components/DisplayLabel';
 import { logFreePalestine } from './components/ConsoleLog';
 import { Harm } from './components/faq';
-import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
+// import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
 import { featureSlider } from './components/feature';

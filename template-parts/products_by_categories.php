@@ -5,9 +5,8 @@
  * @package plk-child-theme
  */
 
-// Sub Init.
 $sub   = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
-$group = isset( $sub ) ? $sub : ( isset( $args['group'] ) ? $args['group'] : null );
+$group = $sub ? $sub : ( $args['group'] ? $args['group'] : null );
 
 $block_title     = $group['title'] ?? null;
 $select_category = $group['select_category'] ?? null;
