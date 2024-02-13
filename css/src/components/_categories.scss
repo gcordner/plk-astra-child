@@ -58,6 +58,12 @@
     }
 }
 
+@media (min-width: 1024px) {
+    .categories__list {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
 .categories__item-link {
     display: block;
     position: relative;
