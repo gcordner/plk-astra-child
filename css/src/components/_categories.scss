@@ -32,6 +32,7 @@
 
     @include medium {
         margin-bottom: 1rem; // Converted from 16px
+        margin-left: 1rem;
     }
 }
 
@@ -51,15 +52,14 @@
 
     @include medium {
         grid-gap: 0.4375rem; // Converted from 7px
+        margin: 0 1rem;
     }
 
     @include max-screen(662px) {
         grid-template-columns: 1fr;
     }
-}
 
-@media (min-width: 1024px) {
-    .categories__list {
+    @include max-screen($medium-size) {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
