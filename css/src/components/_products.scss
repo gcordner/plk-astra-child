@@ -22,7 +22,7 @@
     }
 
     &.background--warm-contrast {
-        background-color: $neutral-warm-light;
+        background-color: var(--ast-global-color-4);
 
         .products__slider {
 
@@ -65,6 +65,16 @@
     .product__list {
         padding-top: 32px!important;
         display: flex;
+    }
+
+    
+    .heading-5 {
+        @include max-screen($medium-size) {
+            font-size: 0.875rem;
+        }
+        @include max-screen($smallest-size) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -294,10 +304,15 @@ div.products__item-btn-wrapper {
         &:hover {
             color: #fff;
         }
+
+        @include max-screen($medium-size){
+            font-size: 0.875rem;
+        }
     }
+    
 
     .added_to_cart {
-        display: block;
+        display: none;
     }
 }
 .woocommerce-js a.button.added::after {
