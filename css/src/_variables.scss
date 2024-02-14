@@ -5,8 +5,8 @@ $neutral-gray-light: #DADADA;
 $neutral-gray-extra: #E7E7E7;
 $neutral-gray-middle: #727272;
 $neutral-white-middle: #F9F9F9;
-$neutral-warm: #FFF4D2;
-$neutral-warm-light: #FFFCF3;
+$neutral-warm: var(--ast-global-color-6);
+$neutral-warm-light: var(--ast-global-color-4);
 $neutral-warm-middle: #F4F7EE;
 $neutral-white-ultra: #E1E1E1;
 $neutral-green-dark: var(--ast-global-color-3);
@@ -36,7 +36,7 @@ $neutral-white-light: #FBFBFB;
 $neutral-warm-dark: #857B21;
 $neutral-warm-med-dark: #E4D5A5;
 
-$primary-1: #6F9238;
+$primary-1: var(--ast-global-color-0);
 $primary-gradient: linear-gradient(168.69deg, #8EB354 5%, #72953B 91.67%);
 $red-gradient: linear-gradient(168.69deg, #D72828 5%, #C42D2D 91.67%);
 
@@ -46,10 +46,10 @@ $info-3: #5766EB;
 
 $primary-4: #EB5757;
 $primary-5: #F5EEEE;
-$primary-6: #D2600F;
+$primary-6: var(--ast-global-color-2);
 
 $black: #000000;
-$white: #FFFFFF;
+$white: var(--ast-global-color-5);
 $orange: $primary-6;
 $brown: #BD840A;
 $blue: #5792EB;
