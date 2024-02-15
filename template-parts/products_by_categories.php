@@ -16,9 +16,9 @@ $view_all_link   = $group['view_all_link']['url'] ?? null;
 $class            = 'products';
 $background_value = $group['background'];
 if ( $background_value ) {
-	$bg_class = 'background--warm-contrast section-padding-top--md section-padding-bottom--md';
+	$bg_class = 'background--warm-contrast section-padding-bottom--md';
 } else {
-	$bg_class = 'section-margin';
+	$bg_class = 'section-padding-top--md ';
 }
 
 $args = array(
@@ -50,7 +50,7 @@ $products = get_posts( $args );
 ?>
 
 <?php if ( $products ) : ?>
-<section class="products section-margin section-margin-bottom <?php echo esc_html( $bg_class ); ?>">
+<section class="products section-margin <?php echo esc_html( $bg_class ); ?>">
 	<div class="ast-container">
 		<div class="container categories__container">
 			<?php if ( $block_title ) : ?>

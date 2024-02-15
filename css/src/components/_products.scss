@@ -76,13 +76,9 @@
             font-size: 1rem;
         }
     }
-}
 
-.products+.products {
-    margin-top: 0;
-
-    @include medium {
-        margin-top: 40px;
+    &+.products {
+        margin-top: 0;
     }
 }
 
