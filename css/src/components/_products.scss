@@ -234,11 +234,11 @@
         }
 
         svg {
-            fill: #55761f;
+            fill: $color-green-dark;
             transition: all .3s linear;
 
             &:hover {
-                fill: #F4D060;
+                fill: $neutral-warm-contrast;
             }
         }
     }
@@ -298,7 +298,7 @@ div.products__item-btn-wrapper {
         padding: 16px 26px;
 
         &:hover {
-            color: #fff;
+            color: $white;
         }
 
         @include max-screen($medium-size){
