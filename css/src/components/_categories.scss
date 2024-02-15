@@ -3,11 +3,16 @@
         margin-top: 2.5rem; // Converted from 40px
     }
 
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
+    .ast-container {
+        padding: 0;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0;
+        }
     }
 
     .btn--arrow {
@@ -27,16 +32,19 @@
 
     @include medium {
         margin-bottom: 1rem; // Converted from 16px
+        margin-left: 1rem;
     }
 }
 
 .categories__list {
     flex-basis: 100%;
     flex-wrap: wrap;
-
+    
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 1.0625rem; // Converted from 17px
+
+    margin: 0px;
 
     @include max-screen(1155px) {
         grid-template-columns: repeat(2, 1fr);
@@ -44,10 +52,21 @@
 
     @include medium {
         grid-gap: 0.4375rem; // Converted from 7px
+        margin: 0 1rem;
     }
 
     @include max-screen(662px) {
         grid-template-columns: 1fr;
+    }
+
+    @include max-screen($medium-size) {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+    @include max-screen($small-size) {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    @include max-screen($smallest-size) {
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }
 
@@ -78,6 +97,7 @@
     &:hover {
         background-color: $neutral-warm;
         border-color: $neutral-warm;
+        text-decoration: none;
     }
 
     picture {

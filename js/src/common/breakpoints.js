@@ -3,36 +3,32 @@ export const STATIC_PAGES_SLIDER_BREAKPOINTS = {
         perPage: 2,
     },
     1024: {
-        slidesPerView: 4,
+        perPage: 4,
     },
     1280: {
-        slidesPerView: 5,
+        perPage: 5,
     },
     1440: {
-        slidesPerView: 6,
+        perPage: 6,
     }
 };
 
+
 // Swiper configuration for product sliders
-export const PRODUCT_SLIDER_BREAKPOINTS = {
-    360: {
-        slidesPerView: 2,
-        spaceBetween: 14
+export const PRODUCT_BY_CATEGORY_SLIDER_BREAKPOINTS = {
+    480: {
+        perPage: 2,
     },
     768: {
-        slidesPerView: 3,
-        spaceBetween: 14
+        perPage: 3,
     },
     1024: {
-        slidesPerView: 4,
-        spaceBetween: 14
+        perPage: 4,
     },
     1280: {
-        slidesPerView: 4,
-        spaceBetween: 14
+        perPage: 5,
     },
     1440: {
-        slidesPerView: 4,
-        spaceBetween: 30
+        perPage: 6,
     }
 };
