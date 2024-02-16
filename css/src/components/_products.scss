@@ -70,10 +70,7 @@
     
     .heading-5 {
         @include max-screen($medium-size) {
-            font-size: 0.875rem;
-        }
-        @include max-screen($smallest-size) {
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
     }
 
