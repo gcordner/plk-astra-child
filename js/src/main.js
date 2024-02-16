@@ -2,10 +2,11 @@
 import { DisplayLabel } from './components/DisplayLabel';
 import { logFreePalestine } from './components/ConsoleLog';
 import { Harm } from './components/faq';
-import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
+// import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
 import { featureSlider } from './components/feature';
+import { productByCategorySlider } from './components/products';
 
 let Main = {
   init: async function () {
@@ -16,6 +17,9 @@ let Main = {
     // FeatureSlider
     featureSlider();
 
+    // Products By Categories Slider
+    productByCategorySlider();
+    
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
     await displayLabel.init();

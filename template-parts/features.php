@@ -39,7 +39,7 @@ if ($gradient_icons) {
                 <p class="feature__caption"><?php echo esc_html($top_content); ?></p>
             <?php endif; ?>
             <?php if ($items) : ?>
-                <div class="feature__slider custom-navigation splide">
+                <div class="feature__slider custom-navigation splide" id="feature_splide">
                     <div class="feature-container splide__track">
                         <ul class="feature__list list-reset splide__list">
                             <?php 
