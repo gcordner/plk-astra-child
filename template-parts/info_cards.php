@@ -32,7 +32,7 @@ $cards = $args['group']['cards'] ?? null;
                                 $cLink  = $card['link'] ?? null;
                                 $cColor = $card['color'] ?? null;
                                 ?>
-                                <li class="splide__slide">
+                                <li class="splide__slide" style="width: calc(25%);">
                                     <div class="vien__item">
                                         <?php if ($cImage) { ?>
                                             <picture>

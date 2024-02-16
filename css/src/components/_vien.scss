@@ -18,11 +18,21 @@
   .splide__track {
     overflow: visible;
   }
+  .splide__slide {
+    flex-basis: calc(25% - 20px);
+    @include medium {
+      flex-basis: calc(50% - 20px);
+    }
+  }
+  .splide__list {
+    left: 5%;
+  }
 }
 
 .vien__heading {
   @include medium {
     margin-bottom: 1.5rem;
+    margin-left: 1rem;
   }
 }
 
@@ -44,40 +54,53 @@
     margin-top: 0;
   }
 
-  .swiper-container {
+  .splide__arrow {
+      // top: 25%;
+      background: transparent;
+      &.splide__arrow--prev {
+          margin-left: -1.3%;
+          @include medium {
+              margin-left: -0.6%;
+          }
+      }
+      &.splide__arrow--next {
+          margin-right: -11%;
+          @include medium {
+              margin-right: -0.6%;
+          }
+      }
 
-    @include medium {
-      width: 75%;
-    }
+      @include medium {
+        top: -40px;
+        height: 21px;
+        width: 21px;
+        font-size: 14px;
 
-    @include tablet {
-      width: 95%;
-    }
+        &.splide__arrow--prev {
+            margin-left: 90%;
+        }
+        &.splide__arrow--next {
+            margin-right: 1%;
+        }
+      }
 
-    @include max-screen(520px) {
-      width: 75%;
-    }
+      @include phone {
+          &.splide__arrow--prev {
+              margin-left: 78%;
+          }
+          &.splide__arrow--next {
+              margin-right: 0;
+          }
+      }
 
-    @include phone {
-      width: 75%;
-    }
-  }
+      svg {
+          fill: $color-green-dark;
+          transition: all .3s linear;
 
-  .swiper-slide {   
-    flex-basis: calc(100% / 4 - 20px);
-
-    @include medium {
-      flex-basis: auto;
-      margin-bottom: 0;
-    }
-  }
-
-  .custom-navigation__button {
-    visibility: hidden;
-
-    @include medium {
-      visibility: visible;
-    }
+          &:hover {
+              fill: $neutral-warm-contrast;
+          }
+      }
   }
 }
 
@@ -149,9 +172,13 @@
 .vien__item-title {
   margin-top: 32px;
   margin-bottom: 15px;
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 600;
 
   @include medium {
     margin-bottom: 17px;
+    font-size: 18px;
   }
 }
 
@@ -160,6 +187,7 @@
   padding-left: 0;
   margin-bottom: 48px;
   flex-grow: 1;
+  margin-left: 0px;
 
   @include medium {
     margin-bottom: 32px;
@@ -201,6 +229,10 @@
   background-color: $primary-1; 
   width: fit-content;
 
+  p:last-child {
+      margin-bottom: 0;
+  }
+  
   @include medium {
     margin-top: 6px;
   }
@@ -213,6 +245,10 @@
 .vien__item-li-name {
   margin-left: 16px;
   font-weight: 500;
+
+  @include medium {
+    font-size: 14px;
+  }
 }
 
 .vien__item-link {
@@ -221,7 +257,14 @@
   width: 100%;
 
   &.btn--transparent {
+    @include button-styles;
     color: $color-green-dark;
+    padding: 16px 0;
+    &:hover {
+      box-shadow: inset 0 0 0 1px #6f9238;
+      background-color: #6f9238;
+      color: #fff;
+    }
   }
 
   span {
