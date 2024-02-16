@@ -16,7 +16,7 @@ $view_all_link   = $group['view_all_link']['url'] ?? null;
 $class            = 'products';
 $background_value = $group['background'];
 if ( $background_value ) {
-	$bg_class = 'background--warm-contrast section-padding-bottom--md';
+	$bg_class = 'background--warm-contrast section-padding-top--md section-padding-bottom--md';
 } else {
 	$bg_class = 'section-padding-top--md ';
 }
