@@ -60,7 +60,7 @@
     }
 
     @include max-screen($medium-size) {
-        grid-template-columns: repeat(4, 1fr) !important;
+        grid-template-columns: repeat(5, 1fr) !important;
     }
     @include max-screen($small-size) {
         grid-template-columns: repeat(2, 1fr) !important;
