@@ -13,6 +13,7 @@ $section_title     = $group['title'] ?? null;
 $view_all_link     = $group['view_all_link'] ?? null;
 $select_categories = $group['select_categories'] ?? null;
 
+
 if ( $select_categories ) : ?>
 
 <section class="categories section-margin section-margin-bottom">
@@ -23,10 +24,14 @@ if ( $select_categories ) : ?>
             <?php endif; ?>
             <?php
             if ( $view_all_link ) :
-                $vlink              = new Link( $view_all_link );
-                $vlink->class       = 'btn--arrow link-reset products__link';
-                $vlink->wrapper_end = '<span class="icon-nav-arrow"></span>';
-                echo $vlink->a();
+                $link_title = $view_all_link['title'] ?? '';
+                $link_href  = $view_all_link['url'] ?? '';
+                ?>
+                <a href="<?php echo esc_html( $link_href ); ?>" class="btn--arrow link-reset products__link">
+                    <?php echo esc_html( $link_title ); ?>
+                    <span class="icon-nav-arrow"></span>
+                </a>
+                <?php
             endif;
             ?>
             <ul class="categories__list list-reset">
