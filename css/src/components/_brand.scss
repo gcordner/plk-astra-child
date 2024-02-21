@@ -30,7 +30,9 @@
     
     .ast-container {
         display: block;
-        padding: 6.25rem 0rem; // Converted from 100px 80px
+        @include ast-container-padding;
+        padding-top: 6.25rem; // Converted from 100px 80px
+        padding-bottom: 6.25rem;
         .container {
             width: 100%;
             padding: 0;

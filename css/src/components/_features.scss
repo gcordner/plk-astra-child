@@ -4,7 +4,7 @@
     color: $neutral-green-dark;
 
     .ast-container {
-        padding: 0;
+        @include ast-container-padding;
         display: block;
 
         .container {

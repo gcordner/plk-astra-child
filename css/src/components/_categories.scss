@@ -4,7 +4,7 @@
     }
 
     .ast-container {
-        padding: 0;
+        @include ast-container-padding;
 
         .container {
             display: flex;

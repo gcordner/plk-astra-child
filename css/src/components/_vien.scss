@@ -4,7 +4,7 @@
   }
 
   .ast-container {
-    padding: 0;
+    @include ast-container-padding;
 
     .container {
       position: relative;
@@ -47,7 +47,6 @@
 .vien__heading {
   @include medium {
     margin-bottom: 1.5rem;
-    margin-left: 1rem;
   }
 }
 
@@ -86,16 +85,16 @@
       }
 
       @include medium {
-        top: -40px;
+        top: -30px;
         height: 21px;
         width: 21px;
         font-size: 14px;
 
         &.splide__arrow--prev {
-            margin-left: 95%;
+            margin-left: 90%;
         }
         &.splide__arrow--next {
-            margin-right: -4.5%;
+            margin-right: 0%;
         }
       }
 
