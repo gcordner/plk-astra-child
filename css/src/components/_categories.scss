@@ -46,10 +46,6 @@
 
     margin: 0px;
 
-    @include max-screen(1155px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     @include medium {
         grid-gap: 0.4375rem; // Converted from 7px
         margin: 0 1rem;
@@ -156,8 +152,9 @@
     margin-right: auto;
 
     @include medium {
-        //max-width: 35%;
         margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     @include max-screen($small-size) {
