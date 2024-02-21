@@ -41,11 +41,11 @@ $items       = $args['group']['items'] ?? null;
 									<?php
 									if ( is_archive() ) {
 										?>
-										<h3 class="heading-4 faq__item-name" itemprop="name"><?php echo wp_kses_post( $question ); ?></h3>
+										<h3 class="heading-4 faq__item-name" itemprop="name"><?php echo esc_html( $question ); ?></h3>
 										<?php
 									} else {
 										?>
-										<div class="heading-4 faq__item-name" itemprop="name"><?php echo wp_kses_post( $question ); ?></div>
+										<div class="heading-4 faq__item-name" itemprop="name"><?php echo esc_html( $question ); ?></div>
 									<?php } ?>
 									<div class="icon-arrow-down faq__item-icon"></div>
 								</div>
