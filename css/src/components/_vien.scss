@@ -100,6 +100,8 @@
       }
 
       @include max-screen($small-size) {
+        top: -26px;
+
         &.splide__arrow--prev {
             margin-left: 90%;
         }
@@ -108,6 +110,8 @@
         }
       }
       @include max-screen($smallest-size) {
+        top: -26px;
+
         &.splide__arrow--prev {
           margin-left: 80%;
       }
@@ -308,4 +312,11 @@
 }
 .custom-navigation__button--next-vien {
 	margin-top: -25px;
+}
+
+.js_vien_container {
+  width: 1241px;
+}
+.js_vien_splide__list{
+  left: 0%;
 }
