@@ -32,3 +32,22 @@ export const PRODUCT_BY_CATEGORY_SLIDER_BREAKPOINTS = {
         perPage: 6,
     }
 };
+
+// Swiper configuration for vien info block sliders
+export const VIEN_INFO_BLOCK_SLIDER_BREAKPOINTS = {
+    480: {
+        perPage: 2,
+    },
+    768: {
+        perPage: 2,
+    },
+    1024: {
+        perPage: 4,
+    },
+    1280: {
+        perPage: 5,
+    },
+    1440: {
+        perPage: 6,
+    }
+};

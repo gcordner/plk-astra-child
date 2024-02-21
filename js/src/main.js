@@ -7,6 +7,7 @@ import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
 import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
+import { vienSlider } from './components/vien';
 
 let Main = {
   init: async function () {
@@ -14,11 +15,14 @@ let Main = {
     // About us parallax 
     aboutUsParallax();
 
-    // FeatureSlider
+    // Feature slider
     featureSlider();
 
-    // Products By Categories Slider
+    // Products By Categories slider
     productByCategorySlider();
+
+    // Vien info slider
+    vienSlider();
     
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
