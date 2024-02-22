@@ -23,15 +23,15 @@
    
     @include medium {
       flex-basis: auto;
-      margin-right: 10px;
+      margin-right: 30px;
     }
 
     @include max-screen($small-size) {
-      flex-basis: calc(35% - 20px);
+      // flex-basis: calc(35% - 20px);
     }
 
     @include max-screen($smallest-size) {
-      flex-basis: calc(80% - 20px);
+      // flex-basis: calc(80% - 20px);
       margin-left: 16px;
     }
   }
@@ -39,7 +39,13 @@
     left: 5%;
     
     @include medium {
-      left: 2%;
+      left: 0%;
+    }
+  }
+
+  @include max-screen($smallest-size) {
+    .splide__pagination__page {
+      display: none;
     }
   }
 }
@@ -66,6 +72,10 @@
 
   @include medium {
     margin-top: 0;
+  }
+
+  .vien-container {
+    padding-top: 20px;
   }
 
   .splide__arrow {
