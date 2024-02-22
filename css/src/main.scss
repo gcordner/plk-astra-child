@@ -50,9 +50,6 @@
 // categories
 @import './components/categories';
 
-// cta - for cta template part
-@import './components/image-block';
-
 // products flex content  - for category-products template part
 @import './components/products';
 
@@ -96,3 +93,6 @@
 
 // info vien
 @import './components/vien';
+
+// cta - for cta template part
+@import './components/cta-block';
