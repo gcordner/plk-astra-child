@@ -35,7 +35,7 @@ $padding_top    = $group['padding_top'] ?? null;
 				endif;
 				if ( $subtitle ) :
 					?>
-					<h3 class="heading-3 cta-block__subheading"><?php echo esc_html( $subtitle ); ?></h4>
+					<h3 class="heading-3 cta-block__subheading"><?php echo esc_html( $subtitle ); ?></h3>
 					<?php
 				endif;
 				if ( $view_link ) :
