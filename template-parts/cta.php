@@ -1,49 +1,65 @@
 <?php
-//Sub Init
-$sub = get_sub_field(pathinfo(__FILE__, PATHINFO_FILENAME));
-if (!$sub) {
-    ?><link href="<?php echo get_template_directory_uri() ?>/front/build/image-block.css" rel="stylesheet"><?php
-}
-$group = $sub ?? null ?: $args['group'] ?? null;
-$args['group'] = $group;
-//Sub Init Done
+/**
+ * CTA Block
+ *
+ * @package plk-child-theme
+ */
 
-$image = $args['group']['image'] ?? null;
-$title = $args['group']['title'] ?? null;
-$subtitle = $args['group']['subtitle'] ?? null;
-$link = $args['group']['link'] ?? null;
-$bottom_content = $args['group']['bottom_content'] ?? null;
-$color = $args['group']['color'] ?? null;
-$padding_top = $args['group']['padding_top'] ?? null;
+$sub   = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
+$group = $sub ? $sub : ( $args['group'] ? $args['group'] : null );
+
+$image          = $group['image'] ?? null;
+$cta_title      = $group['title'] ?? null;
+$subtitle       = $group['subtitle'] ?? null;
+$view_link      = $group['link'] ?? null;
+$bottom_content = $group['bottom_content'] ?? null;
+$color          = $group['color'] ?? null;
+$padding_top    = $group['padding_top'] ?? null;
 ?>
-<section class="image-block <?php echo $padding_top ? 'section-padding' : 'section-padding-bottom' ?> <?php echo $color ?>">
-    <div class="container">
-        <div class="image-block__wrapper section-padding">
-            <?php if ($image) { ?>
-                <picture class="image-block__image">
-                    <?php echo wp_get_attachment_image($image['ID'], 'large', '', ['alt' => $image['alt'] ?? $title]); ?>
-                </picture>
-            <?php } ?>
-            <?php if ($title) { ?>
-                <h3 class="heading-3 image-block__heading"><?php echo $title; ?></h3>
-            <?php } ?>
-            <?php if ($subtitle) { ?>
-                <p class="image-block__caption"><?php echo $subtitle; ?></p>
-            <?php } ?>
-            <?php if ($link) { ?>
-                <div class="image-block__btn-wrapper">
-                    <?php
-                    $link = new Link($link);
-                    $link->class = 'btn btn--middle btn--primary';
-                    echo $link->a();
-                    ?>
-                </div>
-            <?php } ?>
-        </div>
-        <?php if ($bottom_content) { ?>
-            <div class="info-image__disclosure">
-                <?php echo str_replace(['<h5>', '<p>'], ['<h5 class="heading-5 info-image__disclosure-heading">', '<p class="text-small info-image__disclosure-caption">'], $bottom_content) ?>
-            </div>
-        <?php } ?>
-    </div>
+<section class="cta-block <?php echo ( isset( $padding_top ) ? 'section-padding' : 'section-padding-bottom' ); ?> <?php echo esc_html( $color ); ?>">
+	<div class="ast-container">    
+		<div class="container">
+			<div class="cta-block__wrapper section-padding">
+				<?php
+				if ( $image ) :
+					?>
+					<picture class="cta-block__cta">
+						<?php echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $image['alt'] ?? $cta_title ) ); ?>
+					</picture>
+					<?php
+				endif;
+				if ( $cta_title ) :
+					?>
+					<h2 class="heading-2 cta-block__heading"><?php echo esc_html( $cta_title ); ?></h2>
+					<?php
+				endif;
+				if ( $subtitle ) :
+					?>
+					<h3 class="heading-3 cta-block__subheading"><?php echo esc_html( $subtitle ); ?></h3>
+					<?php
+				endif;
+				if ( $view_link ) :
+					$link_title = $view_link['title'] ?? '';
+					$link_href  = $view_link['url'] ?? '';
+					?>
+					<div class="cta-block__btn-wrapper">
+						<a href="<?php echo esc_html( $link_href ); ?>" class="btn btn--middle btn--primary">
+							<?php echo esc_html( $link_title ); ?>
+						</a>
+					</div>
+					<?php
+				endif;
+				?>
+			</div>
+			<?php
+			if ( $bottom_content ) :
+				?>
+				<div class="info-cta__disclosure">
+					<?php echo wp_kses_post( $bottom_content ); ?>
+				</div>
+				<?php
+			endif;
+			?>
+		</div>
+		</div>
 </section>
