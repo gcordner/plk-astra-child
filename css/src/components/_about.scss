@@ -1,7 +1,7 @@
 .about {
     color: $neutral-green-dark;
     .ast-container {
-        padding: 0;
+        @include ast-container-padding;
     }
 
     .container {
@@ -10,10 +10,6 @@
         flex-wrap: wrap;
         padding: 0;
         width: 100%;
-
-        @include medium {
-            padding: 0 10px;
-        }
     }
 
     &.background--warm-contrast {
