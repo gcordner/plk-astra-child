@@ -12,12 +12,13 @@
             width: 100%;
         }
     }
-    
+
     .cta-block__heading {
         max-width: 756px;
         color: $white;
         margin: auto;
     }
+
     .cta-block__subheading {
         color: $white;
         margin-bottom: 1.5rem;
@@ -39,6 +40,7 @@
     &.section-padding {
         padding: 100px 0;
     }
+
     @include phone {
         border-radius: 3.75rem; // Changed from 60px
     }
@@ -88,11 +90,8 @@
 
 .info-cta__disclosure {
     max-width: 827px;
-    margin: 3.5rem auto 0; // Changed from 56px
+    margin: 1.5rem auto 0; // Changed from 56px
 
-    @include medium {
-        margin-top: 1.875rem; // Changed from 30px
-    }
 }
 
 .info-cta__disclosure-heading {
