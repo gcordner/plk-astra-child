@@ -6,7 +6,8 @@ export const vienSlider = () => {
         perPage: 6,
         perMove: 1,
         breakpoints: VIEN_INFO_BLOCK_SLIDER_BREAKPOINTS,
-        padding: { left: 0, right: 5 },
+        rewind: true,
+        // type: 'loop'
     } );
     splide.on('visible', function (slide) {
         if(window.innerWidth > 1024 && splide.length == 4) {
@@ -21,7 +22,6 @@ export const vienSlider = () => {
                 const parentASTContainer = vienSplide.closest('.ast-container');
                 const ASTContainerWidth = parentASTContainer.clientWidth;
                 parentContainer.style.width = ASTContainerWidth + 'px';
-                console.log('AAA', parentContainer.style.width);
                 vienSplideList.style.left =  '0%';
             }
 
