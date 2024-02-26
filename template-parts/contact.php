@@ -8,10 +8,10 @@
 $sub   = get_sub_field(pathinfo(__FILE__, PATHINFO_FILENAME));
 $group = $sub ? $sub : ( $args['group'] ? $args['group'] : null );
 
-$form     = $group['form'] ?? null;
-$image    = $group['image'] ?? null;
-$title    = $group['title'] ?? null;
-$subtitle = $group['subtitle'] ?? null;
+$form          = $group['form'] ?? null;
+$image         = $group['image'] ?? null;
+$contact_title = $group['title'] ?? null;
+$subtitle      = $group['subtitle'] ?? null;
 ?>
 <section class="form form--image">
     <div class="ast-container">
@@ -22,9 +22,9 @@ $subtitle = $group['subtitle'] ?? null;
                     ?>
                     <div class="form__block">
                         <?php
-                        if ( $title ) :
+                        if ( $contact_title ) :
                             ?>
-                            <h2 class="heading-2 form__heading"><?php echo esc_html( $title ); ?></h2>
+                            <h2 class="heading-2 form__heading"><?php echo esc_html( $contact_title ); ?></h2>
                             <?php
                         endif;
                         if ( $subtitle ) :
@@ -32,7 +32,7 @@ $subtitle = $group['subtitle'] ?? null;
                             <p class="form__caption text-large"><?php echo esc_html( $subtitle ); ?></p>
                             <?php
                         endif;
-                        echo $form;
+                        echo wp_kses_data( $form );
                         ?>
                     </div>
                     <?php
@@ -42,7 +42,11 @@ $subtitle = $group['subtitle'] ?? null;
                     <div class="form__image-wrapper">
                         <picture>
                             <?php
-                            echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $image['alt'] ?: 'Contact Us' ) );
+                            if ( $image['ID'] ) :
+                                echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $image['alt'] ) );
+                            else :
+                                echo 'Contact Us';
+                            endif;
                             ?>
                         </picture>
                     </div>
