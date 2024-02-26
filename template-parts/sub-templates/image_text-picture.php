@@ -7,6 +7,7 @@
 
 $image       = $args['image'];
 $block_title = $args['block_title'];
+$small_image = isset( $args['small_image'] ) ? $args['small_image'] : null;
 
 $medium       = wp_get_attachment_image_url( $image['ID'], 'medium' );
 $medium_large = wp_get_attachment_image_url( $image['ID'], 'medium_large' );
@@ -19,3 +20,17 @@ $src_set      = $medium . ',' . $medium_large . ' 2x';
     echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
     ?>
 </picture>
+
+<?php
+if ( $small_image ) :
+    ?>
+    <div class="infoblock__parallax">
+        <picture>
+        <?php
+        $alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
+        echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
+        ?>
+        </picture>
+    </div>
+    <?php
+endif;
