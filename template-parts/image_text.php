@@ -19,42 +19,27 @@ if ( $big_image ) :
 	<section class="infoblock infoblock--reverse infoblock--more-image">
 	<?php
 	if ( $image ) :
-		?>
-		<picture>
-			<source 
-				media="(max-width: 500px)" 
-				srcset="
-					<?php
-					echo esc_url( wp_get_attachment_image_url( $image['ID'], 'medium' ) );
-					?>
-					,
-					<?php
-					echo esc_url( wp_get_attachment_image_url( $image['ID'], 'medium_large' ) );
-					?>
-					2x">
-			<?php
-			$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-			echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
-			?>
-		</picture>
-		<?php
-		endif;
+
+		get_template_part(
+			'template-parts/sub-templates/image_text',
+			'picture',
+			array(
+				'image'       => $image,
+				'block_title' => $block_title,
+			)
+		);
+
+		get_template_part(
+			'template-parts/sub-templates/image_text',
+			'container',
+			array(
+				'image'       => $image,
+				'block_title' => $block_title,
+				'text'        => $text,
+				'btn_link'    => $btn_link,
+			)
+		);
 	?>
-		<div class="ast-container">
-			<div class="container">
-				<div class="infoblock__wrapper">
-					<?php
-					if ( $block_title ) :
-						?>
-						<h2 class="heading-2 infoblock__heading"><?php echo esc_html( $block_title ); ?></h2>
-						<?php
-					endif;
-					echo esc_textarea( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption">', '<p class="text-large infoblock__caption">' ), $text ) );
-					?>
-					<a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--primary"><?php echo esc_html( $btn_link['title'] ); ?></a>
-				</div>
-			</div>
-		</div>
 	</section>
 	<?php
 endif;
