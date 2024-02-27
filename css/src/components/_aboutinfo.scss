@@ -1,8 +1,22 @@
 .aboutinfo {
     margin-top: 100px; // Unchanged 
 
+    .ast-container {
+        @include ast-container-padding;
+
+        .container {
+            padding: 0;
+        }
+    }
+
     @include medium {
         margin-top: 0px; // Unchanged
+    }
+
+    .infoblock__btn {
+        @include button-styles;
+        background-color: #6f9238;
+        margin-top: 48px;
     }
 }
 

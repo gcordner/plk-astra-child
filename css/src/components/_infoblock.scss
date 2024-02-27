@@ -174,9 +174,13 @@
             left: 42%;
             bottom: -30%;
 
+            @include min-screen(1025px) {
+                bottom: -3%;
+            }
+
             @include min-screen(1398px) {
                 left: 33%;
-                bottom: -25%;
+                bottom: -3%;
             }
         }
     }
@@ -203,6 +207,17 @@
                 right: 0;
                 bottom: 0 !important;
             }
+        }
+    }
+
+    
+
+    .infoblock__btn {
+        @include button-styles;
+        margin-top: 4rem;
+
+        @include medium {
+            margin-top: 3rem;
         }
     }
 }
@@ -260,6 +275,10 @@
     @include min-screen(1398px) {
         left: 40%;
         bottom: 10%;
+    }
+
+    @include min-screen(1025px) {
+        left: 42%;
     }
 
     @include medium {
@@ -335,12 +354,4 @@
 
 .infoblock__caption+.infoblock__caption {
     margin-top: 1.25rem;
-}
-
-.infoblock__btn {
-    margin-top: 4rem;
-
-    @include medium {
-        margin-top: 3rem;
-    }
 }
