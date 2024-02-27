@@ -32,7 +32,7 @@ $subtitle      = $group['subtitle'] ?? null;
                             <p class="form__caption text-large"><?php echo esc_html( $subtitle ); ?></p>
                             <?php
                         endif;
-                        echo wp_kses_data( $form );
+                        echo $form;
                         ?>
                     </div>
                     <?php
