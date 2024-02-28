@@ -123,7 +123,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        min-height: 400px; // Changed from 662px (Original: 662px)
+        // min-height: 400px; // Changed from 662px (Original: 662px)
+        min-height: 662px;
 
         @media (max-width: $medium-size) {
             min-height: 400px;
@@ -313,6 +314,19 @@
             max-width: 100px;
         }
     }
+
+    .hero__heading {
+        font-size: 40px;
+        line-height: 1.1;
+        font-weight: 700;
+        width: 95%;
+        margin-bottom: 1.5rem; // Changed from 24px (Original: 24px)
+
+        @media (max-width: $medium-size) {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+    }
 }
 
 .hero__wrapper-parallax {
@@ -478,17 +492,8 @@
     }
 }
 
-.hero__heading {
-    width: 95%;
-    margin-bottom: 1.5rem; // Changed from 24px (Original: 24px)
-
-    @media (max-width: $medium-size) {
-        margin-bottom: 0.625rem; // Changed from 1rem (Original: 1rem)
-    }
-}
-
 .hero__caption {
-    color: $neutral-gray-dark;
+    color: $neutral-green-dark;
 
     @media (max-width: $medium-size) {
         margin-bottom: 0.5rem; // Changed from 8px (Original: 8px)
@@ -500,6 +505,12 @@
         @media (max-width: $medium-size) {
             margin-top: 1.5rem; // Changed from 24px (Original: 24px)
         }
+    }
+
+    @media (max-width: $small-size) {
+        margin: 0 0 1rem;
+        font-size: 16px;
+        line-height: 1.5;
     }
 }
 
@@ -553,17 +564,5 @@
         padding: 1rem 3rem; // Changed from 14px 48px (Original: 14px 48px)
 
         font-size: 1rem; // Changed from 14px (Original: 14px)
-    }
-}
-
-.hero__heading {
-    font-size: 5.5rem;
-
-    @media (max-width: $medium-size) {
-        font-size: 3.5rem;
-    }
-
-    @media (max-width: $small-size) {
-        font-size: 2.5rem;
     }
 }

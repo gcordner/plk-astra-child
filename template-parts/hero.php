@@ -114,26 +114,28 @@ if ( 'type_1' === $hero_type ) :
 		endif;
 		?>
 
-		<div class="container">
-			<div class="hero__wrapper--text">
-				<?php
-				if ( $cat_title ) :
+		<div class="ast-container">
+			<div class="container">
+				<div class="hero__wrapper--text">
+					<?php
+					if ( $cat_title ) :
+						?>
+						<h1 class="heading-1 hero__heading"><?php echo esc_html( $cat_title ); ?></h1>
+					<?php
+					endif;
+					if ( $subtitle ) :
 					?>
-					<h1 class="heading-1 hero__heading"><?php echo esc_html( $cat_title ); ?></h1>
-				<?php
-				endif;
-				if ( $subtitle ) :
-				?>
-					<p class="text-large hero__caption"><?php echo esc_html( $subtitle ); ?></p>
-				<?php
-				endif;
-				do_action( 'paylesskratom_banners' );
-				if ( $description ) :
-				?>
-					<p class="hero__caption"><?php echo esc_html( $description ); ?></p>
-				<?php
-				endif;
-				?>
+						<p class="text-large hero__caption"><?php echo esc_html( $subtitle ); ?></p>
+					<?php
+					endif;
+					do_action( 'paylesskratom_banners' );
+					if ( $description ) :
+					?>
+						<p class="hero__caption"><?php echo esc_html( $description ); ?></p>
+					<?php
+					endif;
+					?>
+				</div>
 			</div>
 		</div>
 </section>
