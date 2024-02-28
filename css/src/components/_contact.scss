@@ -77,6 +77,14 @@
         @include button-styles;
         min-width: 262px;
         text-align: center;
+
+        &:hover {
+            border: none;
+        }
+        
+        &:focus {
+            background-color: var(--ast-global-color-0);
+        }
     }
 
     @include medium {
