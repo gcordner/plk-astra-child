@@ -8,10 +8,6 @@
 
 // Sub Init.
 $sub = get_sub_field( pathinfo( __FILE__, PATHINFO_FILENAME ) );
-if ( ! $sub ) {
-	?><link href="<?php echo esc_url( get_template_directory_uri() ); ?>/front/build/hero.css?ver=<?php echo esc_attr( '1.02' ); ?>" rel="stylesheet">
-	<?php
-}
 $group         = $sub ?? null ?: $args['group'] ?? null;
 $args['group'] = $group;
 // Sub Init Done.
@@ -34,10 +30,6 @@ $description        = $args['group']['description'] ?? null;
 $hero_link          = $args['group']['link'] ?? null;
 $image_alt          = $args['group']['image_alt'] ?? null;
 ?>
-<?php if ( ! empty( $bg_color ) ) : ?>
-<style>.hero.hero--warm{background:<?php echo $bg_color; ?>}</style>
-<?php endif; ?>
-<style>.hero--wide.hero--index .hero__image{width:72%}.hero--wide.hero--index .hero__image img{object-fit:contain;object-position:right}@media (max-width: 768px){.hero--wide.hero--index .hero__image{width:100%;height:auto;margin-top:20px}}</style>
 
 <?php
 /** Define function to output styles for double image banners */
@@ -188,8 +180,10 @@ if ( ( 'single banner' === $banner_type || 'double banner' === $banner_type ) ) 
 ?>
 
 
-<?php if ( 'type_1' === $hero_type ) { ?>
-<section class="hero hero--warm hero--index 
+<?php 
+if ( 'type_1' === $hero_type ) {
+	?>
+	<section class="hero hero--warm hero--index 
 	<?php
 	if ( ! $promo_image ) {
 		?>
@@ -283,191 +277,4 @@ if ( ( 'single banner' === $banner_type || 'double banner' === $banner_type ) ) 
 		</div>
 	</div>
 </section>
-<?php } elseif ( 'type_2' === $hero_type ) { ?>
-<section class="hero hero--no-image layout-hero is-preview">
-	<div class="container">
-		<div class="hero__wrapper--text">
-			<?php if ( $cat_title ) { ?>
-				<h1 class="heading-1 hero__heading"><?php echo esc_html( $cat_title ); ?></h1>
-			<?php } ?>
-			<?php do_action( 'paylesskratom_banners' ); ?>
-			<?php if ( $subtitle ) { ?>
-				<p class="text-large hero__caption"><?php echo esc_html( $subtitle ); ?></p>
-			<?php } ?>
-		</div>
-		<?php if ( $image ) { ?>
-			<div class="hero__wrapper-parallax">
-				<picture class="hero__wrapper-image--parallax image-parallax">
-					<source media="(max-width: 500px)" srcset="<?php echo esc_url( wp_get_attachment_image_url( $image['ID'], 'medium' ) ); ?>, <?php echo esc_url( wp_get_attachment_image_url( $image['ID'], 'woocommerce_single' ) ); ?> 2x">
-					<?php
-					echo wp_get_attachment_image(
-						$image['ID'],
-						'hero',
-						'',
-						array(
-							'alt'     => $image['alt'] ?: $cat_title ?: $image_alt,
-							'loading' => 'none',
-						)
-					);
-					?>
-				</picture>
-			</div>
-		<?php } ?>
-		<?php if ( $small_bottom_image ) { ?>
-			<picture class="hero__wrapper-image">
-				<?php
-				echo wp_get_attachment_image(
-					$small_bottom_image['ID'],
-					'medium_large',
-					'',
-					array(
-						'alt'     => $small_bottom_image['alt'] ?: $cat_title,
-						'loading' => 'none',
-					)
-				);
-				?>
-			</picture>
-		<?php } ?>
-		<?php if ( $small_right_image ) { ?>
-			<div class="hero__wrapper-parallax--right">
-				<picture class="hero__wrapper-image--parallax-right">
-					<?php
-					echo wp_get_attachment_image(
-						$small_right_image['ID'],
-						'medium_large',
-						'',
-						array(
-							'alt'     => $small_right_image['alt'] ?: $cat_title,
-							'loading' => 'none',
-						)
-					);
-					?>
-				</picture>
-			</div>
-		<?php } ?>
-	</div>
-</section>
-
-
-	<?php
-} elseif ( 'type_3' === $hero_type ) {
-	;
-	?>
-
-<!-- SINGLE BANNER -->
-	<?php if ( 'single banner' === $banner_type ) { ?>
-	<section class="hero hero--image layout-hero is-preview">
-		<div class="container">
-			<div class="hero__wrapper--text">
-				<?php if ( $cat_title ) { ?>
-					<h1 class="heading-1 hero__heading"><?php echo esc_html( $cat_title ); ?></h1>
-				<?php } ?>
-				<?php if ( $description ) { ?>
-					<?php
-					$description_filtered = apply_filters( 'the_content', $description );
-					$description_filtered = str_replace(
-						array( '<p>', '<h1>' ),
-						array( '<p class="hero__caption">', '<h1 class="heading-1 hero__heading">' ),
-						$description_filtered
-					);
-					echo wp_kses_post( $description_filtered );
-					?>
-										<?php if ( $mobile_banner ) : ?>
-						<div class="banner-images mobi-show">
-											<?php if ( $banner_url ) : ?>
-							<a href="<?php echo esc_url( $banner_url ); ?>"><?php endif; ?>
-								<img src="<?php echo esc_url( $mobile_banner['url'] ); ?>" alt="<?php echo esc_html( $mobile_banner['alt'] ); ?>">
-											<?php if ( $banner_url ) : ?>
-							</a><?php endif; ?>
-						</div>
-					<?php endif; ?>
-
-					<?php if ( $desktop_banner ) : ?>
-						<div class="banner-images mobi-hide">
-						<?php if ( $banner_url ) : ?>
-							<a href="<?php echo esc_url( $banner_url ); ?>"><?php endif; ?>
-								<img src="<?php echo esc_url( $desktop_banner['url'] ); ?>" alt="<?php echo esc_html( $desktop_banner['alt'] ); ?>">
-											<?php if ( $banner_url ) : ?>
-							</a><?php endif; ?>
-						</div>
-					<?php endif; ?>
-				<?php } ?>
-
-				<?php do_action( 'paylesskratom_banners' ); ?>
-			</div>
-		</div>
-	</section>
-	<!-- END SINGLE BANNER -->
-<?php } elseif ( 'double banner' === $banner_type ) { ?>
-	<!--START DBL BANNER. -->
-		<section class="hero hero--image layout-hero is-preview">
-	<div class="container">
-		<div class="hero__wrapper--text">
-			<?php if ( isset( $title ) && $title ) { ?>
-				<h1 class="heading-1 hero__heading"><?php echo esc_html( $title ); ?></h1>
-			<?php } ?>
-			<?php if ( isset( $description ) && $description ) { ?>
-				<?php echo str_replace( array( '<p>', '<h1>' ), array( '<p class="hero__caption">', '<h1 class="heading-1 hero__heading">' ), apply_filters( 'the_content', $description ) ); ?>
-				<div class="banner-images">
-					<?php if ( isset( $banner_image_1 ) && $banner_image_1 ) : ?>
-						<?php if ( $banner_url_1 ) : ?>
-						<a href="<?php echo esc_url( $banner_url_1 ); ?>"><?php endif; ?>
-							<img src="<?php echo esc_url( $banner_image_1['url'] ); ?>" alt="<?php echo esc_html( $banner_image_1['alt'] ); ?>">
-							<?php if ( $banner_url_1 ) : ?>
-						</a>
-						<?php endif; ?>
-					<?php endif; ?>
-					<?php if ( isset( $banner_image_2 ) && $banner_image_2 ) : ?>
-						<?php if ( $banner_url_2 ) : ?>
-						<a href="<?php echo esc_url( $banner_url_2 ); ?>"><?php endif; ?>
-							<img src="<?php echo esc_url( $banner_image_2['url'] ); ?>" alt="<?php echo esc_html( $banner_image_2['alt'] ); ?>">
-							<?php if ( $banner_url_2 ) : ?>
-						</a>
-						<?php endif; ?>
-					<?php endif; ?>
-				</div>
-			<?php } ?>
-			<?php do_action( 'paylesskratom_banners' ); ?>
-		</div>
-	</div>
-</section>
-<!-- END DBL BANNER -->
-		<?php } else { ?>
-<!-- IF BANNER SELECTION == NONE OR IS NULL, START HERO -->
-<section class="hero hero--image layout-hero is-preview">
-					<?php if ( $image ) { ?>
-								<picture class="hero__image">
-						<?php
-						echo wp_get_attachment_image(
-							$image['ID'],
-							'hero',
-							'',
-							array(
-								'alt'     => $image['alt'] ?: $title ?: $image_alt,
-								'loading' => 'none',
-							)
-						);
-						?>
-		</picture>
-	<?php } ?>
-	<div class="container">
-		<div class="hero__wrapper--text">
-				<?php if ( $title ) { ?>
-				<h1 class="heading-1 hero__heading"><?php echo esc_html( $title ); ?></h1>
-			<?php } ?>
-				<?php if ( $description ) { ?>
-					<?php echo str_replace( array( '<p>', '<h1>' ), array( '<p class="hero__caption">', '<h1 class="heading-1 hero__heading">' ), apply_filters( 'the_content', $description ) ); ?>
-			<?php } ?>
-				<?php do_action( 'paylesskratom_banners' ); ?>
-		</div>
-	</div>
-</section>
-<!--HERO ENDS -->
-				<?php } ?>
-
-
-
-
-
-
-<?php } ?>
+<?php }
