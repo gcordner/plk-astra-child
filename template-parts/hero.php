@@ -72,7 +72,6 @@ if ( 'type_1' === $hero_type ) :
 			?>
 			<a class="hero__promo-link" href="<?php echo esc_url( $promo_link ); ?>" aria-label="Promo Link">
 			<?php if ( $promo_button_text ) { ?>
-				<style>.hero__fake-btn:hover { color: #ffffff;}</style>
 				<div class="hero__fake-btn"><?php echo esc_html( $promo_button_text ); ?></div>
 			<?php } ?>
 			</a>
