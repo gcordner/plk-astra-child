@@ -28,8 +28,8 @@ if ( $small_image ) :
     <div class="infoblock__parallax">
         <picture>
         <?php
-        $alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-        echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
+        $alt_text = ! empty( $small_image['alt'] ) ? $small_image['alt'] : $block_title;
+        echo wp_get_attachment_image( $small_image['ID'], 'large', '', array( 'alt' => $alt_text ) );
         ?>
         </picture>
     </div>
