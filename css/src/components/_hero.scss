@@ -43,7 +43,7 @@
 
         .hero__caption {
             max-width: 85%;
-
+            font-size: 1rem;
             @media (max-width: $smallest-size) {
                 max-width: 100%;
             }
@@ -573,6 +573,7 @@
     &:hover {
         @media (hover: hover) {
             background-color: #6F9238;
+            color: $white;
         }
     }
 
