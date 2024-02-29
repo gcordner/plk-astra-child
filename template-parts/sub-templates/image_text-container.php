@@ -48,7 +48,7 @@ $btn_link    = $args['btn_link'];
                 <h2 class="heading-2 infoblock__heading"><?php echo esc_html( $block_title ); ?></h2>
                 <?php
             endif;
-            echo wp_kses_data( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption">', '<p class="text-large infoblock__caption">' ), $text ) );
+            echo wp_kses_post( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption">', '<p class="text-large infoblock__caption">' ), $text ) );
             if( !empty( $btn_link ) ):
             ?>
             <a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--primary"><?php echo esc_html( $btn_link['title'] ); ?></a>

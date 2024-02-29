@@ -84,8 +84,13 @@ else :
 								<h3>Reverse should be True.</h3>
 							<?php
 							endif;
+							echo wp_kses_post( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption aboutinfo__caption">', '<p class="text-large infoblock__caption aboutinfo__caption">' ), $text ) );
+							if( !empty( $btn_link ) ):
+								?>
+								<a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--middle btn--primary infoblock__btn"><?php echo esc_html( $btn_link['title'] ); ?></a>
+							<?php
+							endif;
 							?>
-							<?php echo wp_kses_data( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption aboutinfo__caption">', '<p class="text-large infoblock__caption aboutinfo__caption">' ), $text ) ); ?>
 						</div>
 						<?php
 						if ( $image ) :
@@ -97,11 +102,6 @@ else :
 								?>
 							</picture>
 							<?php
-						endif;
-						if( !empty( $btn_link ) ):
-						?>
-							<a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--middle btn--primary infoblock__btn"><?php echo esc_html( $btn_link['title'] ); ?></a>
-						<?php
 						endif;
 						?>
 					</div>
