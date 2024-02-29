@@ -13,20 +13,16 @@ $group = $sub ? $sub : ( $args['group'] ? $args['group'] : null );
 
 $hero_type          = $group['type'] ?? null;
 $image              = $group['image'] ?? null;
-$bg_color           = $group['bg_color'] ?? null;
 $promo_wide         = $group['promo_wide'] ?? null;
 $promo_image        = $group['promo_image'] ?? null;
 $promo_link         = $group['promo_link'] ?? null;
 $promo_button_text  = $group['promo_button_text'] ?? null;
-$small_right_image  = $group['small_right_image'] ?? null;
-$small_bottom_image = $group['small_bottom_image'] ?? null;
 $enable_star        = $group['enable_star'] ?? null;
 $star_number        = $group['star_number'] ?? null;
 $star_text          = $group['star_text'] ?? null;
 $cat_title          = $group['title'] ?? null;
 $subtitle           = $group['subtitle'] ?? null;
 $description        = $group['description'] ?? null;
-$hero_link          = $group['link'] ?? null;
 $image_alt          = $group['image_alt'] ?? null;
 
 if ( 'type_1' === $hero_type ) :
