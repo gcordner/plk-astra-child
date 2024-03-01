@@ -81,7 +81,6 @@ else :
 							if ( $block_title ) :
 								?>
 								<h2 class="heading-2 aboutinfo__heading"><?php echo esc_html( $block_title ); ?></h2>
-								<h3>Reverse should be True.</h3>
 							<?php
 							endif;
 							echo wp_kses_post( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption aboutinfo__caption">', '<p class="text-large infoblock__caption aboutinfo__caption">' ), $text ) );
