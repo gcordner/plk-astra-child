@@ -69,3 +69,10 @@ h5,
         font-size: 1rem;
     }
 }
+
+.text-small {
+    @media (max-width: $medium-size) {
+        line-height: 1.6;
+        font-weight: 500;
+    }
+}
