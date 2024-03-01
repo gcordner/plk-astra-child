@@ -5,6 +5,7 @@ import { Harm } from './components/faq';
 // import setupSwiper from './components/SwiperSetup'; // Import the Swiper setup module
 import './components/category.js';
 import { aboutUsParallax } from './components/about.js';
+import { imageTextParallax } from './components/image-text.js';
 import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
 import { vienSlider } from './components/vien';
@@ -15,6 +16,9 @@ let Main = {
     // About us parallax 
     aboutUsParallax();
 
+    // Image text parallax
+    imageTextParallax();
+    
     // Feature slider
     featureSlider();
 

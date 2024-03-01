@@ -3,6 +3,29 @@
     background-color: $neutral-warm-light;
     z-index: 2;
 
+    .ast-container {
+        @include ast-container-padding;
+
+        .container {
+            padding: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .btn--primary {
+        @include button-styles;
+        background-color: #6f9238;
+        margin-top: 30px;
+        &::hover {
+            text-decoration: none;
+            box-shadow: inset 0 0 0 1px #6f9238;
+            color: #fff;
+        }
+    }
+    
     &--reverse {
         picture {
             right: 0;
@@ -63,7 +86,7 @@
         .infoblock__parallax {
             @include medium {
                 top: auto;
-                bottom: 120px !important;
+                bottom: 180px !important;
             }
 
             @include phone {
@@ -151,9 +174,13 @@
             left: 42%;
             bottom: -30%;
 
+            @include min-screen(1025px) {
+                bottom: -3%;
+            }
+
             @include min-screen(1398px) {
                 left: 33%;
-                bottom: -25%;
+                bottom: -3%;
             }
         }
     }
@@ -180,6 +207,17 @@
                 right: 0;
                 bottom: 0 !important;
             }
+        }
+    }
+
+    
+
+    .infoblock__btn {
+        @include button-styles;
+        margin-top: 4rem;
+
+        @include medium {
+            margin-top: 3rem;
         }
     }
 }
@@ -231,12 +269,16 @@
     position: absolute;
     top: auto;
     left: 50%;
-    bottom: -15%;
+    bottom: 10%;
     transform: translateX(-50%);
 
     @include min-screen(1398px) {
         left: 40%;
-        bottom: -15%;
+        bottom: 10%;
+    }
+
+    @include min-screen(1025px) {
+        left: 42%;
     }
 
     @include medium {
@@ -301,18 +343,15 @@
 }
 
 .infoblock__caption {
-    color: $neutral-gray-dark;
+    color: $neutral-green-dark;
     margin-bottom: 0;
+
+    @include medium {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 }
 
 .infoblock__caption+.infoblock__caption {
     margin-top: 1.25rem;
-}
-
-.infoblock__btn {
-    margin-top: 4rem;
-
-    @include medium {
-        margin-top: 3rem;
-    }
 }

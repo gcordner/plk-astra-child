@@ -43,7 +43,7 @@
 
         .hero__caption {
             max-width: 85%;
-
+            font-size: 1rem;
             @media (max-width: $smallest-size) {
                 max-width: 100%;
             }
@@ -123,7 +123,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        min-height: 400px; // Changed from 662px (Original: 662px)
+        // min-height: 400px; // Changed from 662px (Original: 662px)
+        min-height: 662px;
 
         @media (max-width: $medium-size) {
             min-height: 400px;
@@ -161,7 +162,7 @@
                 position: relative;
                 width: 100%;
                 height: 424px;
-                margin-top: 2.5rem;
+                margin-top: unset;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -197,13 +198,30 @@
             }
 
             @media (max-width: $small-size) {
-                width: 345px;
-                top: auto;
-                bottom: 3.75rem;
-                height: auto;
-                right: auto;
-                left: 50%;
-                transform: translate(-50%, 0);
+                // width: 345px;
+                // top: auto;
+                // bottom: 3.75rem;
+                // height: auto;
+                // right: auto;
+                // left: 50%;
+                // transform: translate(-50%, 0);
+                
+                max-height: 540px;
+                flex-direction: column;
+                align-self: center;
+                text-decoration: none;
+
+                position: relative !important;
+                top: unset !important;
+                bottom: unset !important;
+                right: unset !important;
+                left: 15px !important;
+                transform: unset !important;
+                width: 100% !important;
+                align-items: flex-start !important;
+
+                margin-top: 70px;
+                margin-left: 50px;
             }
 
             @media (max-width: 370px) {
@@ -311,6 +329,19 @@
 
         @media (max-width: $smallest-size) {
             max-width: 100px;
+        }
+    }
+
+    .hero__heading {
+        font-size: 40px;
+        line-height: 1.1;
+        font-weight: 700;
+        width: 95%;
+        margin-bottom: 1.5rem; // Changed from 24px (Original: 24px)
+
+        @media (max-width: $medium-size) {
+            font-size: 40px;
+            margin-bottom: 16px;
         }
     }
 }
@@ -478,17 +509,8 @@
     }
 }
 
-.hero__heading {
-    width: 95%;
-    margin-bottom: 1.5rem; // Changed from 24px (Original: 24px)
-
-    @media (max-width: $medium-size) {
-        margin-bottom: 0.625rem; // Changed from 1rem (Original: 1rem)
-    }
-}
-
 .hero__caption {
-    color: $neutral-gray-dark;
+    color: $neutral-green-dark;
 
     @media (max-width: $medium-size) {
         margin-bottom: 0.5rem; // Changed from 8px (Original: 8px)
@@ -501,8 +523,17 @@
             margin-top: 1.5rem; // Changed from 24px (Original: 24px)
         }
     }
+
+    @media (max-width: $small-size) {
+        margin: 0 0 1rem;
+        font-size: 16px;
+        line-height: 1.5;
+    }
 }
 
+h2.hero__caption {
+    font-weight: 600;
+}
 .hero__btn {
     margin-top: 3.125rem; // Changed from 4rem (Original: 4rem)
 
@@ -545,6 +576,7 @@
     &:hover {
         @media (hover: hover) {
             background-color: #6F9238;
+            color: $white;
         }
     }
 
@@ -553,17 +585,5 @@
         padding: 1rem 3rem; // Changed from 14px 48px (Original: 14px 48px)
 
         font-size: 1rem; // Changed from 14px (Original: 14px)
-    }
-}
-
-.hero__heading {
-    font-size: 5.5rem;
-
-    @media (max-width: $medium-size) {
-        font-size: 3.5rem;
-    }
-
-    @media (max-width: $small-size) {
-        font-size: 2.5rem;
     }
 }
