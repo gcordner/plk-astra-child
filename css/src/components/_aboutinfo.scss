@@ -17,6 +17,19 @@
         @include button-styles;
         background-color: #6f9238;
         margin-top: 48px;
+
+        &.desktop {
+            @include medium {
+                display: none;
+            }
+        }
+        &.mobile {
+            display: none;
+    
+            @include medium {
+                display: block;
+            }
+        }
     }
 }
 
