@@ -117,7 +117,7 @@ if ( 'type_1' === $hero_type ) :
 					endif;
 					if ( $subtitle ) :
 						?>
-						<p class="text-large hero__caption"><?php echo esc_html( $subtitle ); ?></p>
+						<h2 class="text-large hero__caption"><?php echo esc_html( $subtitle ); ?></h2>
 						<?php
 					endif;
 					do_action( 'paylesskratom_banners' );
