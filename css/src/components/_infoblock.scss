@@ -19,13 +19,14 @@
         @include button-styles;
         background-color: #6f9238;
         margin-top: 30px;
+
         &::hover {
             text-decoration: none;
             box-shadow: inset 0 0 0 1px #6f9238;
             color: #fff;
         }
     }
-    
+
     &--reverse {
         picture {
             right: 0;
@@ -99,6 +100,13 @@
         @include medium {
             padding-bottom: 0;
         }
+    }
+
+    &.section-padding {
+        @include medium {
+            padding-top: 0;
+        }
+
     }
 
     .container {
@@ -210,7 +218,7 @@
         }
     }
 
-    
+
 
     .infoblock__btn {
         @include button-styles;
