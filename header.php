@@ -18,14 +18,24 @@ defined( 'ABSPATH' ) || exit;
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="format-detection" content="telephone=no">
-	<?php if ( $google_map_key = get_field( 'google_map_key', 'option' ) ) { ?>
-		<meta name="GOOGLE_API_KEY" content="<?php echo $google_map_key; ?>">
-	<?php } ?>
-	<?php if ( $favicon = get_field( 'favicon', 'option' ) ) { ?>
-	  <link rel="shortcut icon" href="<?php echo esc_url( wp_get_attachment_image_src( $favicon['ID'], 'full', '' )[0] ); ?>" type="image/png">
-	  <meta name="msapplication-TileColor" content="#da532c">
-	  <meta name="theme-color" content="#ffffff">
-	<?php } ?>
+	<?php
+	$google_map_key = get_field( 'google_map_key', 'option' );
+	if ( $google_map_key ) :
+		?>
+		<meta name="GOOGLE_API_KEY" content="<?php echo esc_html( $google_map_key ); ?>">
+		<?php
+	endif;
+	?>
+	<?php
+	$favicon = get_field( 'favicon', 'option' );
+	if ( $favicon ) :
+		?>
+		<link rel="shortcut icon" href="<?php echo esc_url( wp_get_attachment_image_src( $favicon['ID'], 'full', '' )[0] ); ?>" type="image/png">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		<?php
+	endif;
+	?>
 	<script>
 		// prettier-ignore
 		! function(e, n, o) {
@@ -148,10 +158,16 @@ if ( is_page_template( 'page-landing-page.php' ) ) {
 
 <main class="root 
 <?php
-if ( isset( $top_banner ) && $top_banner ) {
-	echo 'root-mg'; }
+if ( isset( $top_banner ) && $top_banner ) :
+	echo 'root-mg';
+endif;
 ?>
 "
-	  <?php if ( is_page( 104524 ) ) { ?>
+	<?php
+	if ( is_page( 104524 ) ) :
+		?>
 			itemscope itemtype="https://schema.org/FAQPage"
-	  <?php } ?>>
+		<?php
+	endif;
+	?>
+	>

@@ -1,23 +1,35 @@
-<!-- HEADER BEGINS-->
 <?php
-	$top_banner = get_field( 'top_banner', 'option' );
-	$email      = get_field( 'email', 'option' );
-	$phone      = get_field( 'phone', 'option' );
+/**
+ * The header for our theme.
+ *
+ * Displays all of the header nav section and menu.
+ *
+ * @package PLK
+ */
+
+$top_banner = get_field( 'top_banner', 'option' );
+$email      = get_field( 'email', 'option' );
+$phone      = get_field( 'phone', 'option' );
 ?>
 
 <header class="header
 	<?php
-	if ( isset( $top_banner ) && $top_banner ) {
-		echo ' bar-shown" style="--header-banner-height:45px';}
+	if ( isset( $top_banner ) && $top_banner ) :
+		echo ' bar-shown" style="--header-banner-height:45px';
+	endif;
 	?>
 ">
-	<?php if ( isset( $top_banner ) && $top_banner ) { ?>
+	<?php
+	if ( isset( $top_banner ) && $top_banner ) :
+		?>
 		<div class="header__banner">
 			<div class="container">
 				<div class="header__banner-text text-small text-reset"><?php echo esc_html( $top_banner ); ?></div><button class="header__banner-close" aria-label="Close Banner"></button>
 			</div>
 		</div>
-	<?php } ?>
+		<?php
+	endif;
+	?>
 	<div class="header__nav">
 		<div class="container">
 			<a class="header__logo-link" href="/" aria-label="Header Logo">
@@ -43,18 +55,24 @@
 					<?php aws_get_search_form( true ); ?>
 				</div>
 				<a class="btn btn--small btn--transparent header__nav-btn header__nav-private" href="/my-account/" aria-label="My Account">
-					<?php if ( is_user_logged_in() ) { ?>
-						<?php $current_user = wp_get_current_user(); ?>
+					<?php
+					if ( is_user_logged_in() ) :
+						global $current_user;
+						?>
 						<span class="header__nav-btn-text">My Account</span>
-					<?php } else { ?>
+						<?php
+					else :
+						?>
 						<span class="header__nav-btn-text">Sign in </span>
-					<?php } ?>
+						<?php
+					endif;
+					?>
 					<span class="header__nav-btn-icon icon-private desktop-hide"></span>
 				</a>
 				<a class="btn btn--small btn--primary header__nav-btn header__nav-basket-btn" href="/cart/" aria-label="Cart Button">
 					<?php $items_count = WC()->cart->get_cart_contents_count(); ?>
 					<span class="header__nav-btn-text">Cart</span>
-					<span class="header__nav-backet-count woo-cart-items-count"><?php echo $items_count ? $items_count : '0'; ?></span>
+					<span class="header__nav-backet-count woo-cart-items-count"><?php echo esc_attr( $items_count ? $items_count : '0' ); ?></span>
 					<span class="header__nav-btn-icon icon-basket"></span>
 				</a>
 				<button class="header__nav-burger desktop-hide" aria-label="NAV BURGER DELUXE">
@@ -71,11 +89,10 @@
 					<?php aws_get_search_form( true ); ?>
 				</div>
 				<?php
-				if ( isset( $_SERVER['REQUEST_URI'] ) ) {
-					$url = wp_unslash( sanitize_text_field( $_SERVER['REQUEST_URI'] ) );
-				} else {
-					$url = '';
-				}
+				$url = '';
+				if ( isset( $_SERVER['REQUEST_URI'] ) ) :
+					$url = sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) );
+				endif;
 				$url_absolute    = home_url() . $url;
 				$menu_locationss = get_nav_menu_locations();
 				$menu_id         = $menu_locationss['header_menu'] ?? null;
@@ -87,40 +104,42 @@
 					<?php foreach ( $header_menu as $nav_item ) { ?>
 						<?php $class = $url === $nav_item['url'] || $url_absolute === $nav_item['url'] ? 'active' : ''; ?>
 						<?php if ( isset( $nav_item['submenu'] ) && $nav_item['submenu'] ) { ?>
-							<li class="header__nav-item <?php echo $class; ?>">
+							<li class="header__nav-item <?php echo esc_attr( $class ); ?>">
 								<?php
-								$needle_array      = array( ' - 2cols', ' - 3cols', ' - 4cols' );
-								$repl_array        = array( '', '', '' );
-								$link              = new Link(
+								$needle_array       = array( ' - 2cols', ' - 3cols', ' - 4cols' );
+								$repl_array         = array( '', '', '' );
+								$mlink              = new Link(
 									array(
 										'url'    => $nav_item['url'],
 										'target' => $nav_item['target'],
 										'title'  => str_replace( $needle_array, $repl_array, $nav_item['title'] ),
 									)
 								);
-								$link->class       = 'header__nav-link link-reset';
-								$link->wrapper_end = '<span class="icon-arrow-up mobile-hide"></span><span class="icon-nav-arrow desktop-hide"></span>';
-								echo $link->a();
+								$mlink->class       = 'header__nav-link link-reset';
+								$mlink->wrapper_end = '<span class="icon-arrow-up mobile-hide"></span><span class="icon-nav-arrow desktop-hide"></span>';
+								echo $mlink->a();
 								?>
 								<div class="header__nav-dropdown">
 									<?php
 									$additional_class = '';
-									if ( strpos( $nav_item['title'], ' - 2cols' ) !== false ) {
+									if ( strpos( $nav_item['title'], ' - 2cols' ) !== false ) :
 										$additional_class = ' header__nav-dropdown-wrapper_2col';
-									}
-									if ( strpos( $nav_item['title'], ' - 3cols' ) !== false ) {
+									endif;
+									if ( strpos( $nav_item['title'], ' - 3cols' ) !== false ) :
 										$additional_class = ' header__nav-dropdown-wrapper_3col';
-									}
-									if ( strpos( $nav_item['title'], ' - 4cols' ) !== false ) {
+									endif;
+									if ( strpos( $nav_item['title'], ' - 4cols' ) !== false ) :
 										$additional_class = ' header__nav-dropdown-wrapper_4col';
-									}
+									endif;
 									?>
-									<div class="header__nav-dropdown-wrapper<?php echo $additional_class; ?>">
+									<div class="header__nav-dropdown-wrapper<?php echo esc_attr( $additional_class ); ?>">
 										<div class="header__nav-dropdown-back desktop-hide"><button class="header__nav-dropdown-back-link btn btn--arrow"><span class="icon-nav-arrow"></span><span>Back to the main menu</span></button></div>
-										<?php foreach ( $nav_item['submenu'] as $submenu_item ) { ?>
-											<?php $class = $url === $submenu_item['url'] || $url_absolute === $submenu_item['url'] ? 'active' : ''; ?>
-											<?php if ( isset( $submenu_item['submenu'] ) && $submenu_item['submenu'] ) { ?>
-												<?php $fl_submenu_before = true; ?>
+										<?php
+										foreach ( $nav_item['submenu'] as $submenu_item ) {
+											$class = $url === $submenu_item['url'] || $url_absolute === $submenu_item['url'] ? 'active' : '';
+											if ( isset( $submenu_item['submenu'] ) && $submenu_item['submenu'] ) {
+												$fl_submenu_before = true;
+												?>
 												<div class="header__nav-dropdown-inner">
 													<?php
 													$s_link              = new Link(
@@ -137,7 +156,7 @@
 													<ul class="header__nav-dropdown-list list-reset">
 														<?php foreach ( $submenu_item['submenu'] as $subsubmenuitem ) { ?>
 															<?php $class = $url === $subsubmenuitem['url'] || $url_absolute === $subsubmenuitem['url'] ? 'active' : ''; ?>
-															<li class="header__nav-dropdown-item <?php echo $class; ?>">
+															<li class="header__nav-dropdown-item <?php echo esc_attr( $class ); ?>">
 																<?php
 																$ss_link        = new Link(
 																	array(
@@ -155,42 +174,41 @@
 												</div>
 											<?php } else { ?>
 												<?php
-												$dLink         = new Link(
+												$dlink         = new Link(
 													array(
 														'url' => $submenu_item['url'],
 														'target' => $submenu_item['target'],
 														'title' => str_replace( array( ' (mob)', ' (all)' ), '', $submenu_item['title'] ),
 													)
 												);
-												$dLink->class  = 'header__nav-dropdown-link header__nav-dropdown-link--title link-reset heading-tiny' . ( strpos( $submenu_item['title'], ' (mob)' ) === false ? '' : ' desktop-hide' ) . ( $fl_submenu_before ? ' mt' : '' );
-												$dLink->class .= strpos( $submenu_item['title'], ' (all)' ) === false ? '' : ' header__nav-dropdown-link_all';
-												echo $dLink->a();
-												?>
-												<?php $fl_submenu_before = false; ?>
-											<?php } ?>
-											
-									   <?php } ?>
+												$dlink->class  = 'header__nav-dropdown-link header__nav-dropdown-link--title link-reset heading-tiny' . ( strpos( $submenu_item['title'], ' (mob)' ) === false ? '' : ' desktop-hide' ) . ( $fl_submenu_before ? ' mt' : '' );
+												$dlink->class .= strpos( $submenu_item['title'], ' (all)' ) === false ? '' : ' header__nav-dropdown-link_all';
+												echo $dlink->a();
+												$fl_submenu_before = false;
+											}
+										}
+										?>
 									</div>
 								</div>
 							</li>
 						<?php } else { ?>
-							<li class="nav-item nav-item_main <?php echo $class; ?>">
+							<li class="nav-item nav-item_main <?php echo esc_attr( $class ); ?>">
 								<?php
-									$link        = new Link(
+									$rlink        = new Link(
 										array(
 											'url'    => $nav_item['url'],
 											'target' => $nav_item['target'],
 											'title'  => $nav_item['title'],
 										)
 									);
-									$link->class = 'header__nav-link link-reset';
-									echo $link->a();
+									$rlink->class = 'header__nav-link link-reset';
+									echo $rlink->a();
 								?>
 							</li>
 						<?php } ?>
 					<?php } ?>
 					<?php
-					$url                = $_SERVER['REQUEST_URI'];
+					$url                = sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) );
 					$url_absolute       = home_url() . $url;
 					$menu_locationss    = get_nav_menu_locations();
 					$menu_id            = $menu_locationss['header_menu_mobile'] ?? null;
@@ -201,17 +219,17 @@
 							<ul class="header__nav-mobile-menu list-reset">
 								<?php
 								foreach ( $header_menu_mobile as $nav_item ) {
-									$class = $url == $nav_item['url'] || $url_absolute === $nav_item['url'] ? 'active' : '';
-									echo '<li class="header__nav-mobile-menu-item ' . $class . '">';
-										$link        = new Link(
+									$class = $url === $nav_item['url'] || $url_absolute === $nav_item['url'] ? 'active' : '';
+									echo '<li class="header__nav-mobile-menu-item ' . esc_attr( $class ) . '">';
+										$vlink        = new Link(
 											array(
 												'url'    => $nav_item['url'],
 												'target' => $nav_item['target'],
 												'title'  => $nav_item['title'],
 											)
 										);
-										$link->class = 'header__nav-mobile-menu-link link-reset' . ( stripos( $nav_item['title'], ' view all' ) === false ? '' : ' header__nav-dropdown-link_all' );
-										echo $link->a();
+										$vlink->class = 'header__nav-mobile-menu-link link-reset' . ( stripos( $nav_item['title'], ' view all' ) === false ? '' : ' header__nav-dropdown-link_all' );
+										echo $vlink->a();
 									echo '</li>';
 								}
 								?>
