@@ -9,9 +9,12 @@ import { imageTextParallax } from './components/image-text.js';
 import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
 import { vienSlider } from './components/vien';
+import { Header } from './components/header';
 
 let Main = {
   init: async function () {
+    // Header
+    Header();
     
     // About us parallax 
     aboutUsParallax();
