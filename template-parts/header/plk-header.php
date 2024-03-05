@@ -160,7 +160,7 @@ $phone      = get_field( 'phone', 'option' );
 																<?php
 																$ss_link        = new Link(
 																	array(
-																		'url' => $subsubmenuitem['url'],
+																		'url'    => $subsubmenuitem['url'],
 																		'target' => $subsubmenuitem['target'],
 																		'title' => $subsubmenuitem['title'],
 																	)
@@ -215,7 +215,9 @@ $phone      = get_field( 'phone', 'option' );
 					$header_menu_mobile = wp_get_menu_array( $menu_id ) ?? null;
 					?>
 					<li class="desktop-hide">
-						<?php if ( $header_menu_mobile ) { ?>
+						<?php
+						if ( $header_menu_mobile ) :
+							?>
 							<ul class="header__nav-mobile-menu list-reset">
 								<?php
 								foreach ( $header_menu_mobile as $nav_item ) {
@@ -234,8 +236,10 @@ $phone      = get_field( 'phone', 'option' );
 								}
 								?>
 							</ul>
-						<?php } ?>
-											</li>
+							<?php
+						endif;
+						?>
+					</li>
 				</ul>
 			</nav>
 			<?php } ?>

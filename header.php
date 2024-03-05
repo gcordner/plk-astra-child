@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
 	?>
 	<?php
 	$favicon = get_field( 'favicon', 'option' );
-	if ( $favicon ) :
+	if ( $favicon && is_array( $favicon ) ) :
 		?>
 		<link rel="shortcut icon" href="<?php echo esc_url( wp_get_attachment_image_src( $favicon['ID'], 'full', '' )[0] ); ?>" type="image/png">
 		<meta name="msapplication-TileColor" content="#da532c">
