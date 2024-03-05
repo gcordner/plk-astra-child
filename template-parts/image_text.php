@@ -13,95 +13,105 @@ $block_title       = $args['group']['title'] ?? null;
 $text              = $args['group']['text'] ?? null;
 $btn_link          = $args['group']['link'] ?? null;
 $mobile_image_down = $args['group']['mobile_image_down'] ?? null;
-?>
 
-<?php if ( $big_image ) { ?>
+if ( $big_image ) :
+	?>
 	<section class="infoblock infoblock--reverse infoblock--more-image">
-		<?php if ( $image ) { ?>
-			<picture>
-				<source media="(max-width: 500px)" srcset="<?php echo wp_get_attachment_image_url( $image['ID'], 'medium' ); ?>, <?php echo wp_get_attachment_image_url( $image['ID'], 'medium_large' ); ?> 2x">
-				<?php
-				$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-				echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
-				?>
-							</picture>
-		<?php } ?>
-		<div class="container">
-			<div class="infoblock__wrapper">
-				<?php if ( $block_title ) { ?>
-					<h2 class="heading-2 infoblock__heading"><?php echo esc_html( $block_title ); ?></h2>
-				<?php } ?>
-				<?php echo str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption">', '<p class="text-large infoblock__caption">' ), $text ); ?>
-			</div>
-		</div>
+	<?php
+	if ( $image ) :
+		get_template_part(
+			'template-parts/sub-templates/image_text',
+			'picture',
+			array(
+				'image'       => $image,
+				'block_title' => $block_title,
+			)
+		);
+	endif;
+	get_template_part(
+		'template-parts/sub-templates/image_text',
+		'container',
+		array(
+			'image'       => $image,
+			'block_title' => $block_title,
+			'text'        => $text,
+			'btn_link'    => $btn_link,
+		)
+	);
+	?>
 	</section>
-<?php } else { ?>
-	<?php if ( ! $reverse ) { ?>
-	<section class="infoblock <?php echo $mobile_image_down ? 'infoblock--about' : ''; ?> section-margin">
-		<?php if ( $image ) { ?>
-			<picture>
-				<source media="(max-width: 500px)" srcset="<?php echo wp_get_attachment_image_url( $image['ID'], 'medium' ); ?>, <?php echo wp_get_attachment_image_url( $image['ID'], 'medium_large' ); ?> 2x">
-				<?php
-				$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-				echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
-				?>
+	<?php
+else :
+	if ( ! $reverse ) :
+		?>
+		<section class="infoblock <?php echo $mobile_image_down ? 'infoblock--about' : ''; ?> section-margin section-padding">
+		<?php
+		if ( $image ) :
+			get_template_part(
+				'template-parts/sub-templates/image_text',
+				'picture',
+				array(
+					'image'       => $image,
+					'block_title' => $block_title,
+					'small_image' => $small_image,
+				)
+			);
+		endif;
+		get_template_part(
+			'template-parts/sub-templates/image_text',
+			'container',
+			array(
+				'image'       => $image,
+				'block_title' => $block_title,
+				'text'        => $text,
+				'btn_link'    => $btn_link,
+			)
+		);
+		?>
+		</section>
+		<?php
+	else :
+		?>
+		<section class="aboutinfo section-padding">
+			<div class="ast-container">
+				<div class="container">
+					<div class="aboutinfo__wrapper section-padding-top">
+						<div class="aboutinfo__text">
+							<?php
+							if ( $block_title ) :
+								?>
+								<h2 class="heading-2 aboutinfo__heading"><?php echo esc_html( $block_title ); ?></h2>
+							<?php
+							endif;
+							echo wp_kses_post( str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption aboutinfo__caption">', '<p class="text-large infoblock__caption aboutinfo__caption">' ), $text ) );
+							if( !empty( $btn_link ) ):
+								?>
+								<a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--middle btn--primary infoblock__btn desktop"><?php echo esc_html( $btn_link['title'] ); ?></a>
+							<?php
+							endif;
+							?>
+						</div>
+						<?php
+						if ( $image ) :
+							?>
+							<picture class="aboutinfo__picture aboutinfo__image">
+								<?php
+								$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
+								echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
+								?>
 							</picture>
-		<?php } ?>
-		<?php if ( $small_image ) { ?>
-			<div class="infoblock__parallax">
-				<picture>
-				<?php
-				$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-				echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
-				?>
-								</picture>
-			</div>
-		<?php } ?>
-		<div class="container">
-			<div class="infoblock__wrapper">
-				<?php if ( $block_title ) { ?>
-					<h2 class="heading-2 infoblock__heading"><?php echo esc_html( $block_title ); ?></h2>
-					<h3>Reverse should be False.</h3>
-				<?php } ?>
-				<?php echo str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption">', '<p class="text-large infoblock__caption">' ), $text ); ?>
-				<?php
-				if ( $btn_link ) {
-					$a_link        = new Link( $btn_link );
-					$a_link->class = 'btn btn--middle btn--primary infoblock__btn';
-					echo $a_link->a();
-				}
-				?>
-			</div>
-		</div>
-	</section>
-	<?php } else { ?>
-	<section class="aboutinfo section-padding">
-		<div class="container">
-			<div class="aboutinfo__wrapper section-padding-top">
-				<div class="aboutinfo__text">
-					<?php if ( $block_title ) { ?>
-						<h2 class="heading-2 aboutinfo__heading"><?php echo esc_html( $block_title ); ?></h2>
-						<h3>Reverse should be True.</h3>
-					<?php } ?>
-					<?php echo str_replace( array( '<p>', '<strong>' ), array( '<p class="infoblock__caption aboutinfo__caption">', '<p class="text-large infoblock__caption aboutinfo__caption">' ), $text ); ?>
+							<?php
+						endif;
+						if( !empty( $btn_link ) ):
+							?>
+							<a href="<?php echo esc_url( $btn_link['url'] ); ?>" class="btn btn--middle btn--primary infoblock__btn mobile"><?php echo esc_html( $btn_link['title'] ); ?></a>
+						<?php
+						endif;
+						?>
+					</div>
 				</div>
-				<?php if ( $image ) { ?>
-					<picture class="aboutinfo__picture aboutinfo__image">
-					<?php
-					$alt_text = ! empty( $image['alt'] ) ? $image['alt'] : $block_title;
-					echo wp_get_attachment_image( $image['ID'], 'large', '', array( 'alt' => $alt_text ) );
-					?>
-					</picture>
-				<?php } ?>
-				<?php
-				if ( $btn_link ) {
-					$a_link        = new Link( $btn_link );
-					$a_link->class = 'btn btn--middle btn--primary infoblock__btn';
-					echo $a_link->a();
-				}
-				?>
 			</div>
-		</div>
-	</section>
-	<?php } ?>
-<?php } ?>
+		</section>
+		<?php
+	endif;
+endif;
