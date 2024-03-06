@@ -27,7 +27,7 @@
 
             &::before,
             &::after {
-                background-color: $neutral-warm-light;
+                background-color: var(--ast-global-color-4);
             }
         }
     }
