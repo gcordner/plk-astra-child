@@ -176,3 +176,22 @@ function replace_astra_archive_function() {
 	add_action( 'astra_archive_header', 'custom_astra_archive_page_info', 11 );
 }
 add_action( 'after_setup_theme', 'replace_astra_archive_function' );
+
+add_action( 'astra_header_before', 'add_script_before_header' );
+function add_script_before_header() {
+	// if ( isset( $top_banner ) && $top_banner ) :
+		?>
+		<div class="header__banner">
+			<div class="container">
+				<div class="header__banner-text text-small text-reset"><?php echo esc_html( $top_banner ); ?></div><button class="header__banner-close" aria-label="Close Banner"></button>
+			</div>
+		</div>
+		<?php
+	// endif;
+}
+
+// add_action( 'astra_masthead_content', 'test', 9999 );
+function test()
+{
+	echo '<div style="width: 200px; height: 30px; background-color: red">Test</div>';
+}

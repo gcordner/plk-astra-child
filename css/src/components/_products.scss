@@ -83,6 +83,10 @@
 
     &.btn--arrow {
         color: $color-green-dark;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     @include medium {
