@@ -179,7 +179,7 @@ add_action( 'after_setup_theme', 'replace_astra_archive_function' );
 
 add_action( 'astra_header_before', 'add_script_before_header' );
 function add_script_before_header() {
-	// if ( isset( $top_banner ) && $top_banner ) :
+	if ( isset( $top_banner ) && $top_banner ) :
 		?>
 		<div class="header__banner">
 			<div class="container">
@@ -187,7 +187,23 @@ function add_script_before_header() {
 			</div>
 		</div>
 		<?php
-	// endif;
+	endif;
+}
+
+add_filter( 'aws_admin_page_options', 'my_aws_admin_page_options' );
+function my_aws_admin_page_options( $options ) {
+    $options['general'][] = array(
+        "name" => __( "Show on mobile", "advanced-woo-search" ),
+        "desc"  => __( "Show or not search form on mobile devices.", "advanced-woo-search" ),
+        "id"   => "show_on_mobile",
+        "value" => 'true',
+        "type"  => "select",
+        'choices' => array(
+            'true'  => __( 'Show', 'advanced-woo-search' ),
+            'false' => __( 'Hide', 'advanced-woo-search' ),
+        )
+    );
+    return $options;
 }
 
 // add_action( 'astra_masthead_content', 'test', 9999 );
