@@ -60,13 +60,61 @@ echo esc_attr(
 );
 ?>
 >
+	<header class="header
 	<?php
-	astra_header_before();
+	if ( isset( $top_banner ) && $top_banner ) :
+		echo ' bar-shown" style="--header-banner-height:45px';
+	endif;
+	?>
+	">
+	<?php
+	if ( isset( $top_banner ) && $top_banner ) :
+		?>
+		<div class="header__banner">
+			<div class="container">
+				<div class="header__banner-text text-small text-reset"><?php echo esc_html( $top_banner ); ?></div><button class="header__banner-close" aria-label="Close Banner"></button>
+			</div>
+		</div>
+		<?php
+	endif;
+	?>
+	<div class="header__nav">
+		<div class="ast-container">
+			<div class="container">
+				<div class="header__logo-link">
+					<?php Astra_Builder_UI_Controller::render_site_identity( $device = 'desktop' );?>
+				</div>
 
-	astra_header();
-
-	astra_header_after();
-
-	astra_content_before();
-
-	astra_content_top();
+				<div class="header__nav-wrapper">
+					<div class="header__nav-search mobile-hide">
+						<?php aws_get_search_form( true ); ?>
+					</div>
+					<a class="btn btn--small btn--transparent header__nav-btn header__nav-private" href="/my-account/" aria-label="My Account">
+						<?php
+						if ( is_user_logged_in() ) :
+							global $current_user;
+							?>
+							<span class="header__nav-btn-text">My Account</span>
+							<?php
+						else :
+							?>
+							<span class="header__nav-btn-text">Sign in</span>
+							<?php
+						endif;
+						?>
+						<span class="header__nav-btn-icon icon-private desktop-hide"></span>
+					</a>
+					<a class="btn btn--small btn--primary header__nav-btn header__nav-basket-btn" href="/cart/" aria-label="Cart Button">
+						<?php $items_count = WC()->cart->get_cart_contents_count(); ?>
+						<span class="header__nav-btn-text">Cart</span>
+						<span class="header__nav-backet-count woo-cart-items-count"><?php echo esc_attr( $items_count ? $items_count : '0' ); ?></span>
+						<span class="header__nav-btn-icon icon-basket"></span>
+					</a>
+					<button class="header__nav-burger desktop-hide" aria-label="NAV BURGER DELUXE">
+						<span class="header__nav-burger-line header__nav-burger-line--top"></span>
+						<span class="header__nav-burger-line header__nav-burger-line--bottom"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
