@@ -9,6 +9,7 @@ import { imageTextParallax } from './components/image-text.js';
 import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
 import { vienSlider } from './components/vien';
+import { hideContactForm7Message } from './components/footer';
 
 let Main = {
   init: async function () {
@@ -27,6 +28,9 @@ let Main = {
 
     // Vien info slider
     vienSlider();
+
+    // Footer
+    hideContactForm7Message();
     
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();

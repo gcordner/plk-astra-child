@@ -117,7 +117,6 @@
   }
 
   .footer__form-label {
-    margin-bottom: 13px;
     display: block;
 
     &.text-small {
@@ -233,15 +232,15 @@
     border-width: 0px;
     position: absolute;
     bottom: 0;
-    right: 6.4%;
+    // right: 6.4%;
     top: 82px;
 
     @include max-screen($small-size) {
-      right: 29%;
+      // right: 29%;
       top: 78px;
     }
     @include max-screen($smallest-size) {
-      right: 0;
+      // right: 0;
       top: 78px;
     }
 
@@ -297,13 +296,25 @@
     bottom: 8px;
     left: 50%;
     z-index: 10;
-    transform: translate(-50%,200%);
+    transform: translate(-50%, 200%);
     font-size: 14px;
     font-weight: 600;
     text-align: center;
     background-color: #fff;
     transition: .3s ease;
-    border-color: #ffb900;
+    border-color: #ffb900!important;
+  }
+  
+  form .wpcf7-response-output.active {
+    transform: translate(-50%, 0%);
+  }
+
+  .wpcf7 form>p {
+    margin-bottom: 0!important;
+  }
+
+  p {
+    margin-bottom: 0!important;
   }
 }
 
@@ -318,9 +329,15 @@
   @include max-screen($small-size) {
     grid-template-columns: repeat( 1,1fr );
   }
+  @media (max-width: 921px) {
+    grid-template-columns: repeat( 1,1fr );
+  }
 }
 .site-above-footer-wrap[data-section="section-above-footer-builder"].ast-footer-row-tablet-stack .site-footer-section {
   @include max-screen($small-size) {
+    margin-bottom: 0;
+  }
+  @media (max-width: 921px) {
     margin-bottom: 0;
   }
 }
@@ -328,4 +345,24 @@
   @include max-screen($small-size) {
     align-items: self-start;
   }
+  @media (max-width: 921px) {
+    align-items: self-start;
+  }
+}
+
+.site-footer-above-section-1 .site-footer-section .site-footer-section-1 {
+  @media (max-width: 921px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.site-above-footer-wrap[data-section="section-above-footer-builder"].ast-footer-row-tablet-stack .site-footer-section {
+  @media (max-width: 921px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.footer-widget-area[data-section="sidebar-widgets-footer-widget-1"] {
+  display: flex;
+  flex-wrap: wrap;
 }
