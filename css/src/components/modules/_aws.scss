@@ -14,6 +14,7 @@
     font-size: 14px !important;
     line-height: 1.4;
     color: $neutral-green-dark;
+    margin-top: -20px!important;
 
     &::placeholder {
       color: $neutral-green-dark;
@@ -140,6 +141,6 @@
 }
 .ast-search-menu-icon {
   .search-form {
-    border: none;
+      border: none;
   }
 }
