@@ -176,3 +176,38 @@ function replace_astra_archive_function() {
 	add_action( 'astra_archive_header', 'custom_astra_archive_page_info', 11 );
 }
 add_action( 'after_setup_theme', 'replace_astra_archive_function' );
+
+add_action( 'astra_header_before', 'add_script_before_header' );
+function add_script_before_header() {
+	if ( isset( $top_banner ) && $top_banner ) :
+		?>
+		<div class="header__banner">
+			<div class="container">
+				<div class="header__banner-text text-small text-reset"><?php echo esc_html( $top_banner ); ?></div><button class="header__banner-close" aria-label="Close Banner"></button>
+			</div>
+		</div>
+		<?php
+	endif;
+}
+
+add_filter( 'aws_admin_page_options', 'my_aws_admin_page_options' );
+function my_aws_admin_page_options( $options ) {
+    $options['general'][] = array(
+        "name" => __( "Show on mobile", "advanced-woo-search" ),
+        "desc"  => __( "Show or not search form on mobile devices.", "advanced-woo-search" ),
+        "id"   => "show_on_mobile",
+        "value" => 'true',
+        "type"  => "select",
+        'choices' => array(
+            'true'  => __( 'Show', 'advanced-woo-search' ),
+            'false' => __( 'Hide', 'advanced-woo-search' ),
+        )
+    );
+    return $options;
+}
+
+// add_action( 'astra_masthead_content', 'test', 9999 );
+function test()
+{
+	echo '<div style="width: 200px; height: 30px; background-color: red">Test</div>';
+}
