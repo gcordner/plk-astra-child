@@ -10,6 +10,7 @@ import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
 import { vienSlider } from './components/vien';
 import { Header } from './components/header';
+import { hideContactForm7Message } from './components/footer';
 
 let Main = {
   init: async function () {
@@ -30,6 +31,9 @@ let Main = {
 
     // Vien info slider
     vienSlider();
+
+    // Footer
+    hideContactForm7Message();
     
     // Initialize the DisplayLabel component
     const displayLabel = new DisplayLabel();
