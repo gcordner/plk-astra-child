@@ -9,13 +9,14 @@ import { imageTextParallax } from './components/image-text.js';
 import { featureSlider } from './components/feature';
 import { productByCategorySlider } from './components/products';
 import { vienSlider } from './components/vien';
-import { Header } from './components/header';
+import { Header, addCustomClassesToMenu } from './components/header';
 import { hideContactForm7Message } from './components/footer';
 
 let Main = {
   init: async function () {
     // Header
     Header();
+    addCustomClassesToMenu();
     
     // About us parallax 
     aboutUsParallax();
