@@ -149,6 +149,24 @@
     &:hover {
       border: 1px solid var(--ast-global-color-0)!important;
     }
+  } 
+
+  .mini_cart_item {
+    a {
+      .ast-product-name {
+        color: $neutral-green-contrast;
+
+        &:hover {
+          color: $neutral-green;
+        }
+      }
+      text-decoration: none;
+      color: $neutral-green-contrast;
+      
+      &:hover {
+        color: $neutral-green;
+      }
+    }
   }
 }
 
@@ -285,6 +303,10 @@
           order: 1;
           display: flex!important;
           transform: rotate(-90deg);
+          margin-left: 8px;
+          svg {
+            margin-left: unset;
+          }
         }
         .menu-text {
           order: 0; 
@@ -398,7 +420,7 @@
     }
   }
 
-  ul.stack-on-mobile  {
+  #ast-hf-mobile-menu {
     .ast-menu-toggle {
       transform: rotate(-90deg);
       transition: all .2s ease-in-out;
@@ -458,6 +480,16 @@
       .ast-menu-toggle {
         transform: rotate(0deg);
         transition: all .2s ease-in-out;
+
+        .sub-menu {
+          transform: rotate(-90deg);
+          .ast-submenu-expanded {
+            .ast-menu-toggle {
+              transform: rotate(0deg);
+              transition: all .2s ease-in-out;
+            }
+          }
+        }
       }
 
       ul > li > button {
@@ -475,6 +507,33 @@
       }
       
     }
+
+    .mobile-menu-link {
+      width: 100%;
+      font-size: 16px;
+      line-height: 1.5;
+      display: block;
+      color: #042825;
+      border-bottom: none;
+
+      &.mt-40 {
+        margin-top: 40px;
+      }
+    }
+  }
+}
+#ast-mobile-header {
+  .ast-button-wrap {
+    border-radius: 50%;
+    border: 1px solid $primary-1;
+    background: $primary-1;
+
+    .ast-mobile-svg {
+      fill: $white;
+    }
+  }
+  .ast-header-search {
+    width: 100%;
   }
 }
 
@@ -507,7 +566,31 @@
 }
 
 .ast-inline-search {
+  @include max-screen($smallest-size) {
+    width: 100%;
+  }
+}
+.ast-main-header-nav-open {
+  overflow: hidden;
+}
+.ast-mobile-header-content {
   @include max-screen($small-size) {
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.2)!important;
+    position: absolute;
+  }
+  @include max-screen($smallest-size) {
+    width: 100%;
+  }
+
+  .ast-builder-menu-mobile {
+    background-color: $white;
+    @include max-screen($small-size) {
+      width: 55%;
+      z-index: 999;
+    }
+    @include max-screen($smallest-size) {
+      width: 100%;
+    }
   }
 }
