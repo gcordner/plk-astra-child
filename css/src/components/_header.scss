@@ -205,6 +205,13 @@
   }
 }
 
+.ast-sticky-active {
+  box-shadow: 4px 4px 9px hsla(0,0%,91.4%,.25);
+}
+.ast-primary-header-bar {
+  border: none;
+}
+
 .main-navigation {
   .main-header-menu  {
     display: flex;
