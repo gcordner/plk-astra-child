@@ -212,6 +212,15 @@
   border: none;
 }
 
+header .custom-logo-link img {
+  @include max-screen(450px) {
+    max-width: 150px;
+  }
+  @include max-screen(380px) {
+    max-width: 145px;
+  }
+}
+
 .main-navigation {
   .main-header-menu  {
     display: flex;
