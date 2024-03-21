@@ -129,7 +129,7 @@ export const Header = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const bodyOpenBlock = document.querySelector('body');
 
-        rootElement.addEventListener('click', e => {
+        rootElement && rootElement.addEventListener('click', e => {
             const target = e.target;
             if (!target.closest('.header__nav-list') && !target.closest('.header__nav-burger')) {
             bodyOpenBlock.classList.remove('open-menu')
@@ -148,5 +148,28 @@ export const Header = () => {
             clearAllBodyScrollLocks()
             }
         })
+    });
+}
+
+export const addCustomClassesToMenu = () => {
+    const topLevelLiElements = document.querySelectorAll('ul#ast-hf-menu-1 > li');
+    
+    topLevelLiElements && topLevelLiElements.forEach((li, i) => {
+        if (li.classList.contains('astra-megamenu-li')) {
+            const elem = li.querySelector('.astra-megamenu');
+            if(i === 0) {
+                if(elem) {
+                    elem.classList.add('first-megamenu');
+                }
+            }
+            if(i === 2) {
+                if(elem) {
+                    elem.classList.add('second-megamenu');
+                }
+            }
+            li.classList.add('with-megamenu');
+        } else {
+            li.classList.add('without-megamenu');
+        }
     });
 }
