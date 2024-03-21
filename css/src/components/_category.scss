@@ -1,3 +1,24 @@
+.tax-product_cat {
+    .ast-archive-description {
+        padding: 0!important;
+        margin-top: 0!important;
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+    
+    #primary {
+        margin: auto;
+    }
+    .ast-left-sidebar #primary {
+        // padding-left: 0;
+    }
+    @media (min-width: 922px){
+        .ast-left-sidebar #primary {
+            border-left: 0!important;
+        }
+    }
+}
+
 .category {
     &--brands {
         .category__wrapper {
