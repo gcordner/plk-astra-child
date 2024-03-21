@@ -1,0 +1,190 @@
+.ast-header-account-wrap {
+  .ast-account-action-link {
+    @include button-styles;
+    background-color: $white;
+    padding: 13px 25px;
+    color: $color-green-dark;
+    font-weight: 500;
+    
+    &:hover {
+      background-color: $color-green-dark;
+      color: $white;
+    }
+
+    @include medium {
+      box-shadow: unset;
+      padding: 13px 0px!important;
+    }
+  }
+  .ast-header-account-text {
+    color: unset!important;
+  }
+}
+.site-header-section {
+  .ast-header-account {
+    padding-left: 0px;
+  }
+}
+.ast-header-woo-cart {
+  padding-left: 0px;
+}
+.ast-site-header-cart.ast-menu-cart-outline .ast-addon-cart-wrap {
+  position: relative;
+  background-color: var(--ast-global-color-0);
+  overflow: hidden;
+  border-color: transparent;
+  z-index: 1;
+  box-shadow: inset 0 0 0 1px var(--ast-global-color-0);
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 48px;
+  border-width: 0;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    background-color: #042825;
+  }
+
+  @include medium {
+    background-color: $white;
+    box-shadow: unset;
+    padding: 0;
+  }
+}
+.ast-icon  {
+  &.icon-cart {
+    margin-right: 8px;
+    color: $white;
+
+    @include medium{
+      margin-right: 20px;
+
+    }
+  }
+}
+.ast-addon-cart-wrap i.astra-icon:after {
+  margin-top: 18px;
+  color: $white;
+  box-shadow: none!important;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: unset;
+  background-color: unset;
+  transition: all .3s ease-in-out;
+  
+  @include medium{
+    color: var(--ast-global-color-0)!important;
+    background-color: $white!important;
+    right: 0;
+  }
+}
+.ast-header-account-type-icon {
+  path {
+    fill: var(--ast-global-color-0)!important;
+  }
+
+  &:hover{
+    path {
+      fill: $white!important;
+    }
+  }
+  svg {
+    @include medium {
+      width: 22px!important;
+      height: 22px!important;
+    }
+  }
+}
+.ast-icon-shopping-cart .ast-icon svg {
+  @include medium {
+    path {
+      fill: var(--ast-global-color-0)!important;
+    }
+    width: 3zpx!important;
+    height: 32px!important;
+  }
+}
+.woocommerce.widget_shopping_cart .cart_list li a.remove {
+  top: 84px;
+  right: -3px;
+  
+  @include max-screen($small-size) {
+    top: 1.1rem!important;
+  }
+}
+.ast-site-header-cart-data {
+  bdi {
+    clear: both;
+    display: block;
+  }
+  .qib-button-wrapper {
+    margin-bottom: 8px;
+
+    @include medium {
+      display: none;
+    }
+  }
+  .qib-button {
+    display: none;
+  }
+  .wqpmb_input_text {
+    border: 1px solid var(--ast-global-color-0)!important;
+
+    @include medium {
+      border: 1px solid var(--ast-global-color-0)!important;
+    }
+  }
+  .button {
+    text-decoration: none;
+  }
+
+  .widget_shopping_cart
+  .checkout {
+    border: 1px solid var(--ast-global-color-0);
+    
+    &:hover {
+      border: 1px solid var(--ast-global-color-0)!important;
+    }
+
+    
+  }
+}
+
+.astra-cart-drawer.active {
+  width: 60%;
+}
+.astra-cart-drawer-content {
+  .qib-button {
+    display: none;
+  }
+  .wqpmb_input_text {
+    border: 1px solid var(--ast-global-color-0)!important;
+  }
+  .button {
+    text-decoration: none;
+  }
+
+  @include max-screen($small-size) {
+    .woocommerce-mini-cart__buttons {
+      width: 60%;
+      margin: auto;
+    }
+  }
+  @include max-screen($smallest-size) {
+    .woocommerce-mini-cart__buttons {
+      width: 70%;
+      margin: auto;
+    }
+  }
+}
+
+.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart-item .ast-mini-cart-price-wrap {
+  margin-top: 1.2rem;
+  @include max-screen($smallest-size) {
+    float: left;
+  }
+}

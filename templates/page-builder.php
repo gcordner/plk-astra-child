@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-</div><!-- closes ast-container div opened in header.php -->
+<!--</div> closes ast-container div opened in header.php -->
 	<div id="primary" <?php astra_primary_class(); ?>>
 	<?php
 	if ( $flexible = get_field( 'flexible' ) ) {
@@ -31,5 +31,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <!--BEGIN FOOTER -->
-<div class="ast-container"><!-- new ast-container div -->
+<!--<div class="ast-container"> new ast-container div -->
 <?php get_footer(); ?>
