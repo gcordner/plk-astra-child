@@ -41,38 +41,47 @@ get_template_part(
 )
 ?>
 <section class="category <?php echo $dysplay_type == 'subcategories' ? 'category--brands' : ''; ?> section-padding">
-	<div class="container">
-		<div class="category__wrapper">
-			<?php if ( $dysplay_type != 'subcategories' ) { ?>
-				<div class="category__filter">
-					<?php dynamic_sidebar( 'wc_categories_sidebar' ); ?>
-				</div>
-			<?php } ?>
-			<div class="category__products">
+	<div class="ast-container">
+		<div class="container">
+			<div class="category__wrapper">
 				<?php if ( $dysplay_type != 'subcategories' ) { ?>
-					<div class="category__products-wrapper">
-						<?php do_action( 'woocommerce_before_shop_loop' ); ?>
+					<div class="category__filter">
+						<?php dynamic_sidebar( 'wc_categories_sidebar' ); ?>
 					</div>
 				<?php } ?>
-				<?php
-				if ( woocommerce_product_loop() ) {
-					woocommerce_product_loop_start();
-					if ( wc_get_loop_prop( 'total' ) ) {
-						while ( have_posts() ) {
-							the_post();
-							do_action( 'woocommerce_shop_loop' );
-							wc_get_template_part( 'content', 'product-main' );
+				<div class="category__products">
+					<?php if ( $dysplay_type != 'subcategories' ) { ?>
+						<div class="category__products-wrapper">
+							<?php do_action( 'woocommerce_before_shop_loop' ); ?>
+						</div>
+					<?php } ?>
+					<?php
+					if ( woocommerce_product_loop() ) {
+						woocommerce_product_loop_start();
+						if ( wc_get_loop_prop( 'total' ) ) {
+							while ( have_posts() ) {
+								the_post();
+								do_action( 'woocommerce_shop_loop' );
+								wc_get_template_part( 'content', 'product-main' );
+							}
 						}
+						woocommerce_product_loop_end();
+						do_action( 'woocommerce_after_shop_loop' );
+					} else {
+						do_action( 'woocommerce_no_products_found' );
 					}
-					woocommerce_product_loop_end();
-					do_action( 'woocommerce_after_shop_loop' );
-				} else {
-					do_action( 'woocommerce_no_products_found' );
-				}
-				?>
+					?>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
+<?php
+if ( $flexible = get_field( 'flexible', $term_object ) ) {
+	foreach ( $flexible as $flex ) {
+		get_template_part( 'template-parts/' . $flex['acf_fc_layout'], '', array( 'group' => $flex[ $flex['acf_fc_layout'] ] ?? null ) );
+	}
+}
+?>
 <?php
 get_footer( 'shop' );

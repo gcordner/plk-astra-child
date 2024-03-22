@@ -51,33 +51,48 @@ if ( 'single banner' === $banner_type ) {
 	?>
 <!-- SINGLE BANNER -->
 	<section class="hero hero--image layout-hero is-preview">
-		<div class="container">
-			<div class="hero__wrapper--text">
-				
-				<?php if ( $description ) { ?>
-					
-										<?php if ( $mobile_banner ) : ?>
+		<div class="ast-container">
+			<div class="container">
+				<div class="hero__wrapper--text">
+				<?php
+				if ( $description ) {
+					?>
+					<h1 class="heading-1 hero__heading"><?php echo esc_html( strip_tags( $description ) ); ?></h1>
+					<?php
+					if ( $mobile_banner ) :
+						?>
 						<div class="banner-images mobi-show">
-											<?php if ( $banner_url ) : ?>
-							<a href="<?php echo esc_url( $banner_url ); ?>"><?php endif; ?>
-								<img src="<?php echo esc_url( $mobile_banner['url'] ); ?>" alt="<?php echo esc_html( $mobile_banner['alt'] ); ?>">
-											<?php if ( $banner_url ) : ?>
-							</a><?php endif; ?>
+						<?php 
+						if ( $banner_url ) :
+							?>
+							<a href="<?php echo esc_url( $banner_url ); ?>">
+						<?php
+						endif;
+						?>
+							<img src="<?php echo esc_url( $mobile_banner['url'] ); ?>" alt="<?php echo esc_html( $mobile_banner['alt'] ); ?>">
+							<?php
+							if ( $banner_url ) :
+							?>
+							</a>
+							<?php
+							endif;
+							?>
 						</div>
-					<?php endif; ?>
+						<?php endif; ?>
 
-					<?php if ( $desktop_banner ) : ?>
-						<div class="banner-images mobi-hide">
-						<?php if ( $banner_url ) : ?>
-							<a href="<?php echo esc_url( $banner_url ); ?>"><?php endif; ?>
-								<img src="<?php echo esc_url( $desktop_banner['url'] ); ?>" alt="<?php echo esc_html( $desktop_banner['alt'] ); ?>">
-											<?php if ( $banner_url ) : ?>
-							</a><?php endif; ?>
-						</div>
-					<?php endif; ?>
-				<?php } ?>
+						<?php if ( $desktop_banner ) : ?>
+							<div class="banner-images mobi-hide">
+							<?php if ( $banner_url ) : ?>
+								<a href="<?php echo esc_url( $banner_url ); ?>"><?php endif; ?>
+									<img src="<?php echo esc_url( $desktop_banner['url'] ); ?>" alt="<?php echo esc_html( $desktop_banner['alt'] ); ?>">
+												<?php if ( $banner_url ) : ?>
+								</a><?php endif; ?>
+							</div>
+						<?php endif; ?>
+					<?php } ?>
 
-				<?php do_action( 'paylesskratom_banners' ); ?>
+					<?php do_action( 'paylesskratom_banners' ); ?>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -91,6 +106,7 @@ if ( 'single banner' === $banner_type ) {
 			<div class="hero__wrapper--text">
 				
 				<?php if ( isset( $description ) && $description ) { ?>
+					<h1 class="heading-1 hero__heading"><?php echo esc_html( strip_tags( $description ) ); ?></h1>
 					
 					<div class="banner-images">
 						<?php if ( isset( $banner_image_1 ) && $banner_image_1 ) : ?>
@@ -138,7 +154,9 @@ if ( 'single banner' === $banner_type ) {
 	<?php } ?>
 		<div class="container">
 			<div class="hero__wrapper--text">
-					
+			<?php if ( $description ) { ?>
+					<?php echo str_replace( array( '<p>', '<h1>' ), array( '<p class="hero__caption">', '<h1 class="heading-1 hero__heading">' ), apply_filters( 'the_content', $description ) ); ?>
+			<?php } ?>
 					<?php do_action( 'paylesskratom_banners' ); ?>
 			</div>
 		</div>
